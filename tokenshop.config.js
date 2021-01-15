@@ -24,7 +24,7 @@ export default {
       main: [1, 2, 3, 4],
       mainDisplay: [1, 300, 378, 744],
       rinkeby: [1, 1],
-      rinkebyDisplay: [12, 31]
+      rinkebyDisplay: [1, 2]
     },
     social: {
       twitter: "https://twitter.com/johnorionyoung",

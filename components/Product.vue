@@ -18,7 +18,7 @@
           <p class="description small">{{ tokenData.description }}</p>
           <div class="metaRow">
             <span class="metaLabel">ID</span>
-            <span class="metaValue">{{ tokenData.id }}</span>
+            <span class="metaValue">{{ tokenData.JOYtoyId }}</span>
           </div>
           <div class="metaRow">
             <span class="metaLabel">Total</span>

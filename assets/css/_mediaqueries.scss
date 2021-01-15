@@ -1,0 +1,64 @@
+/* MEDIA QUERIES BASE*/
+/* one of sm 450, md 780, lg 1250, xl (infinty), */
+#body .sm {
+}
+#body.md {
+}
+#body.lg {
+}
+#body.xl {
+}
+
+/* Overrides*/
+#body.lg,
+#body.xl {
+  section .primary,
+  section .secondary,
+  section .tertiary {
+    padding-top: 5rem !important;
+  }
+}
+
+/* STRUCTURE */
+
+#body.sm {
+  section {
+  }
+}
+
+#body.sm,
+#body.md {
+  section {
+    // box-shadow: 0 0 0 1px lime;
+    min-height: unset;
+    .primary {
+    }
+    &#intro {
+      flex-direction: column;
+      .primary {
+        padding-top: 2rem;
+        padding-left: 2rem;
+        margin: 0;
+        .heroList {
+          margin-left: 2rem;
+        }
+      }
+      .secondary {
+        margin-left: 2rem;
+      }
+    }
+  }
+  .pageContainer section#read .secondary,
+  .pageContainer section#read .tertiary {
+    min-height: 1rem;
+  }
+  section#read .primary {
+    padding: 0;
+  }
+}
+
+#body.lg {
+}
+
+#body.xl {
+}

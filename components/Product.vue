@@ -17,7 +17,6 @@
           <p class="description small">{{ tokenData.feature }}</p>
           <p class="description small">{{ tokenData.description }}</p>
           
-          </div>
           <div class="metaRow">
             <span class="metaLabel">Total</span>
             <span class="metaValue">{{ tokenData.editionSize }}</span>

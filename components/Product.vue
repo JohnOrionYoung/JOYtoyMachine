@@ -16,10 +16,7 @@
           <h4>{{ tokenData.title }}</h4>
           <p class="description small">{{ tokenData.feature }}</p>
           <p class="description small">{{ tokenData.description }}</p>
-          <div class="metaRow">
-            <span class="metaLabel">ID</span>
-            <span class="metaValue">{{ tokenData.JOYtoyId }}</span>
-          </div>
+          
           <div class="metaRow">
             <span class="metaLabel">Total</span>
             <span class="metaValue">{{ tokenData.editionSize }}</span>

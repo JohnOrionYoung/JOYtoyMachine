@@ -16,18 +16,12 @@
           <h4>{{ tokenData.title }}</h4>
           <p class="description small">{{ tokenData.feature }}</p>
           <p class="description small">{{ tokenData.description }}</p>
-          <div class="metaRow">
-            <span class="metaLabel">ID</span>
-            <span class="metaValue">{{ tokenData.id }}</span>
-          </div>
+          
           <div class="metaRow">
             <span class="metaLabel">Total</span>
             <span class="metaValue">{{ tokenData.editionSize }}</span>
           </div>
-          <div class="metaRow">
-            <span class="metaLabel">Number</span>
-            <span class="metaValue">{{ tokenData.editionNumber }}</span>
-          </div>
+          
           <div class="metaRow">
             <span class="metaLabel">Price</span>
             <span class="metaValue">{{ tokenData.price }} Eth</span>

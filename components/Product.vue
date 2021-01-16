@@ -209,12 +209,12 @@ export default {
         return
       }
       this.readStatus = "working"
-      const templateData = await this.readTemplate({
-        tokenId: this.displayid,
-        requiredNetwork: this.requiredNetwork,
-        axios: this.$axios
-      })
-      console.log("templateData", templateData)
+      //const templateData = await this.readTemplate({
+      //  tokenId: this.displayid,
+      //  requiredNetwork: this.requiredNetwork,
+      //  axios: this.$axios
+      //})
+      //console.log("templateData", templateData)
       const data = await this.readToken({
         tokenId: this.displayid,
         requiredNetwork: this.requiredNetwork

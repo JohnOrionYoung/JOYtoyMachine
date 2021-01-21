@@ -111,4 +111,34 @@ export default {
     font-size: 2rem;
   }
 }
+
+.row.between {
+    justify-content: center;
+}
+
+.brandImage[data-v-96f67418] {
+    width: 30rem;
+    height: 10rem;
+}
+
+.productTile {
+    border-radius: 50px;
+}
+
+.button.joy {
+    
+    font-size: 40px;
+    border-radius: 50px;
+    width: 100%;
+    border: 4px solid var(--text-color,#000);
+    border-color: #ffe70d;
+    letter-spacing: 2px;
+}
+
+
+.button.joy.invert {
+    border: 4px solid var(--text-color,#000);
+    background: var(--background-color,#ffe70d);
+}
+
 </style>

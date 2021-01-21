@@ -1,7 +1,6 @@
 <template>
   <div class="Brand">
-    <img :src="logoUrl" vif="logoUrl" class="brandImage" />
-    <span v-if="!logoUrl && brandName">{{ brandName }}</span>
+    <img :src="https://assets.website-files.com/5c73606d331282a7a53d3df3/5ffb98b2f2faea1a53240c1f_IMG_5303-p-1080.png" vif="logoUrl" class="brandImage" />
   </div>
 </template>
 

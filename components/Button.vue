@@ -6,9 +6,9 @@
 
 <style lang="scss">
 .button {
-  color: var(--background-color, #111);
-  border: 0px solid var(--brand-color, #111);
-  background: var(--brand-color, #111);
+  color: var(--background-color, #000);
+  border: 0px solid var(--brand-color, #000);
+  background: var(--brand-color, #000);
   // background: blue;
   padding: 0.25rem 1rem;
   font-weight: bold;

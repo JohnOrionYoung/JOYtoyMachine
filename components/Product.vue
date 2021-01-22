@@ -52,7 +52,7 @@
             mode="joy"
             @click="handleConnect"
           >
-            Connect Wallet!
+            CONNECT
           </button>
         </div>
         <modal

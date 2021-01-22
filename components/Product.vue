@@ -94,7 +94,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "VT323";
+  font-family: "Doobie";
 }
 .productLoading {
   min-height: 20rem;
@@ -111,7 +111,7 @@
   background: rgba(255, 255, 255, 1);
   color: var(--text-color, #111);
   border-radius: 50px;
-  font-family: "Doobie";
+  font-family: "VT323";
 
   .productImage {
     width: 100%;

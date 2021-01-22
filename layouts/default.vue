@@ -82,7 +82,7 @@ export default {
 }
 
 @font-face {
-  font-family: 'CheeeVariable';
+  font-family: 'Cheee';
   font-style: normal;
   font-weight: 400;
   font-display: swap;

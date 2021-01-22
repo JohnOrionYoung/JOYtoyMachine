@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   .navItem {
-    padding: 0 0.5rem;
+    padding: 0 2rem;
   }
 }
 </style>

@@ -26,7 +26,7 @@ export default {
 }
 .brandImage {
   width: 500px;
-  max-width: 90%;
+  max-width: 100%;
   object-fit: contain;
   margin: 3px 0px -2px;
 }

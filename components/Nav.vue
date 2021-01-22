@@ -3,11 +3,9 @@
     <div class="navItem">
       <a href="https://www.joy.lol/joys">JOYs</a>
     </div>
-
     <div class="navItem">
       <nuxt-link to="/" class="navLink">JOYtoys</nuxt-link>
     </div>
-    
   </div>
 </template>
 
@@ -18,11 +16,9 @@
   align-items: center;
   justify-content: center;
   .navItem {
-    padding: 0 8rem;
+    padding: 0 9rem;
     font-size: 32px;
     font-family: Doobie;
-    color: #ffe70d;
-    text-decoration: none;
   }
 }
 .row.center {
@@ -31,6 +27,8 @@
     line-height: 44px;
     text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
     letter-spacing: 2px;
+    color: #ffe70d;
+    text-decoration: none;
 }
 </style>
 

@@ -11,6 +11,7 @@
     <Header />
     <Nav />
     <Nuxt />
+    <Nav />
     <Footer />
   </div>
 </template>

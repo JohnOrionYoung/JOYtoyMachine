@@ -78,7 +78,7 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/fonts/Doobie.ttf') format('truetype');
+  src: url('~assets/Doobie.ttf') format('truetype');
 }
 
 </style>

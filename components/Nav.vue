@@ -25,6 +25,10 @@
     text-decoration: none;
   }
 }
+.row.center {
+    justify-content: center;
+    background-color: #0060e1;
+}
 </style>
 
 <script>

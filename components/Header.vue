@@ -109,7 +109,7 @@ export default {
     justify-content: center;
   }
   .networkLabel {
-    border: 1px solid var(--ui-color, #111);
+    border: 1px solid var(--ui-color, #000);
     font-size: 0.75rem;
     padding: 0 0.5rem;
     line-height: 1.5;

@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   .navItem {
-    padding: 0 7rem;
+    padding: 0 8rem;
     font-size: 32px;
     font-family: Doobie;
     color: #ffe70d;

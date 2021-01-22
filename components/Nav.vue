@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   .navItem {
-    padding: 0 0.5rem;
+    padding: 0 7rem;
     font-size: 32px;
     font-family: Doobie;
     color: #ffe70d;
@@ -28,6 +28,9 @@
 .row.center {
     justify-content: center;
     background-color: #0060e1;
+    line-height: 44px;
+    text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
 }
 </style>
 

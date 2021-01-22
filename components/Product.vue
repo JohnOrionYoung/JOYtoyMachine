@@ -1,7 +1,7 @@
 <template>
   <div class="Product" :class="`${mode}`">
     <div v-if="readStatus !== 'done'" class="productLoading">
-      Loading Product...
+      Loading JOYtoys...
     </div>
     <transition name="slideup" appear>
       <div v-if="tokenData && readStatus !== 'working'" class="productTile">

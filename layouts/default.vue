@@ -86,7 +86,7 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/CheeeVariable.ttf') format('truetype');
+  src: url('~assets/Cheee.ttf') format('truetype');
 }
 
 </style>

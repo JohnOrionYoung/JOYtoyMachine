@@ -26,7 +26,7 @@
   stroke: var(--ui-color, #eee);
 }
 .icon.user.text {
-  stroke: var(--text-color, #111);
+  stroke: var(--text-color, #000);
 }
 .icon.user.brand {
   stroke: var(--brand-color, #ccc);

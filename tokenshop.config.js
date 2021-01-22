@@ -16,7 +16,7 @@ export default {
     brandName: "JOYWORLD",
     title: "JOYWORLD",
     description:
-      "GET new JOYtoys from the JOYtoy Machine or find them on <a href="https://opensea.io/collection/joyworld-joytoys/?ref=0x4d430e327c8967cd23a8c17a256ba4f33e2a2ced">OpenSea</a> when they’re GONE!",
+      "GET new JOYtoys from the JOYtoy Machine or find them on OpenSea when they’re GONE!",
     logoUrl:
       "https://assets.website-files.com/5c73606d331282a7a53d3df3/5ffb98b2f2faea1a53240c1f_IMG_5303-p-1080.png",
     hasNavigation: true,

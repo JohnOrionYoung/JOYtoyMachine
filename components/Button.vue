@@ -13,15 +13,21 @@
   padding: 0.25rem 1rem;
   font-weight: bold;
   &.joy {
-    font-size: 1rem;
+    font-size: 40px;
     line-height: 1.5;
     display: flex;
-    width: auto;
+    width: 100%;
     height: auto;
     margin: 10px;
     // padding-top: 12px;
     // padding-right: 10px;
     // padding-left: 10px;
+    
+
+    //JOY
+    border: 4px solid var(--text-color,#000);
+    border-color: #ffe70d;
+    letter-spacing: 2px;
 
     flex-direction: row;
 
@@ -30,7 +36,7 @@
     border-style: solid;
     // border-width: 4px;
     // border-color: #ff0004;
-    border-radius: 40px;
+    border-radius: 50px;
     background-color: #0060e1;
     background-image: radial-gradient(
         circle farthest-corner at 50% 50%,

@@ -10,6 +10,7 @@
   >
     <Header />
     <Nav />
+    <Connect />
     <Nuxt />
     <Nav />
     <Footer />

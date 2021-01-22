@@ -9,6 +9,7 @@
     ]"
   >
     <Header />
+    <Nav />
     <Nuxt />
     <Footer />
   </div>

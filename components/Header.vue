@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  max-width: 100%;
   .accountWrap {
     display: flex;
     flex-direction: row;

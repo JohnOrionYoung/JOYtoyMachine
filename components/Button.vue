@@ -66,7 +66,8 @@
     &.invert {
       background: var(--background-color, #eee);
       color: var(--text-color, #111);
-      border: 2px solid var(--text-color, #111);
+      border: 4px solid var(--text-color,#000);
+      background: var(--background-color,#ffe70d);
       box-shadow: none;
     }
   }

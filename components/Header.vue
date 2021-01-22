@@ -4,10 +4,10 @@
       <Brand />
     </div>
   </header>
-  <header>
+  <div>
     <Nav v-if="hasNavigation" />
-  </header>
-  <header>
+  </div>
+  <div>
     <div class="profile">
       <client-only>
         <div id="accountWrap" class="accountWrap">
@@ -25,7 +25,7 @@
         </div>
       </client-only>
     </div>
-  </header>
+  </div>
 </template>
 
 <script>

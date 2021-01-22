@@ -3,9 +3,9 @@
     <div class="row full between">
       <Brand />
     </div>
-   </br>
+   <br/>
     <Nav v-if="hasNavigation" />
-   </br>
+   <br/>
     <div class="profile">
       <client-only>
         <div id="accountWrap" class="accountWrap">

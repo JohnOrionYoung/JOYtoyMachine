@@ -1,5 +1,6 @@
 <template>
   <header class="Header">
+      <div class="row full between">
       <Brand />
     </div>    
   </header>

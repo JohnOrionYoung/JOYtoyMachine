@@ -90,7 +90,7 @@
   flex-basis: 25%;
   min-width: 16rem;
   min-height: 10rem;
-  padding: 0.5rem;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,6 +111,7 @@
   background: rgba(255, 255, 255, 1);
   color: var(--text-color, #111);
   border-radius: 50px;
+  font-family: "Doobie";
 
   .productImage {
     width: 100%;

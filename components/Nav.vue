@@ -1,7 +1,7 @@
 <template>
   <div class="Nav row center" :class="`${uiTheme}}`">
     <div class="navItem">
-      <nuxt-link to="https://www.joy.lol/joys" class="navLink">JOYs</nuxt-link>
+      <a href="https://www.joy.lol/joys">JOYs</a>
     </div>
 
     <div class="navItem">

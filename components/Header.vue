@@ -3,13 +3,7 @@
     <div class="row full between">
       <Brand />
     </div>
-  </header>
-</template>
-
-  <div>
     <Nav v-if="hasNavigation" />
-  </div>
-  <div>
     <div class="profile">
       <client-only>
         <div id="accountWrap" class="accountWrap">
@@ -26,7 +20,8 @@
           <div v-if="walletAddress"><IconUser /></div>
         </div>
       </client-only>
-    </div>
+  </header>
+</template>
 
 <script>
 import { mapMutations, mapGetters, mapActions } from "vuex"

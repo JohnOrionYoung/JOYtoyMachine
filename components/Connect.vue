@@ -1,11 +1,8 @@
 <template>
   <header class="Header">
     <div class="row full between">
-      <Brand />
     </div>
-
-    <Nav v-if="hasNavigation" />
-
+    
     <div class="profile">
       <client-only>
         <div id="accountWrap" class="accountWrap">

@@ -1,7 +1,5 @@
 <template>
-    <div class="row full between">
-    </div>
-    
+<header class="Header">
     <div class="profile">
       <client-only>
         <div id="accountWrap" class="accountWrap">
@@ -18,6 +16,7 @@
         </div>
       </client-only>
     </div>
+  </header>
 </template>
 
 <script>

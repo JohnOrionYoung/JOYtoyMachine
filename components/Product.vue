@@ -27,10 +27,6 @@
             <span class="metaValue">{{ tokenData.price }} Eth</span>
             <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
           </div>
-          <div class="metaRow">
-            <span class="metaLabel">Active</span>
-            <span class="metaValue">{{ tokenData.active ? "yes" : "no" }}</span>
-          </div>
         </div>
 
         <div class="productActions">

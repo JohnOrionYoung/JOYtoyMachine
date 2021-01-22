@@ -1,5 +1,6 @@
 <template>
   <div class="Brand">
+    <a href="https://www.joy.lol/">
     <img :src="logoUrl" vif="logoUrl" class="brandImage" />
     <span v-if="!logoUrl && brandName">{{ brandName }}</span>
   </div>

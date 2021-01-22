@@ -1,5 +1,4 @@
 <template>
-  <header class="Header">
     <div class="row full between">
     </div>
     
@@ -19,7 +18,6 @@
         </div>
       </client-only>
     </div>
-  </header>
 </template>
 
 <script>

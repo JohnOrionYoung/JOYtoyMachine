@@ -1,6 +1,6 @@
 # nftShop
 
-This is a repo to template a simple page token vending shop. If is based on Vue/Nuxt served to Vercel hosting.
+This is a repo to template a simple page token vending shop. It is based on Vue/Nuxt served to Vercel hosting.
 
 # SETUP
 

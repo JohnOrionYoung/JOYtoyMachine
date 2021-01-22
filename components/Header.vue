@@ -13,7 +13,7 @@
             v-if="!walletAddress"
             class="button joy"
             @click.native="handleConnect"
-            >Connect</Button
+            >CONNECT WALLET</Button
           >
 
           <div v-if="walletNetwork" class="networkLabel">

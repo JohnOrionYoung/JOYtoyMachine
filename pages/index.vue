@@ -125,16 +125,6 @@ export default {
     border-radius: 50px;
 }
 
-.button.joy {
-    
-    font-size: 40px;
-    border-radius: 50px;
-    width: 100%;
-    border: 4px solid var(--text-color,#000);
-    border-color: #ffe70d;
-    letter-spacing: 2px;
-}
-
 
 .button.joy.invert {
     border: 4px solid var(--text-color,#000);

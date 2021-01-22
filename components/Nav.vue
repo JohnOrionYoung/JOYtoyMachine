@@ -1,16 +1,13 @@
 <template>
   <div class="Nav row center" :class="`${uiTheme}}`">
     <div class="navItem">
-      <nuxt-link to="/" class="navLink">Home</nuxt-link>
+      <nuxt-link to="https://www.joy.lol/joys" class="navLink">JOYs</nuxt-link>
     </div>
 
     <div class="navItem">
-      <nuxt-link to="/products" class="navLink">Products</nuxt-link>
+      <nuxt-link to="/" class="navLink">JOYtoys</nuxt-link>
     </div>
-
-    <div class="navItem">
-      <nuxt-link to="/about" class="navLink">About</nuxt-link>
-    </div>
+    
   </div>
 </template>
 

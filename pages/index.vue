@@ -112,23 +112,9 @@ export default {
   }
 }
 
+//JOY
 .row.between {
     justify-content: center;
-}
-
-.brandImage[data-v-96f67418] {
-    width: 30rem;
-    height: 10rem;
-}
-
-.productTile {
-    border-radius: 50px;
-}
-
-
-.button.joy.invert {
-    border: 4px solid var(--text-color,#000);
-    background: var(--background-color,#ffe70d);
 }
 
 </style>

@@ -24,8 +24,8 @@ export default {
   font-weight: 700;
 }
 .brandImage {
-  width: 2rem;
-  height: 4rem;
+  width: 30rem;
+  height: 10rem;
   object-fit: contain;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
-<header class="Header">
+  <header class="Header">
+   <div class="row full between">
     <div class="profile">
       <client-only>
         <div id="accountWrap" class="accountWrap">
@@ -16,6 +17,7 @@
         </div>
       </client-only>
     </div>
+   </div>
   </header>
 </template>
 

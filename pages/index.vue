@@ -2,6 +2,29 @@
   <div class="pageContainer">
     <section class="hero">
       <p>{{ description }}</p>
+      
+      <p>
+        <div class="profile">
+      <client-only>
+        <div id="accountWrap" class="accountWrap">
+          <Button
+            v-if="!walletAddress"
+            class="button joy"
+            @click.native="handleConnect"
+            >CONNECT WALLET</Button
+          >
+
+          <div v-if="walletNetwork" class="networkLabel">
+            {{ walletNetwork === "main" ? "Connected" : walletNetwork }}
+          </div>
+          <div v-if="walletAddress"><IconUser /></div>
+        </div>
+      </client-only>
+    </div>
+      </p>    
+      
+      
+      
     </section>
     <section>
       <Products>

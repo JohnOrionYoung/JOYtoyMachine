@@ -1,7 +1,7 @@
 <template>
   <div class="Product" :class="`${mode}`">
     <div v-if="readStatus !== 'done'" class="productLoading">
-      Loading Product...
+      Loading JOYtoys...
     </div>
     <transition name="slideup" appear>
       <div v-if="tokenData && readStatus !== 'working'" class="productTile">
@@ -14,8 +14,8 @@
 
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
-          <p class="description small">{{ tokenData.feature }}</p>
           <p class="description small">{{ tokenData.description }}</p>
+          <p class="description small">{{ tokenData.feature }}</p>
           
           <div class="metaRow">
             <span class="metaLabel">Total</span>
@@ -26,10 +26,6 @@
             <span class="metaLabel">Price</span>
             <span class="metaValue">{{ tokenData.price }} Eth</span>
             <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
-          </div>
-          <div class="metaRow">
-            <span class="metaLabel">Active</span>
-            <span class="metaValue">{{ tokenData.active ? "yes" : "no" }}</span>
           </div>
         </div>
 
@@ -56,7 +52,7 @@
             mode="joy"
             @click="handleConnect"
           >
-            Connect Wallet!
+            CONNECT
           </button>
         </div>
         <modal
@@ -94,11 +90,11 @@
   flex-basis: 25%;
   min-width: 16rem;
   min-height: 10rem;
-  padding: 0.5rem;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "VT323";
+  font-family: "Doobie";
 }
 .productLoading {
   min-height: 20rem;
@@ -114,7 +110,8 @@
   box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 1);
   color: var(--text-color, #111);
-  border-radius: 1rem;
+  border-radius: 50px;
+  font-family: "VT323";
 
   .productImage {
     width: 100%;

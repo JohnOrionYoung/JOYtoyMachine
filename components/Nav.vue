@@ -1,15 +1,10 @@
 <template>
   <div class="Nav row center" :class="`${uiTheme}}`">
     <div class="navItem">
-      <nuxt-link to="/" class="navLink">Home</nuxt-link>
+      <a href="https://www.joy.lol/joys">JOYs</a>
     </div>
-
     <div class="navItem">
-      <nuxt-link to="/products" class="navLink">Products</nuxt-link>
-    </div>
-
-    <div class="navItem">
-      <nuxt-link to="/about" class="navLink">About</nuxt-link>
+      <nuxt-link to="/" class="navLink">JOYtoys</nuxt-link>
     </div>
   </div>
 </template>
@@ -21,8 +16,25 @@
   align-items: center;
   justify-content: center;
   .navItem {
-    padding: 0 0.5rem;
+    padding: 0 2rem;
+    font-size: 32px;
+    font-family: Doobie;
   }
+}
+
+a{
+    color: #ffe70d;
+    text-decoration: none;
+}
+
+.row.center {
+    justify-content: center;
+    background-color: #0060e1;
+    line-height: 44px;
+    text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    color: #ffe70d;
+    text-decoration: none;
 }
 </style>
 

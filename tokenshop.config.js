@@ -16,14 +16,14 @@ export default {
     brandName: "JOYWORLD",
     title: "JOYWORLD",
     description:
-      "GET new JOYtoys directly or find them on OpenSea when they're GONE!",
+      "GET new JOYtoys from the JOYtoy Machine or find them on OpenSea when they’re GONE!",
     logoUrl:
-      "https://assets.website-files.com/5c73606d331282a7a53d3df3/5dcdfa66993302af1cbe093e_JOY_new-p-500.png",
-    hasNavigation: false,
+      "https://assets.website-files.com/5c73606d331282a7a53d3df3/5ffb98b2f2faea1a53240c1f_IMG_5303-p-1080.png",
+    hasNavigation: true,
     products: {
       main: [1, 2, 3, 4],
-      mainDisplay: [1, 300, 378, 744],
-      rinkeby: [1, 1],
+      mainDisplay: [1, 300, 744, 378],
+      rinkeby: [1, 2],
       rinkebyDisplay: [1, 2]
     },
     social: {
@@ -36,13 +36,13 @@ export default {
   },
   ui: {
     purchaseButtonText: "Yes, Gimme!",
-    cancelButtonText: "No, Cancel that.",
+    cancelButtonText: "Nah, Cancel.",
     round: "2px"
   },
   colors: {
-    textColor: "#111",
+    textColor: "#000",
     backgroundColor: "#ffe70d",
-    uiColor: "#111",
+    uiColor: "#000",
     brandColor: "#0060e1",
     secondaryColor: "#ff0004"
   }

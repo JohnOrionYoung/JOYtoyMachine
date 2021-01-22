@@ -81,4 +81,12 @@ export default {
   src: url('~assets/Doobie.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'CheeeVariable';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('~assets/CheeeVariable.ttf') format('truetype');
+}
+
 </style>

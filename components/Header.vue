@@ -3,7 +3,9 @@
     <div class="row full between">
       <Brand />
     </div>
+
     <Nav v-if="hasNavigation" />
+
     <div class="profile">
       <client-only>
         <div id="accountWrap" class="accountWrap">
@@ -11,7 +13,7 @@
             v-if="!walletAddress"
             class="button joy"
             @click.native="handleConnect"
-            >CONNECT WALLET</Button
+            >Connect</Button
           >
 
           <div v-if="walletNetwork" class="networkLabel">
@@ -20,6 +22,7 @@
           <div v-if="walletAddress"><IconUser /></div>
         </div>
       </client-only>
+    </div>
   </header>
 </template>
 

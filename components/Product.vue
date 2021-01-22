@@ -110,7 +110,7 @@
   box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 1);
   color: var(--text-color, #111);
-  border-radius: 1rem;
+  border-radius: 50px;
 
   .productImage {
     width: 100%;

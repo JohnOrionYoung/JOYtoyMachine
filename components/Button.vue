@@ -59,7 +59,7 @@
         #004199 101%
       );
     box-shadow: 2px 2px 7px 1px rgba(85, 85, 85, 0.59);
-    font-family: "Cheee peeenutt", sans-serif;
+    font-family: "Cheee", sans-serif;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;

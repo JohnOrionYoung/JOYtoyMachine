@@ -4,6 +4,8 @@
       <Brand />
     </div>
   </header>
+</template>
+
   <div>
     <Nav v-if="hasNavigation" />
   </div>
@@ -25,8 +27,6 @@
         </div>
       </client-only>
     </div>
-  </div>
-</template>
 
 <script>
 import { mapMutations, mapGetters, mapActions } from "vuex"

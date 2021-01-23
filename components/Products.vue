@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 150px;
   flex-wrap: wrap;
 }
 </style>

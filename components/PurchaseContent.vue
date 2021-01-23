@@ -41,7 +41,7 @@
           Yes, gimme!
         </button>
         <button class="button joy invert" @click="closeAction">
-          No, cancel that
+          Cancel
         </button>
       </div>
     </div>
@@ -92,7 +92,7 @@
     </div>
     <div v-if="transactionStatus && transactionStatus === 'error'">
       <span v-if="!transactionError" class="statusError"
-        >Something went wrong.</span
+        >Something got weird.</span
       >
       <span v-if="transactionError" class="statusError">{{
         transactionError
@@ -167,7 +167,7 @@ export default {
 .modalContent {
   padding: 1rem;
   width: 100%;
-  border-top: 2px solid var(--brand-color);
+  border-top: 4px solid var(--brand-color);
   h3 {
     margin: 0.5rem 0;
   }

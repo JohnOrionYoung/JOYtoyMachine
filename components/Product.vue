@@ -88,13 +88,12 @@
 <style lang="scss">
 .Product {
   flex-basis: 25%;
-  min-width: 16rem;
+  min-width: 20rem;
   min-height: 10rem;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Doobie";
 }
 .productLoading {
   min-height: 20rem;
@@ -142,8 +141,8 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      border-bottom: 1px dashed var(--text-color, #111);
-      font-size: 0.875rem;
+      border-bottom: 1px dashed var(--text-color, #000);
+      font-size: 16px;
       .metaLabel {
       }
       .metaValue {

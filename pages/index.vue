@@ -113,6 +113,10 @@ export default {
 }
 
 //JOY
+h4 {
+    font-family: "Doobie";
+    font-size: 16px;
+  }
 .row.between {
     justify-content: center;
 }

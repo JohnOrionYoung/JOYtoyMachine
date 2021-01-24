@@ -113,7 +113,8 @@ export default {
 }
 
 //JOY
-.h4 {
+.productTile .productMeta h4 {
+    text-align: center;
     font-family: "Doobie";
     font-size: 16px;
   }

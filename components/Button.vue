@@ -65,7 +65,7 @@
     text-transform: uppercase;
     &.invert {
       background: var(--background-color, #eee);
-      color: var(--text-color, #111);
+      color: var(--text-color, #000);
       border: 4px solid var(--text-color,#000);
       background: var(--background-color,#ffe70d);
       box-shadow: none;

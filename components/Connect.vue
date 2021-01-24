@@ -100,11 +100,11 @@ export default {
     padding-top: 10px;
   }
   .networkLabel {
-    border: 4px solid var(--ui-color, #000);
-    font-size: 0.75rem;
+    border: 0px solid var(--ui-color, #000);
+    font-size: 15px;
     padding: 0 0.5rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
+    line-height: 1;
+    font-family: "VT323";
   }
 }
 </style>

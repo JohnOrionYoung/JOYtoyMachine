@@ -113,7 +113,7 @@ export default {
 }
 
 //JOY
-h4 {
+.h4 {
     font-family: "Doobie";
     font-size: 16px;
   }

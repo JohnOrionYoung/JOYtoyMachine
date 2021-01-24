@@ -131,6 +131,7 @@
     h4 {
       text-align: center;
       font-family: "Doobie";
+      font-size: 20px;
     }
     .description {
       text-align: center;
@@ -146,7 +147,7 @@
       .metaLabel {
       }
       .metaValue {
-        font-weight: bold;
+       // font-weight: bold;
       }
     }
   }

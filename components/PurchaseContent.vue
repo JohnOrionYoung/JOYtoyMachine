@@ -11,7 +11,7 @@
     </div>
 
     <div v-if="!transactionStatus && !pendingToken" class="modalSection">
-      <h3>Purchase Token</h3>
+      <h3>Purchase JOYtoy</h3>
       <div class="tokenPreview">
         <div class="previewImage">
           <img :src="imageUrl" alt="token Image" />
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div>Are you sure?</div>
+      <div>You sure?</div>
       <div class="modalActions">
         <button
           class="button joy"
@@ -68,7 +68,7 @@
             }
           "
         >
-          Close
+          CLOSE
         </button>
       </div>
     </div>

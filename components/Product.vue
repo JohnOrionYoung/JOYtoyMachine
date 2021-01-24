@@ -134,15 +134,9 @@
       font-family: "Doobie";
       font-size: 20px;
       font-weight: 400;
-      padding-right: 10px;
-      padding-left: 10px;
     }
     .description {
       text-align: center;
-      text-align: center;
-      padding-right: 10px;
-      padding-left: 10px;
-      padding-bottom: 10px;
       font-size: 16px;
     }
     .metaRow {
@@ -153,10 +147,6 @@
       width: 100%;
       border-bottom: 1px dashed var(--text-color, #000);
       font-size: 16px;
-      padding-top; 0px;
-      padding-bottom: 0px;
-      padding-right: 40px;
-      padding-left: 40px;
       .metaLabel {
       }
       .metaValue {

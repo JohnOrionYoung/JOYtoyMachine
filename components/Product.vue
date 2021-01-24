@@ -18,14 +18,14 @@
           <!-- <p class="description small">{{ tokenData.feature }}</p> -->
           
           <div class="metaRow">
-            <span class="metaLabel">TOTAL</span>
+            <span class="metaLabel">LIMITED EDITION</span>
             <span class="metaValue">{{ tokenData.editionSize }}</span>
           </div>
           
           <div class="metaRow">
             <span class="metaLabel">PRICE</span>
-            <span class="metaValue">Ξ{{ tokenData.price }}</span>
-            <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
+            <span class="metaValue">{{ tokenData.price }} ETH</span>
+            <!-- <span class="metaValue">{{ tokenData.priceWei }} ETH</span> -->
           </div>
         </div>
 

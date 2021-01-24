@@ -152,7 +152,7 @@
       padding-right: 40px;
       padding-left: 40px;
       line-height: 16px;
-      border-bottom: 1px dashed var(--text-color, #000);
+      border-bottom: 1px dotted var(--text-color, #777777);
       font-size: 16px;
       .metaLabel {
       }

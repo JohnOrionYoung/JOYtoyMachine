@@ -148,6 +148,9 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      padding-right: 40px;
+      padding-left: 40px;
+      line-height: 16px;
       border-bottom: 1px dashed var(--text-color, #000);
       font-size: 16px;
       .metaLabel {

@@ -112,14 +112,6 @@
   color: var(--text-color, #111);
   border-radius: 50px;
   font-family: "VT323";
-  
-  //JOY
-      padding-top; 0px;
-    padding-bottom: 10px;
-    padding-right: 35px;
-    padding-left: 35px;
-  //JOY  
-
   .productImage {
     width: 100%;
     min-height: 100px;

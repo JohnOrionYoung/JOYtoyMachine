@@ -134,6 +134,9 @@
       font-family: "Doobie";
       font-size: 20px;
       font-weight: 400;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .description {
       text-align: center;

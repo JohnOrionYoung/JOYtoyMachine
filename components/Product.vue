@@ -87,8 +87,9 @@
 
 <style lang="scss">
 .Product {
-  flex-basis: 25%;
+  flex-basis: 20%;
   min-width: 300px;
+  max-width: 420px;
   min-height: 10rem;
   padding: 10px;
   display: flex;

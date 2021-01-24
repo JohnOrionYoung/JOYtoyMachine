@@ -141,7 +141,8 @@
     }
     .description {
       text-align: center;
-      font-size: 16px;
+      font-size: 15px;
+      padding-bottom: 10px;
     }
     .metaRow {
       display: flex;

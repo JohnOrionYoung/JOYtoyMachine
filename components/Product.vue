@@ -36,7 +36,7 @@
             mode="joy"
             @click="() => {}"
           >
-            Gone
+            GONE
           </button>
           <button
             v-if="walletAddress && tokenData.active"
@@ -44,7 +44,7 @@
             mode="joy"
             @click="triggerPurchase(id)"
           >
-            Get
+            GET
           </button>
           <button
             v-if="!walletAddress && tokenData.active"
@@ -52,7 +52,7 @@
             mode="joy"
             @click="handleConnect"
           >
-            CONNECT
+            GET
           </button>
         </div>
         <modal
@@ -106,10 +106,10 @@
   // border: none;
 }
 .productTile {
-  border: 4px solid var(--ui-color, #111);
+  border: 4px solid var(--ui-color, #000);
   box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 1);
-  color: var(--text-color, #111);
+  color: var(--text-color, #000);
   border-radius: 50px;
   font-family: "VT323";
   .productImage {
@@ -122,7 +122,7 @@
     }
   }
   .productMeta {
-    padding: 0.5rem;
+    padding: 0px;
     min-height: 100px;
     h4,
     p {
@@ -130,11 +130,20 @@
     }
     h4 {
       text-align: center;
+      height: 80px;
       font-family: "Doobie";
       font-size: 20px;
+      font-weight: 400;
+      padding-right: 10px;
+      padding-left: 10px;
     }
     .description {
       text-align: center;
+      text-align: center;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      font-size: 16px;
     }
     .metaRow {
       display: flex;
@@ -144,6 +153,10 @@
       width: 100%;
       border-bottom: 1px dashed var(--text-color, #000);
       font-size: 16px;
+      padding-top; 0px;
+      padding-bottom: 0px;
+      padding-right: 40px;
+      padding-left: 40px;
       .metaLabel {
       }
       .metaValue {

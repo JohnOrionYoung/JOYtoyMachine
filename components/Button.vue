@@ -60,7 +60,7 @@
         #004199 101%
       );
     box-shadow: 2px 2px 7px 1px rgba(85, 85, 85, 0.59);
-    font-family: "Cheee", sans-serif;
+    font-family: "Cheee-Pickels", sans-serif;
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;

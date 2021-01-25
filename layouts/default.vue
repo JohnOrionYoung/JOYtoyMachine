@@ -84,7 +84,7 @@ export default {
 @font-face {
   font-family: 'Cheee-Pickles';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-display: swap;
   src: url('~assets/Cheee-Pickles.ttf') format('truetype');
 }

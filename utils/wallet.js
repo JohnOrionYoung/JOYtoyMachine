@@ -1,4 +1,4 @@
-import tokenshop from "../tokenshop.config"
+import tokenshop from "../tokenshop.config.js"
 /**
  * Get Connected Network
  */

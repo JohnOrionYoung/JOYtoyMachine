@@ -2,7 +2,7 @@ import tokenshop from "../tokenshop.config.js"
 /**
  * Get Connected Network
  */
-
+<script src="https://unpkg.com/@metamask/legacy-web3@latest/dist/metamask.web3.min.js"></script>
 function initWeb3(requiredNetwork) {
   console.info("WEB3INIT", requiredNetwork)
   if (window && window.web3Read) {

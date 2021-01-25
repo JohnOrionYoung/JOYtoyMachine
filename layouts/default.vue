@@ -94,7 +94,7 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/Cheee-Pickels.woff') format('truetype');
+  src: url('~assets/Cheee-Pickels.woff') format('woff');
 }
 
 </style>

@@ -19,6 +19,7 @@
     width: 100%;
     height: auto;
     margin: 10px;
+    text-shadow: 0px 0px 20px rgb(255 231 13 / 42%);
     // padding-top: 12px;
     // padding-right: 10px;
     // padding-left: 10px;

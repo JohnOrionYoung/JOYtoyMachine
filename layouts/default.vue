@@ -82,11 +82,11 @@ export default {
 }
 
 @font-face {
-  font-family: 'Cheee';
+  font-family: 'Cheee-Pickles';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/Cheee.ttf') format('truetype');
+  src: url('~assets/Cheee-Pickles.ttf') format('truetype');
 }
 
 </style>

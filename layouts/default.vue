@@ -89,12 +89,4 @@ export default {
   src: url('~assets/Cheee.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Cheee-Pickels';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('~assets/Cheee-Pickels.woff') format('woff');
-}
-
 </style>

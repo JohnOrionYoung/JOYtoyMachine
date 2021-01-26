@@ -34,7 +34,7 @@
             v-if="tokenData && !tokenData.active"
             class="button joy invert"
             mode="joy"
-            @click="() => {}"
+            @click="window.open(https://opensea.io/collection/joyworld-joytoys/?ref=0x4d430e327c8967cd23a8c17a256ba4f33e2a2ced);"
           >
             GONE
           </button>

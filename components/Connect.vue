@@ -106,5 +106,11 @@ export default {
     line-height: 1;
     font-family: "VT323";
   }
+  .accountWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

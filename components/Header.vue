@@ -13,11 +13,5 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
-  .accountWrap {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
 }
 </style>

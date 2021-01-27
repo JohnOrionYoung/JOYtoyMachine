@@ -4,8 +4,8 @@
 export default {
   keys: {
     infura: {
-      main: "https://mainnet.infura.io/v3/056ad12dceac40558c4b9afb10d52391",
-      rinkeby: "https://rinkeby.infura.io/v3/056ad12dceac40558c4b9afb10d52391"
+      main: "https://mainnet.infura.io/v3/760ff7b32ef04620b65bc7e6c416190b",
+      rinkeby: "https://rinkeby.infura.io/v3/760ff7b32ef04620b65bc7e6c416190b"
     }
   },
   contracts: {

@@ -36,7 +36,7 @@ function init() {
       package: WalletConnectProvider,
       options: {
         infuraId:
-          tokenshop.keys.infura.main || "056ad12dceac40558c4b9afb10d52391"
+          tokenshop.keys.infura.main || "27e484dcd9e3efcfd25a83a78777cdf1"
       }
     }
     // portis: {

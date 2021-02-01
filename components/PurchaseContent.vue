@@ -34,7 +34,8 @@
               purchaseToken({
                 tokenId: id,
                 requiredNetwork: requiredNetwork,
-                priceWei: priceWei
+                priceWei: priceWei,
+                walletAddress: walletAddress
               })
           "
         >
@@ -112,9 +113,9 @@ import tokenshop from "./../tokenshop.config"
 export default {
   // props: ['closeAction', 'id', 'price', 'priceWei', 'title', 'imageUrl'],
   props: {
-    closeAction: { type: String, default: "" },
+    closeAction: { type: Function, default: () => {} },
     id: { type: Number, default: 0 },
-    price: { type: Number, default: null },
+    price: { type: String, default: "" },
     priceWei: { type: Number, default: null },
     title: { type: String, default: "" },
     imageUrl: { type: String, default: "" }

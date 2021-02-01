@@ -1,7 +1,7 @@
 <template>
   <div class="Product" :class="`${mode}`">
     <div v-if="readStatus !== 'done'" class="productLoading">
-      Loading JOYtoys...
+      Loading Product...
     </div>
     <transition name="slideup" appear>
       <div v-if="tokenData && readStatus !== 'working'" class="productTile">
@@ -14,18 +14,28 @@
 
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
-          <p class="description small">{{ tokenData.description }}</p>
           <p class="description small">{{ tokenData.feature }}</p>
-          
+          <p class="description small">{{ tokenData.description }}</p>
           <div class="metaRow">
+            <span class="metaLabel">ID</span>
+            <span class="metaValue">{{ tokenData.id }}</span>
+          </div>
+          <!-- <div class="metaRow">
             <span class="metaLabel">Total</span>
             <span class="metaValue">{{ tokenData.editionSize }}</span>
+          </div> -->
+          <div class="metaRow">
+            <span class="metaLabel">Number</span>
+            <span class="metaValue">{{ tokenData.editionNumber }}</span>
           </div>
-          
           <div class="metaRow">
             <span class="metaLabel">Price</span>
             <span class="metaValue">{{ tokenData.price }} Eth</span>
             <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
+          </div>
+          <div class="metaRow">
+            <span class="metaLabel">Active</span>
+            <span class="metaValue">{{ tokenData.active ? "yes" : "no" }}</span>
           </div>
         </div>
 
@@ -52,7 +62,7 @@
             mode="joy"
             @click="handleConnect"
           >
-            CONNECT
+            Connect Wallet!
           </button>
         </div>
         <modal
@@ -90,11 +100,11 @@
   flex-basis: 25%;
   min-width: 16rem;
   min-height: 10rem;
-  padding: 10px;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Doobie";
+  font-family: "VT323";
 }
 .productLoading {
   min-height: 20rem;
@@ -110,8 +120,7 @@
   box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 1);
   color: var(--text-color, #111);
-  border-radius: 50px;
-  font-family: "VT323";
+  border-radius: 1rem;
 
   .productImage {
     width: 100%;
@@ -189,7 +198,8 @@ export default {
     this.readStatus = "loading"
     const requiredNetwork = this.$config.requiredNetwork
     this.requiredNetwork = requiredNetwork
-    this.handleLoad()
+
+    this.handleLoad({ requiredNetwork })
   },
 
   methods: {
@@ -200,23 +210,29 @@ export default {
       readImage: "walletStore/readImage"
     }),
     async handleLoad(props) {
+      const { requiredNetwork } = props
+      if (!process.client) {
+        return
+      }
       // NOTE: this uses the displayid, whle we have no reliable way to query the template token data
-
       if (!this.id) {
         return
       }
       this.readStatus = "working"
-      //const templateData = await this.readTemplate({
-      //  tokenId: this.displayid,
-      //  requiredNetwork: this.requiredNetwork,
-      //  axios: this.$axios
-      //})
-      //console.log("templateData", templateData)
+
+      // const templateData = await this.readTemplate({
+      //   tokenId: this.displayid,
+      //   requiredNetwork: this.requiredNetwork,
+      //   axios: this.$axios
+      // })
+      // console.log("templateData", templateData)
       const data = await this.readToken({
         tokenId: this.displayid,
-        requiredNetwork: this.requiredNetwork
+        requiredNetwork
       })
-      this.tokenData = data
+
+      this.tokenData = data || {}
+
       this.readStatus = "done"
       const imageData = await this.readImage({
         tokenId: this.displayid,

@@ -1,41 +1,32 @@
 import { initWeb3 } from "../utils/wallet"
 
-function init() {
+function init(requiredNetwork) {
   window.addEventListener("load", function () {
-    // this will init the web3read using default (main) infura
-    initWeb3()
-    //   console.group('WEB3INIT')
-    //   const Web3 = window.Web3
-    //   const web3Implementation = new Web3(
-    //     new Web3.providers.HttpProvider(
-    //       'https://rinkeby.infura.io/v3/760ff7b32ef04620b65bc7e6c416190b'
-    //     )
-    //   )
-    //   console.log('const web3Implementation', web3Implementation)
-    //   window.web3Read = web3Implementation
+    if (window.ethereum) {
+      // check web3js where the script added it to window
+      // this is an annoying workaround.
 
-    //   if (typeof web3 !== 'undefined') {
-    //     console.log("Web3 Detected! " + web3.currentProvider.constructor.name) // eslint-disable-line
-    //   } else {
-    //     console.log('No Web3 Detected... using HTTP Provider')
-    //     window.web3Read = new Web3(
-    //       new Web3.providers.HttpProvider(
-    //         'https://rinkeby.infura.io/v3/760ff7b32ef04620b65bc7e6c416190b'
-    //       )
-    //     )
-    //   }
-    // })
-    // // console.log("Web3Modal instance is", web3Modal);
-    // console.groupEnd()
+      const Web3 = window.Web3
+      window.web3 = undefined
+      const web3Write = new Web3(window.ethereum)
+      window.web3Write = web3Write
+    }
+
+    // this will init the web3read using default (main) infura
+    // if it doesnt' already exist
+
+    if (!window.web3Read) {
+      initWeb3()
+    }
   })
 }
 
 export default async ({ app, store, $axios, isHMR }, inject) => {
   if (process.client) {
-    // initWeb3()
-    await init()
-    // console.log('window', window)
-    // console.log('window.web3Read', window.web3Read)
-    // inject('web3Read', web3Read)
+    const { requiredNetwork } = app.$config
+    // web3 workaround for vercel deployments
+    // init function waits for page load to ensure script
+    // exists, since we cannot use node module
+    await init(requiredNetwork)
   }
 }

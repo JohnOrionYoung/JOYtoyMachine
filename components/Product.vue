@@ -1,7 +1,7 @@
 <template>
   <div class="Product" :class="`${mode}`">
     <div v-if="readStatus !== 'done'" class="productLoading">
-      Loading JOYtoys...
+      Loading Product...
     </div>
     <transition name="slideup" appear>
       <div v-if="tokenData && readStatus !== 'working'" class="productTile">
@@ -14,18 +14,28 @@
 
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
+          <p class="description small">{{ tokenData.feature }}</p>
           <p class="description small">{{ tokenData.description }}</p>
-          <!-- <p class="description small">{{ tokenData.feature }}</p> -->
-          
           <div class="metaRow">
-            <span class="metaLabel">LIMITED EDITION</span>
-            <span class="metaValue">{{ tokenData.editionSize }}</span>
+            <span class="metaLabel">ID</span>
+            <span class="metaValue">{{ tokenData.id }}</span>
           </div>
-          
+          <!-- <div class="metaRow">
+            <span class="metaLabel">Total</span>
+            <span class="metaValue">{{ tokenData.editionSize }}</span>
+          </div> -->
           <div class="metaRow">
-            <span class="metaLabel">PRICE</span>
-            <span class="metaValue">{{ tokenData.price }} ETH</span>
-            <!-- <span class="metaValue">{{ tokenData.priceWei }} ETH</span> -->
+            <span class="metaLabel">Number</span>
+            <span class="metaValue">{{ tokenData.editionNumber }}</span>
+          </div>
+          <div class="metaRow">
+            <span class="metaLabel">Price</span>
+            <span class="metaValue">{{ tokenData.price }} Eth</span>
+            <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
+          </div>
+          <div class="metaRow">
+            <span class="metaLabel">Active</span>
+            <span class="metaValue">{{ tokenData.active ? "yes" : "no" }}</span>
           </div>
         </div>
 
@@ -36,7 +46,7 @@
             mode="joy"
             @click="() => {}"
           >
-            GONE
+            Gone
           </button>
           <button
             v-if="walletAddress && tokenData.active"
@@ -44,7 +54,7 @@
             mode="joy"
             @click="triggerPurchase(id)"
           >
-            GET
+            Get
           </button>
           <button
             v-if="!walletAddress && tokenData.active"
@@ -52,7 +62,7 @@
             mode="joy"
             @click="handleConnect"
           >
-            GET
+            Connect Wallet!
           </button>
         </div>
         <modal
@@ -87,14 +97,14 @@
 
 <style lang="scss">
 .Product {
-  flex-basis: 20%;
-  min-width: 300px;
-  max-width: 420px;
+  flex-basis: 25%;
+  min-width: 16rem;
   min-height: 10rem;
-  padding: 10px;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "VT323";
 }
 .productLoading {
   min-height: 20rem;
@@ -103,16 +113,15 @@
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
-  font-family: "VT323";
   // border: none;
 }
 .productTile {
-  border: 4px solid var(--ui-color, #000);
+  border: 4px solid var(--ui-color, #111);
   box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 1);
-  color: var(--text-color, #000);
-  border-radius: 50px;
-  font-family: "VT323";
+  color: var(--text-color, #111);
+  border-radius: 1rem;
+
   .productImage {
     width: 100%;
     min-height: 100px;
@@ -123,7 +132,7 @@
     }
   }
   .productMeta {
-    padding: 0px;
+    padding: 0.5rem;
     min-height: 100px;
     h4,
     p {
@@ -131,18 +140,10 @@
     }
     h4 {
       text-align: center;
-      height: 80px;
-      font-family: "Doobie";
-      font-size: 20px;
-      font-weight: 400;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-family: "VT323";
     }
     .description {
       text-align: center;
-      font-size: 15px;
-      padding-bottom: 10px;
     }
     .metaRow {
       display: flex;
@@ -150,15 +151,12 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      padding-right: 40px;
-      padding-left: 40px;
-      line-height: 16px;
-      border-bottom: 1px dotted var(--text-color, #777777);
-      font-size: 16px;
+      border-bottom: 1px dashed var(--text-color, #111);
+      font-size: 0.875rem;
       .metaLabel {
       }
       .metaValue {
-       // font-weight: bold;
+        font-weight: bold;
       }
     }
   }
@@ -200,7 +198,8 @@ export default {
     this.readStatus = "loading"
     const requiredNetwork = this.$config.requiredNetwork
     this.requiredNetwork = requiredNetwork
-    this.handleLoad()
+
+    this.handleLoad({ requiredNetwork })
   },
 
   methods: {
@@ -211,23 +210,29 @@ export default {
       readImage: "walletStore/readImage"
     }),
     async handleLoad(props) {
+      const { requiredNetwork } = props
+      if (!process.client) {
+        return
+      }
       // NOTE: this uses the displayid, whle we have no reliable way to query the template token data
-
       if (!this.id) {
         return
       }
       this.readStatus = "working"
-      //const templateData = await this.readTemplate({
-      //  tokenId: this.displayid,
-      //  requiredNetwork: this.requiredNetwork,
-      //  axios: this.$axios
-      //})
-      //console.log("templateData", templateData)
+
+      // const templateData = await this.readTemplate({
+      //   tokenId: this.displayid,
+      //   requiredNetwork: this.requiredNetwork,
+      //   axios: this.$axios
+      // })
+      // console.log("templateData", templateData)
       const data = await this.readToken({
         tokenId: this.displayid,
-        requiredNetwork: this.requiredNetwork
+        requiredNetwork
       })
-      this.tokenData = data
+
+      this.tokenData = data || {}
+
       this.readStatus = "done"
       const imageData = await this.readImage({
         tokenId: this.displayid,

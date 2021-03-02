@@ -25,7 +25,7 @@
             <span class="metaValue">{{ tokenData.editionSize }}</span>
           </div> -->
           <div class="metaRow">
-            <span class="metaLabel">Number</span>
+            <span class="metaLabel">Total</span>
             <span class="metaValue">{{ tokenData.editionNumber }}</span>
           </div>
           <div class="metaRow">
@@ -33,10 +33,10 @@
             <span class="metaValue">{{ tokenData.price }} ETH</span>
             <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
           </div>
-          <div class="metaRow">
+          <!-- <div class="metaRow">
             <span class="metaLabel">Active</span>
             <span class="metaValue">{{ tokenData.active ? "yes" : "no" }}</span>
-          </div>
+          </div> -->
         </div>
 
         <div class="productActions">

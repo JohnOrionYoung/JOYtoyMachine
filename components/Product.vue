@@ -30,7 +30,7 @@
           </div>
           <div class="metaRow">
             <span class="metaLabel">Price</span>
-            <span class="metaValue">{{ tokenData.price }} E</span>
+            <span class="metaValue">{{ tokenData.price }} ETH</span>
             <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
           </div>
           <div class="metaRow">

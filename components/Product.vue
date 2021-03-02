@@ -30,7 +30,7 @@
           </div>
           <div class="metaRow">
             <span class="metaLabel">Price</span>
-            <span class="metaValue">{{ tokenData.price }} Eth</span>
+            <span class="metaValue">{{ tokenData.price }} E</span>
             <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
           </div>
           <div class="metaRow">
@@ -81,7 +81,7 @@
           <PurchaseContent
             :id="id"
             :close-action="closeAction"
-            :price="`${tokenData.price} Eth`"
+            :price="`${tokenData.price} ETH`"
             :price-wei="tokenData.priceWei"
             :title="tokenData.title"
             :image-url="
@@ -154,6 +154,7 @@
       border-bottom: 1px dashed var(--text-color, #111);
       font-size: 0.875rem;
       .metaLabel {
+        display: block;
       }
       .metaValue {
         font-weight: bold;

@@ -22,19 +22,19 @@
   }
 }
 
-a{
-    color: #ffe70d;
-    text-decoration: none;
+a {
+  color: #ffe70d;
+  text-decoration: none;
 }
 
 .row.center {
-    justify-content: center;
-    background-color: #0060e1;
-    line-height: 44px;
-    text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
-    letter-spacing: 2px;
-    color: #ffe70d;
-    text-decoration: none;
+  justify-content: center;
+  background-color: #0060e1;
+  line-height: 44px;
+  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  color: #ffe70d;
+  text-decoration: none;
 }
 </style>
 

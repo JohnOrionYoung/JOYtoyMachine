@@ -1,8 +1,8 @@
 <template>
   <header class="Header">
-      <div class="row full between">
+    <div class="row full between">
       <Brand />
-    </div>    
+    </div>
   </header>
 </template>
 

@@ -29,7 +29,8 @@ export default {
     social: {
       twitter: "https://twitter.com/johnorionyoung",
       instagram: "https://instagram.com/johnorionyoung",
-      youtube: "https://www.youtube.com/channel/UChDK82CmqpsrhdCDJEi-9bQ/featured?",
+      youtube:
+        "https://www.youtube.com/channel/UChDK82CmqpsrhdCDJEi-9bQ/featured?",
       discord: "https://discord.gg/hBv9BDD"
     }
   },

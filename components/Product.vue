@@ -14,10 +14,10 @@
 
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
-          <p class="description small">{{ tokenData.feature }}</p>
+          <!-- <p class="description small">{{ tokenData.feature }}</p> -->
           <p class="description small">{{ tokenData.description }}</p>
           <div class="metaRow">
-            <span class="metaLabel">ID</span>
+            <span class="metaLabel">JOYtoy No.</span>
             <span class="metaValue">{{ tokenData.id }}</span>
           </div>
           <!-- <div class="metaRow">

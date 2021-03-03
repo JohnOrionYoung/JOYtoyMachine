@@ -12,7 +12,7 @@
             >
 
             <div v-if="walletNetwork" class="networkLabel">
-              {{ walletNetwork === "main" ? "Connected" : walletNetwork }}
+              {{ walletNetwork === "main" ? "MetaMask" : "WalletConnect" }}
             </div>
             <div v-if="walletAddress"><IconUser /></div>
           </div>
@@ -102,7 +102,7 @@ export default {
   }
   .networkLabel {
     border: 0px solid var(--ui-color, #000);
-    font-size: 15px;
+    font-size: 30px;
     padding: 0 0.5rem;
     line-height: 1;
     font-family: "VT323";

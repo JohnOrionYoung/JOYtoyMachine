@@ -210,6 +210,7 @@ export const actions = {
       .then((result) => {
         const priceEth = web3Read.utils.fromWei(result[6], "ether")
         const priceWei = Number(result[6])
+        console.log(tokenId)
         const tokenObject = {
           title: result[0],
           description: result[1],

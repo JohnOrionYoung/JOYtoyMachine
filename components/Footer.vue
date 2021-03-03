@@ -9,7 +9,7 @@
         <a target="_blank" :href="youtube">YouTube</a>
       </div>
       <div v-if="instagram">
-        <a target="_blank" :href="gram">Insta</a>
+        <a target="_blank" :href="instagram">Instagram</a>
       </div>
       <div v-if="twitter">
         <a target="_blank" :href="twitter">Twitter</a>

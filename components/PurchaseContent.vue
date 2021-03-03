@@ -41,9 +41,7 @@
         >
           Yes, gimme!
         </button>
-        <button class="button joy invert" @click="closeAction">
-          Cancel
-        </button>
+        <button class="button joy invert" @click="closeAction">Cancel</button>
       </div>
     </div>
 

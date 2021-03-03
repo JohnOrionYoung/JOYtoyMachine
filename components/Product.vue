@@ -14,29 +14,34 @@
 
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
-          <p class="description small">{{ tokenData.feature }}</p>
+          <!-- <p class="description small">{{ tokenData.feature }}</p> -->
           <p class="description small">{{ tokenData.description }}</p>
           <div class="metaRow">
-            <span class="metaLabel">ID</span>
-            <span class="metaValue">{{ tokenData.id }}</span>
+            <span class="metaLabel">JOYtoy No.</span>
+            <span v-if="tokenData.id === 1" class="metaValue">01</span>
+            <span v-if="tokenData.id === 200" class="metaValue">02</span>
+            <span v-if="tokenData.id === 305" class="metaValue">03</span>
+            <span v-if="tokenData.id === 500" class="metaValue">04</span>
+            <span v-if="tokenData.id === 900" class="metaValue">05</span>
+            <span v-if="tokenData.id === 981" class="metaValue">06</span>
           </div>
           <!-- <div class="metaRow">
             <span class="metaLabel">Total</span>
             <span class="metaValue">{{ tokenData.editionSize }}</span>
           </div> -->
           <div class="metaRow">
-            <span class="metaLabel">Number</span>
-            <span class="metaValue">{{ tokenData.editionNumber }}</span>
+            <span class="metaLabel">Total</span>
+            <span class="metaValue">{{ tokenData.editionSize }}</span>
           </div>
           <div class="metaRow">
             <span class="metaLabel">Price</span>
-            <span class="metaValue">{{ tokenData.price }} Eth</span>
+            <span class="metaValue">{{ tokenData.price }} ETH</span>
             <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
           </div>
-          <div class="metaRow">
+          <!-- <div class="metaRow">
             <span class="metaLabel">Active</span>
             <span class="metaValue">{{ tokenData.active ? "yes" : "no" }}</span>
-          </div>
+          </div> -->
         </div>
 
         <div class="productActions">
@@ -62,7 +67,7 @@
             mode="joy"
             @click="handleConnect"
           >
-            Connect Wallet!
+            Get
           </button>
         </div>
         <modal
@@ -81,7 +86,7 @@
           <PurchaseContent
             :id="id"
             :close-action="closeAction"
-            :price="`${tokenData.price} Eth`"
+            :price="`${tokenData.price} ETH`"
             :price-wei="tokenData.priceWei"
             :title="tokenData.title"
             :image-url="
@@ -120,7 +125,7 @@
   box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 1);
   color: var(--text-color, #111);
-  border-radius: 1rem;
+  border-radius: 50px;
 
   .productImage {
     width: 100%;
@@ -154,6 +159,7 @@
       border-bottom: 1px dashed var(--text-color, #111);
       font-size: 0.875rem;
       .metaLabel {
+        display: block;
       }
       .metaValue {
         font-weight: bold;

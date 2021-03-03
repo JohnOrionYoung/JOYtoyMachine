@@ -23,10 +23,9 @@
     // padding-top: 12px;
     // padding-right: 10px;
     // padding-left: 10px;
-    
 
     //JOY
-    border: 4px solid var(--text-color,#000);
+    border: 4px solid var(--text-color, #000);
     border-color: #ffe70d;
     letter-spacing: 2px;
 
@@ -67,8 +66,8 @@
     &.invert {
       background: var(--background-color, #eee);
       color: var(--text-color, #000);
-      border: 4px solid var(--text-color,#000);
-      background: var(--background-color,#ffe70d);
+      border: 4px solid var(--text-color, #000);
+      background: var(--background-color, #ffe70d);
       box-shadow: none;
     }
   }

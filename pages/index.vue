@@ -1,7 +1,7 @@
 <template>
   <div class="pageContainer">
     <section class="hero">
-      <p>{{ description }}</p>      
+      <p>{{ description }}</p>
     </section>
     <section>
       <Products>
@@ -114,19 +114,18 @@ export default {
 
 //JOY
 .productTile .productMeta h4 {
-    text-align: center;
-    font-family: "Doobie";
-    font-size: 16px;
-  }
-.row.between {
-    justify-content: center;
+  text-align: center;
+  font-family: "Doobie";
+  font-size: 16px;
 }
-  .networkLabel {
-    border: 1px solid var(--ui-color, #000);
-    font-size: 0.75rem;
-    padding: 0 0.5rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-  }
-
+.row.between {
+  justify-content: center;
+}
+.networkLabel {
+  border: 1px solid var(--ui-color, #000);
+  font-size: 0.75rem;
+  padding: 0 0.5rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
 </style>

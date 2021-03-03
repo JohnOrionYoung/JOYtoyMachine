@@ -1,7 +1,16 @@
 <template>
   <div class="pageContainer">
     <section class="hero">
-      <p>{{ description }}</p>
+      <h1>
+        GET new JOYtoys from the JOYtoy Machine or find them on
+        <a
+          class="openSeaLink"
+          href="https://opensea.io/collection/joyworld-joytoys"
+          >OpenSea</a
+        >
+        when they’re GONE!
+      </h1>
+      <p class="outOfOrder">WalletConnect is ~Out of Order~</p>
     </section>
     <section>
       <Products>
@@ -108,10 +117,17 @@ export default {
   h1 {
     text-align: center;
     font-family: "VT323";
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
-
+.outOfOrder {
+  font-size: 1.5em;
+}
+.openSeaLink {
+  font-size: 20px;
+  color: black;
+  text-decoration: underline;
+}
 //JOY
 .productTile .productMeta h4 {
   text-align: center;

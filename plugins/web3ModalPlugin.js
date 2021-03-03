@@ -1,7 +1,7 @@
 import Web3Modal from "web3modal"
 // import Portis from '@portis/web3'
 import WalletConnectProvider from "@walletconnect/web3-provider"
-import tokenshop from "./../tokenshop.config"
+// import tokenshop from "./../tokenshop.config"
 
 let web3Modal
 const requiredNetwork =
@@ -35,8 +35,7 @@ function init() {
     walletconnect: {
       package: WalletConnectProvider,
       options: {
-        infuraId:
-          tokenshop.keys.infura.main || "27e484dcd9e3efcfd25a83a78777cdf1"
+        infuraId: "056ad12dceac40558c4b9afb10d52391"
       }
     }
     // portis: {

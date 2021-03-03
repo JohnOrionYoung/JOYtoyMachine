@@ -61,8 +61,8 @@ const getProviderType = (provider) => {
     return null
   }
   let providerType
-  if (provider.isFortmatic) {
-    providerType = "fortmatic"
+  if (provider.isWalletConnect) {
+    providerType = "walletconnect"
   }
   if (provider.isDapper) {
     providerType = "dapper"

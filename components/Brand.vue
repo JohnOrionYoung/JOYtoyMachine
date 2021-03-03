@@ -1,7 +1,9 @@
 <template>
   <div class="Brand">
-    <img :src="logoUrl" vif="logoUrl" class="brandImage" />
-    <span v-if="!logoUrl && brandName">{{ brandName }}</span>
+    <a href="https://www.joy.lol/">
+      <img :src="logoUrl" vif="logoUrl" class="brandImage" />
+      <span v-if="!logoUrl && brandName">{{ brandName }}</span>
+    </a>
   </div>
 </template>
 
@@ -24,8 +26,9 @@ export default {
   font-weight: 700;
 }
 .brandImage {
-  width: 2rem;
-  height: 4rem;
+  width: 500px;
+  max-width: 100%;
   object-fit: contain;
+  margin: 3px 0px -2px;
 }
 </style>

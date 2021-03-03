@@ -6,22 +6,28 @@
 
 <style lang="scss">
 .button {
-  color: var(--background-color, #111);
-  border: 0px solid var(--brand-color, #111);
-  background: var(--brand-color, #111);
+  color: var(--background-color, #000);
+  border: 0px solid var(--brand-color, #000);
+  background: var(--brand-color, #000);
   // background: blue;
   padding: 0.25rem 1rem;
   font-weight: bold;
   &.joy {
-    font-size: 1rem;
+    font-size: 40px;
     line-height: 1.5;
     display: flex;
-    width: auto;
+    width: 100%;
     height: auto;
     margin: 10px;
+    text-shadow: 0px 0px 20px rgb(255 231 13 / 42%);
     // padding-top: 12px;
     // padding-right: 10px;
     // padding-left: 10px;
+
+    //JOY
+    border: 4px solid var(--text-color, #000);
+    border-color: #ffe70d;
+    letter-spacing: 2px;
 
     flex-direction: row;
 
@@ -30,7 +36,7 @@
     border-style: solid;
     // border-width: 4px;
     // border-color: #ff0004;
-    border-radius: 40px;
+    border-radius: 50px;
     background-color: #0060e1;
     background-image: radial-gradient(
         circle farthest-corner at 50% 50%,
@@ -53,14 +59,15 @@
         #004199 101%
       );
     box-shadow: 2px 2px 7px 1px rgba(85, 85, 85, 0.59);
-    font-family: "Cheee peeenutt", sans-serif;
-    font-weight: bold;
+    font-family: "Cheee-Pickles", sans-serif;
+    font-weight: 500;
     text-align: center;
     text-transform: uppercase;
     &.invert {
       background: var(--background-color, #eee);
-      color: var(--text-color, #111);
-      border: 2px solid var(--text-color, #111);
+      color: var(--text-color, #000);
+      border: 4px solid var(--text-color, #000);
+      background: var(--background-color, #ffe70d);
       box-shadow: none;
     }
   }

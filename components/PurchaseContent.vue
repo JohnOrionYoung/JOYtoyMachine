@@ -11,7 +11,7 @@
     </div>
 
     <div v-if="!transactionStatus && !pendingToken" class="modalSection">
-      <h3>Purchase Token</h3>
+      <h3>Purchase JOYtoy</h3>
       <div class="tokenPreview">
         <div class="previewImage">
           <img :src="imageUrl" alt="token Image" />
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div>Are you sure?</div>
+      <div>You sure?</div>
       <div class="modalActions">
         <button
           class="button joy"
@@ -34,15 +34,14 @@
               purchaseToken({
                 tokenId: id,
                 requiredNetwork: requiredNetwork,
-                priceWei: priceWei
+                priceWei: priceWei,
+                walletAddress: walletAddress
               })
           "
         >
           Yes, gimme!
         </button>
-        <button class="button joy invert" @click="closeAction">
-          No, cancel that
-        </button>
+        <button class="button joy invert" @click="closeAction">Cancel</button>
       </div>
     </div>
 
@@ -68,7 +67,7 @@
             }
           "
         >
-          Close
+          CLOSE
         </button>
       </div>
     </div>
@@ -92,7 +91,7 @@
     </div>
     <div v-if="transactionStatus && transactionStatus === 'error'">
       <span v-if="!transactionError" class="statusError"
-        >Something went wrong.</span
+        >Something got weird.</span
       >
       <span v-if="transactionError" class="statusError">{{
         transactionError
@@ -112,9 +111,9 @@ import tokenshop from "./../tokenshop.config"
 export default {
   // props: ['closeAction', 'id', 'price', 'priceWei', 'title', 'imageUrl'],
   props: {
-    closeAction: { type: String, default: "" },
+    closeAction: { type: Function, default: () => {} },
     id: { type: Number, default: 0 },
-    price: { type: Number, default: null },
+    price: { type: String, default: "" },
     priceWei: { type: Number, default: null },
     title: { type: String, default: "" },
     imageUrl: { type: String, default: "" }
@@ -167,7 +166,7 @@ export default {
 .modalContent {
   padding: 1rem;
   width: 100%;
-  border-top: 2px solid var(--brand-color);
+  border-top: 4px solid var(--brand-color);
   h3 {
     margin: 0.5rem 0;
   }

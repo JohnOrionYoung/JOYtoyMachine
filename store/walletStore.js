@@ -91,6 +91,7 @@ export const actions = {
     commit("setWalletStatus", "connecting")
     // const requiredNetwork = this.$config.requiredNetwork;
     web3Modal.clearCachedProvider()
+
     const provider = await web3Modal.connect().catch((error) => {
       console.log("error here:", error)
       // this.connectStatus = "error";
@@ -107,13 +108,7 @@ export const actions = {
     commit("setWalletType", providerType)
 
     const accts = await provider.enable()
-    // const accts = await web3.eth
-    //   .getAccounts((error, accounts) => {
-    //     console.log("accts", accts);
-    //   })
-    //   .catch((error) => {
-    //     console.log("error here:", error);
-    //   });
+
     console.log("accts", accts)
     if (!accts[0]) {
       commit("setWalletStatus", "noAccount")
@@ -166,7 +161,7 @@ export const actions = {
   },
 
   async readTemplate(context, props) {
-    // note: axios is a nuxt plugin, so using it here to avoid installing it again
+    // NOTE:  axios is a nuxt plugin, so using it here to avoid installing it again
     const { tokenId, requiredNetwork, axios, artworkIndex = 1 } = props
 
     console.log("readtemplate ", tokenId, axios)
@@ -175,47 +170,19 @@ export const actions = {
     // https://joyworld.azurewebsites.net/api/HttpTrigger?id=1
     // can become /api/....
     // if the api url changes, you will need to add a base setting in the nuxt.config.js
+    // This will be better implemented int he future, I promise.
     const rinkebyApi = `/api/HttpTrigger?artworkIndex=${artworkIndex}&id=${tokenId}`
     const mainApi = `/api/HttpTrigger?artworkIndex=${artworkIndex}&id=${tokenId}`
     const templateApiUrl = requiredNetwork === "rinkeby" ? rinkebyApi : mainApi
-    console.log("templateApiUrl", templateApiUrl)
-    // const theUrl2 = `${templateApiUrl}${tokenId}`
-    // const theUrl = `https://dog.ceo/api/breeds/image/random`
-    // const { data } = await $axios.get(theUrl)
+    // console.log("templateApiUrl", templateApiUrl)
     const { data } = await axios.get(templateApiUrl)
-    console.log("data", data)
+    // console.log("data", data)
 
     return data
-    // return await getData(templateApiUrl)
-    // return await tokenContract.methods
-    //   .getMetadata(tokenId)
-    //   .call()
-    //   .then((result) => {
-    //     const priceEth = web3Read.utils.fromWei(result[6], "ether")
-    //     const priceWei = Number(result[6])
-    //     const tokenObject = {
-    //       title: result[0],
-    //       description: result[1],
-    //       editionSize: Number(result[2]), // "x", // result[2],
-    //       editionNumber: Number(result[3]), // result[3],
-    //       vendingMachine: result[4], // result[4],
-    //       feature: result[5], // result[4],
-    //       price: priceEth, // result[5],
-    //       priceWei, // result[5],
-    //       collaborators: result[7],
-    //       active: result[8],
-    //       id: tokenId
-    //     }
-    //     return tokenObject
-    //   })
-    //   .catch((error) => {
-    //     console.log("error", error)
-    //     return error
-    //   })
   },
 
   async readToken(context, props) {
-    if (!process.client) {
+    if (!window) {
       return
     }
     const { tokenId, requiredNetwork } = props
@@ -223,23 +190,13 @@ export const actions = {
     const { contracts } = tokenshop
     const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
-    // const web3Read = window.Web3 // workaround to handle deploy issues with node web3
-    // console.log('web3Read', web3Read)
-    // console.log('window.Web3', window.Web3)
-    // console.log('props', props, tokenId)
     const contractHash =
       requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
 
-    // const infuraUrl =
-    //   requiredNetwork === 'rinkeby'
-    //     ? 'https://rinkeby.infura.io/v3/760ff7b32ef04620b65bc7e6c416190b'
-    //     : 'https://mainnet.infura.io/v3/760ff7b32ef04620b65bc7e6c416190b'
-
-    await initWeb3(requiredNetwork)
-    const web3Read = window.web3Read
+    let web3Read = window.web3Read
     if (!web3Read) {
-      console.info("NO WEB3READ", window)
-      return
+      await initWeb3(requiredNetwork)
+      web3Read = window.web3Read
     }
 
     const tokenContract = new web3Read.eth.Contract(contractABI, contractHash)
@@ -253,6 +210,7 @@ export const actions = {
       .then((result) => {
         const priceEth = web3Read.utils.fromWei(result[6], "ether")
         const priceWei = Number(result[6])
+        console.log(tokenId)
         const tokenObject = {
           title: result[0],
           description: result[1],
@@ -275,21 +233,17 @@ export const actions = {
   },
   async readImage(context, props) {
     const { tokenId, requiredNetwork, index } = props
-    // const { commit } = context
-    // console.log('requiredNetwork', requiredNetwork)
-    // console.log('props: ', props)
-    // const web3 = window.web3
     const { contracts } = tokenshop
     const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
     // console.log('props', props)
     const contractHash =
       requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
-    await initWeb3(requiredNetwork)
-    const web3Read = window.web3Read
+    let web3Read = window.web3Read
     if (!web3Read) {
-      console.info("NO WEB3READ", window)
-      return
+      console.info("NO WEB3READ", requiredNetwork)
+      await initWeb3(requiredNetwork)
+      web3Read = window.web3Read
     }
     const tokenContract = new web3Read.eth.Contract(contractABI, contractHash)
 
@@ -309,29 +263,24 @@ export const actions = {
       })
   },
   purchaseToken(context, props) {
-    const { requiredNetwork, priceWei, tokenId } = props
+    const { requiredNetwork, priceWei, tokenId, walletAddress } = props
     const { commit, dispatch } = context
-    // console.log('requiredNetwork', requiredNetwork)
     const { contracts } = tokenshop
     const debugMode = false // stops the contract from firing, while debugging
     const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
-    const web3 = window.web3
-    console.log("props", props, priceWei, tokenId)
-    console.log({ rinkebyContract, mainContract })
+    const web3Write = window.web3Write
     commit("setTransactionId", null)
     commit("setTransactionError", null)
     commit("setPendingCount", 0)
     commit("setTransactionStatus", "confirming")
     const contractHash =
       requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
-    const tokenContract = web3.eth.contract(contractABI).at(contractHash)
 
-    if (!tokenContract) {
-      console.error("no ADDCONTRACT")
-      return
-    }
-    // console.log('tokenContract', tokenContract)
+    const tokenContractNew = new web3Write.eth.Contract(
+      contractABI,
+      contractHash
+    )
     if (debugMode) {
       setTimeout(() => {
         commit("setTransactionStatus", "pending")
@@ -343,36 +292,73 @@ export const actions = {
       }, 3000)
       return
     }
+    if (!tokenContractNew) {
+      console.error("no ADDCONTRACT")
+      return
+    }
+    const options = { value: priceWei, from: walletAddress }
     if (!debugMode) {
-      console.log("tokenContract to mint", tokenContract)
       console.log("about to mint id", tokenId)
       console.log("about to mint to hash", contractHash)
-      commit("setTransactionStatus", "confirming")
-      tokenContract.JOYtoyMachine(
-        tokenId,
-        { value: priceWei },
-        (err, result) => {
-          if (err) {
-            console.error("err", err)
-            commit("setTransactionStatus", "error")
-            commit("setTransactionError", err.message)
-            commit("setPendingToken", null)
-            commit("setTransactionId", null)
-          }
-          if (!err) {
-            // transaction sent (close popup)}
-            commit("setTransactionStatus", "pending")
-            commit("setTransactionError", null)
-            commit("setPendingToken", tokenId)
-            commit("setTransactionId", result)
-            dispatch("trackTransaction", {
-              transactionId: result,
-              requiredNetwork
-            })
-          }
-        }
-      )
+      // commit("setTransactionStatus", "confirming")
+      commit("setTransactionStatus", "pending")
+      commit("setPendingToken", tokenId)
+      tokenContractNew.methods
+        .JOYtoyMachine(tokenId)
+        .send(options)
+        .then((result) => {
+          console.log("result", result)
+          const transactionId = result.transactionHash
+          commit("setTransactionStatus", "pending")
+          commit("setTransactionError", null)
+          commit("setTransactionId", transactionId)
+          dispatch("trackTransaction", {
+            transactionId,
+            requiredNetwork
+          })
+        })
+        .catch((error) => {
+          console.log("error", error)
+          commit("setTransactionStatus", "error")
+          commit("setTransactionError", error.message)
+          commit("setPendingToken", null)
+          commit("setTransactionId", null)
+          return error
+        })
     }
+
+    // console.log('tokenContract', tokenContract)
+
+    // if (!debugMode) {
+    //   console.log("tokenContract to mint", tokenContract)
+    //   console.log("about to mint id", tokenId)
+    //   console.log("about to mint to hash", contractHash)
+    //   commit("setTransactionStatus", "confirming")
+    //   tokenContract.JOYtoyMachine(
+    //     tokenId,
+    //     { value: priceWei },
+    //     (err, result) => {
+    //       if (err) {
+    //         console.error("err", err)
+    //         commit("setTransactionStatus", "error")
+    //         commit("setTransactionError", err.message)
+    //         commit("setPendingToken", null)
+    //         commit("setTransactionId", null)
+    //       }
+    //       if (!err) {
+    //         // transaction sent (close popup)}
+    //         commit("setTransactionStatus", "pending")
+    //         commit("setTransactionError", null)
+    //         commit("setPendingToken", tokenId)
+    //         commit("setTransactionId", result)
+    //         dispatch("trackTransaction", {
+    //           transactionId: result,
+    //           requiredNetwork
+    //         })
+    //       }
+    //     }
+    //   )
+    // }
   },
   trackTransaction(context, props) {
     const { transactionId, requiredNetwork } = props
@@ -460,7 +446,7 @@ export const actions = {
     // await initWeb3(requiredNetwork)
     const web3Read = window.web3Read
     if (!web3Read) {
-      console.info("NO WEB3READ", window)
+      console.info("NO WEB3READ")
       return
     }
     const self = web3Read.eth

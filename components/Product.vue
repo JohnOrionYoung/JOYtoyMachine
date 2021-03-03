@@ -14,23 +14,34 @@
 
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
-          <p class="description small">{{ tokenData.feature }}</p>
+          <!-- <p class="description small">{{ tokenData.feature }}</p> -->
           <p class="description small">{{ tokenData.description }}</p>
-          
+          <div class="metaRow">
+            <span class="metaLabel">JOYtoy No.</span>
+            <span v-if="tokenData.id === 1" class="metaValue">01</span>
+            <span v-if="tokenData.id === 200" class="metaValue">02</span>
+            <span v-if="tokenData.id === 305" class="metaValue">03</span>
+            <span v-if="tokenData.id === 500" class="metaValue">04</span>
+            <span v-if="tokenData.id === 900" class="metaValue">05</span>
+            <span v-if="tokenData.id === 981" class="metaValue">06</span>
+          </div>
+          <!-- <div class="metaRow">
+            <span class="metaLabel">Total</span>
+            <span class="metaValue">{{ tokenData.editionSize }}</span>
+          </div> -->
           <div class="metaRow">
             <span class="metaLabel">Total</span>
             <span class="metaValue">{{ tokenData.editionSize }}</span>
           </div>
-          
           <div class="metaRow">
             <span class="metaLabel">Price</span>
-            <span class="metaValue">{{ tokenData.price }} Eth</span>
+            <span class="metaValue">{{ tokenData.price }} ETH</span>
             <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
           </div>
-          <div class="metaRow">
+          <!-- <div class="metaRow">
             <span class="metaLabel">Active</span>
             <span class="metaValue">{{ tokenData.active ? "yes" : "no" }}</span>
-          </div>
+          </div> -->
         </div>
 
         <div class="productActions">
@@ -56,7 +67,7 @@
             mode="joy"
             @click="handleConnect"
           >
-            Connect Wallet!
+            Get
           </button>
         </div>
         <modal
@@ -75,7 +86,7 @@
           <PurchaseContent
             :id="id"
             :close-action="closeAction"
-            :price="`${tokenData.price} Eth`"
+            :price="`${tokenData.price} ETH`"
             :price-wei="tokenData.priceWei"
             :title="tokenData.title"
             :image-url="
@@ -114,7 +125,7 @@
   box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 1);
   color: var(--text-color, #111);
-  border-radius: 1rem;
+  border-radius: 50px;
 
   .productImage {
     width: 100%;
@@ -148,6 +159,7 @@
       border-bottom: 1px dashed var(--text-color, #111);
       font-size: 0.875rem;
       .metaLabel {
+        display: block;
       }
       .metaValue {
         font-weight: bold;
@@ -192,7 +204,8 @@ export default {
     this.readStatus = "loading"
     const requiredNetwork = this.$config.requiredNetwork
     this.requiredNetwork = requiredNetwork
-    this.handleLoad()
+
+    this.handleLoad({ requiredNetwork })
   },
 
   methods: {
@@ -203,23 +216,29 @@ export default {
       readImage: "walletStore/readImage"
     }),
     async handleLoad(props) {
+      const { requiredNetwork } = props
+      if (!process.client) {
+        return
+      }
       // NOTE: this uses the displayid, whle we have no reliable way to query the template token data
-
       if (!this.id) {
         return
       }
       this.readStatus = "working"
-      //const templateData = await this.readTemplate({
-      //  tokenId: this.displayid,
-      //  requiredNetwork: this.requiredNetwork,
-      //  axios: this.$axios
-      //})
-      //console.log("templateData", templateData)
+
+      // const templateData = await this.readTemplate({
+      //   tokenId: this.displayid,
+      //   requiredNetwork: this.requiredNetwork,
+      //   axios: this.$axios
+      // })
+      // console.log("templateData", templateData)
       const data = await this.readToken({
         tokenId: this.displayid,
-        requiredNetwork: this.requiredNetwork
+        requiredNetwork
       })
-      this.tokenData = data
+
+      this.tokenData = data || {}
+
       this.readStatus = "done"
       const imageData = await this.readImage({
         tokenId: this.displayid,

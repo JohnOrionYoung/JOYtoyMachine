@@ -6,6 +6,7 @@
         <a
           class="openSeaLink"
           href="https://opensea.io/collection/joyworld-joytoys"
+          target="_blank"
           >OpenSea</a
         >
         when they’re GONE!
@@ -124,7 +125,7 @@ export default {
   font-size: 1.5em;
 }
 .openSeaLink {
-  font-size: 20px;
+  font-size: 30px;
   color: black;
   text-decoration: underline;
 }

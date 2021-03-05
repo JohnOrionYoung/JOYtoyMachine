@@ -24,6 +24,7 @@
             <span v-if="tokenData.id === 500" class="metaValue">04</span>
             <span v-if="tokenData.id === 900" class="metaValue">05</span>
             <span v-if="tokenData.id === 981" class="metaValue">06</span>
+            <span v-if="tokenData.id === 1022" class="metaValue">07</span>
           </div>
           <!-- <div class="metaRow">
             <span class="metaLabel">Total</span>
@@ -54,7 +55,15 @@
             Gone
           </button>
           <button
-            v-if="walletAddress && tokenData.active"
+            v-if="tokenData && !tokenData.vendingMachine && tokenData.active"
+            class="button joy invert"
+            mode="joy"
+            @click="() => {}"
+          >
+            Gone
+          </button>
+          <button
+            v-if="walletAddress && tokenData.active && tokenData.vendingMachine"
             class="button joy"
             mode="joy"
             @click="triggerPurchase(id)"
@@ -62,7 +71,9 @@
             Get
           </button>
           <button
-            v-if="!walletAddress && tokenData.active"
+            v-if="
+              !walletAddress && tokenData.active && tokenData.vendingMachine
+            "
             class="button joy"
             mode="joy"
             @click="handleConnect"

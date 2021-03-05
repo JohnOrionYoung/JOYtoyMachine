@@ -11,10 +11,14 @@
               >CONNECT WALLET</Button
             >
 
-            <div v-if="walletNetwork" class="networkLabel">
-              {{ walletNetwork === "main" ? "MetaMask" : "WalletConnect" }}
+            <div v-if="walletAddress" class="networkLabel">
+              {{ walletNetwork === "main" ? "MetaMask:" : "WalletConnect:" }}
             </div>
-            <div v-if="walletAddress"><IconUser /></div>
+            <div v-if="walletAddress">
+              <Button class="disconnect" @click.native="handleDisconnect">
+                Disconnect
+              </Button>
+            </div>
           </div>
         </client-only>
       </div>
@@ -26,6 +30,8 @@
 import { mapMutations, mapGetters, mapActions } from "vuex"
 import tokenshop from "../tokenshop.config"
 export default {
+  props: { mode: { type: String, default: "" } },
+
   data() {
     return {
       brandName: "",
@@ -73,8 +79,10 @@ export default {
     }),
     ...mapActions({
       handleWeb3Connect: "walletStore/handleWeb3Connect",
-      networkCheck: "walletStore/networkCheck"
+      networkCheck: "walletStore/networkCheck",
+      handleDisconnect: "walletStore/handleDisconnect"
     }),
+
     handleConnect() {
       console.log("this", this)
       const web3Modal = this.$web3Modal
@@ -107,11 +115,14 @@ export default {
     line-height: 1;
     font-family: "VT323";
   }
-  .accountWrap {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  .disconnect {
+    color: black;
+    background-color: transparent;
+    border: 3px solid black;
+    border-radius: 50px;
+    padding: 5px 20px 5px 20px;
+    font-family: "VT323";
+    font-size: 20px;
   }
 }
 </style>

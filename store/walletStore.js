@@ -113,6 +113,7 @@ export const actions = {
     if (!accts[0]) {
       commit("setWalletStatus", "noAccount")
       console.error("error: no account")
+      alert("You have no accounts present.")
     }
     commit("setWalletAddress", accts[0])
     provider.autoRefreshOnNetworkChange = true
@@ -158,6 +159,15 @@ export const actions = {
     context.commit("setTransactionError", null)
     context.commit("setTransactionId", null)
     context.commit("setPendingCount", 0)
+  },
+
+  handleDisconnect(context) {
+    console.log("wallet disconnection")
+    context.commit("setWalletNetwork", null)
+    context.commit("setWalletStatus", null)
+    context.commit("setWalletAddress", null)
+    context.commit("setWalletType", null)
+    console.log(context)
   },
 
   async readTemplate(context, props) {
@@ -253,7 +263,7 @@ export const actions = {
       .then((result) => {
         const imageObject = {
           artworkHash: result[0],
-          artworkType: result[1]
+          artworkType: result[0]
         }
         return imageObject
       })

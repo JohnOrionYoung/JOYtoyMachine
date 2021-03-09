@@ -1,6 +1,6 @@
 <template>
   <div class="pageContainer">
-    <section class="hero">
+    <header class="hero">
       <h1>
         GET new JOYtoys from the JOYtoy Machine or find them on
         <a
@@ -12,8 +12,8 @@
         when they’re GONE!
       </h1>
       <p class="outOfOrder">WalletConnect is ~Out of Order~</p>
-    </section>
-    <section>
+    </header>
+    <main>
       <Products>
         <Product
           v-for="(tokenId, index) in productsArray"
@@ -22,7 +22,7 @@
           :displayid="displayArray[index]"
         />
       </Products>
-    </section>
+    </main>
   </div>
 </template>
 
@@ -120,12 +120,16 @@ export default {
     font-family: "VT323";
     font-size: 1.5rem;
   }
+  a {
+    font-family: "VT323";
+    font-size: 1.75rem;
+  }
 }
 .outOfOrder {
   font-size: 1.5em;
 }
 .openSeaLink {
-  font-size: 30px;
+  font-size: 20px;
   color: black;
   text-decoration: underline;
 }

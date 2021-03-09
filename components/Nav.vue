@@ -1,41 +1,47 @@
 <template>
-  <div class="Nav row center" :class="`${uiTheme}}`">
-    <div class="navItem">
-      <a href="https://www.joy.lol/joys">JOYs</a>
-    </div>
-    <div class="navItem">
-      <nuxt-link to="/" class="navLink">JOYtoys</nuxt-link>
+  <div class="navContainer">
+    <div class="navLinks">
+      <div class="navItemLeft">
+        <a href="https://www.joy.lol/joys">JOYs</a>
+      </div>
+      <div class="navItemRight">
+        <nuxt-link to="/" class="navLink">JOYtoys</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.Nav {
-  flex-basis: 100%;
-  flex-shrink: 1;
-  align-items: center;
+.navContainer {
+  display: flex;
+  align-content: center;
   justify-content: center;
-  .navItem {
-    padding: 0 10%;
-    font-size: 32px;
-    font-family: Doobie;
-  }
+  background-color: #0060e1;
+}
+
+.navLinks {
+  width: 100%;
+  // border: solid 5px black;
+  // border-radius: 50px;
+  // box-shadow: 2px 2px 7px 1px rgba(85, 85, 85, 0.59);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 a {
-  color: #ffe70d;
-  text-decoration: none;
-}
-
-.row.center {
-  justify-content: center;
-  background-color: #0060e1;
-  line-height: 44px;
   text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
   letter-spacing: 2px;
   color: #ffe70d;
   text-decoration: none;
+  font-family: Doobie;
+  font-size: 3rem;
 }
+
+// .navItemRight {
+//   margin-left: 150px;
+// }
 </style>
 
 <script>

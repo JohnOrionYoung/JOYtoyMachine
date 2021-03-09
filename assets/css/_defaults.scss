@@ -1,5 +1,5 @@
 /* STATIC PAGES, MODES, ICONS, TRANSITIONS */
-@import url('./icons.css');
+@import url("./icons.css");
 
 :root {
   --primary-color: #000;
@@ -10,7 +10,7 @@
   --color-success: #14b406;
   --danger-color: #ec0000;
   --success-color: #14b406;
-  --font-family: 'Roboto', 'Helvetica Neue', 'helvetica', sans-serif;
+  --font-family: "Roboto", "Helvetica Neue", "helvetica", sans-serif;
 }
 /* STRUCTURE */
 
@@ -62,7 +62,7 @@ div.xsmall {
   margin: 0;
 }
 strong {
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: "wght" 600;
 }
 .clamp {
   overflow: hidden;
@@ -103,6 +103,7 @@ h3 {
 }
 
 h4 {
+  display: block;
 }
 
 h5 {

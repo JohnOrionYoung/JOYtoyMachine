@@ -1,17 +1,48 @@
 <template>
   <div class="Product" :class="`${mode}`">
     <div v-if="readStatus !== 'done'" class="productLoading">
-      Loading Product...
+      .~*-Loading JOYtoy-*~.
+      <img
+        class="loadingAnimation"
+        :src="require(`../assets/loadingSpinner.gif`)"
+      />
     </div>
     <transition name="slideup" appear>
       <div v-if="tokenData && readStatus !== 'working'" class="productTile">
         <div class="productImage">
           <img
-            v-if="imageData"
-            :src="`https://gateway.pinata.cloud/ipfs/${imageData.artworkHash}`"
+            v-if="tokenData.id === 1"
+            :src="require(`../assets/JOYtoy1.gif`)"
+          />
+          <img
+            v-if="tokenData.id === 200"
+            :src="require(`../assets/JOYtoy2.gif`)"
+          />
+          <img
+            v-if="tokenData.id === 305"
+            :src="require(`../assets/JOYtoy3.gif`)"
+          />
+          <img
+            v-if="tokenData.id === 500"
+            :src="require(`../assets/JOYtoy4.gif`)"
+          />
+          <img
+            v-if="tokenData.id === 900"
+            :src="require(`../assets/JOYtoy5.gif`)"
+          />
+          <img
+            v-if="tokenData.id === 981"
+            :src="require(`../assets/JOYtoy6.gif`)"
+          />
+          <img
+            v-if="tokenData.id === 1022"
+            :src="require(`../assets/JOYtoy7.gif`)"
           />
         </div>
-
+        <!-- <img
+            v-if="imageData"
+            :src="`https://gateway.pinata.cloud/ipfs/${imageData.artworkHash}`"
+          /> -->
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
           <!-- <p class="description small">{{ tokenData.feature }}</p> -->
@@ -26,10 +57,6 @@
             <span v-if="tokenData.id === 981" class="metaValue">06</span>
             <span v-if="tokenData.id === 1022" class="metaValue">07</span>
           </div>
-          <!-- <div class="metaRow">
-            <span class="metaLabel">Total</span>
-            <span class="metaValue">{{ tokenData.editionSize }}</span>
-          </div> -->
           <div class="metaRow">
             <span class="metaLabel">Total</span>
             <span class="metaValue">{{ tokenData.editionSize }}</span>
@@ -37,12 +64,7 @@
           <div class="metaRow">
             <span class="metaLabel">Price</span>
             <span class="metaValue">{{ tokenData.price }} ETH</span>
-            <!-- <span class="metaValue">{{ tokenData.priceWei }} Eth</span> -->
           </div>
-          <!-- <div class="metaRow">
-            <span class="metaLabel">Active</span>
-            <span class="metaValue">{{ tokenData.active ? "yes" : "no" }}</span>
-          </div> -->
         </div>
 
         <div class="productActions">
@@ -126,10 +148,16 @@
   min-height: 20rem;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   // border: none;
+}
+
+.loadingAnimation {
+  max-width: 75px;
+  max-height: auto;
 }
 .productTile {
   border: 4px solid var(--ui-color, #111);

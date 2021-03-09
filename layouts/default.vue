@@ -21,12 +21,6 @@
 import { mapGetters, mapMutations } from "vuex"
 import tokenshop from "../tokenshop.config"
 export default {
-  data() {
-    return {
-      // backgroundColor: '#f00',
-    }
-  },
-
   computed: {
     ...mapGetters({
       uiMode: "ui/uiMode",
@@ -38,7 +32,6 @@ export default {
     }
   },
   mounted() {
-    // console.log('this.$el', this.$el);
     this.$root.$el.style.setProperty(
       "--background-color",
       tokenshop.colors.backgroundColor
@@ -62,15 +55,8 @@ export default {
   }
 }
 </script>
+
 <style id="styles" lang="scss">
-// :root {
-//   --accent-color: red;
-
-// }
-#layout {
-  //     --background-color: blue;
-}
-
 // JOY
 
 @font-face {

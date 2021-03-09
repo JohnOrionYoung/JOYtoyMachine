@@ -23,9 +23,6 @@
         />
       </Products>
     </main>
-    <footer>
-      <Footer />
-    </footer>
   </div>
 </template>
 
@@ -122,6 +119,10 @@ export default {
     text-align: center;
     font-family: "VT323";
     font-size: 1.5rem;
+  }
+  a {
+    font-family: "VT323";
+    font-size: 1.75rem;
   }
 }
 .outOfOrder {

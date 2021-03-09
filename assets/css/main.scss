@@ -8,7 +8,7 @@ body {
   min-height: 100%;
   // background: var(--background-color, #111);
   background: var(--background-color);
-  font-family: 'arial, sans-serif';
+  font-family: "arial, sans-serif";
   font-family: var(--font-family);
 }
 
@@ -26,9 +26,6 @@ body {
   color: var(--text-color, #111);
 }
 
-a {
-  color: var(--brand-color, #999);
-}
 // GRID, if needed
 .row {
   display: flex;

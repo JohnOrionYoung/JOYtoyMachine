@@ -1,35 +1,53 @@
 <template>
-  <div class="Footer">
-    <div class="row full between">
-      <!-- <Brand /> -->
-      <div v-if="discord">
+  <div class="footerContainer">
+    <div class="footerLinks">
+      <div>
         <a target="_blank" :href="discord">Discord</a>
       </div>
-      <div v-if="youtube">
+      <div class="link">
         <a target="_blank" :href="youtube">YouTube</a>
       </div>
-      <div v-if="instagram">
+      <div class="link">
         <a target="_blank" :href="instagram">Instagram</a>
       </div>
-      <div v-if="twitter">
+      <div class="link">
         <a target="_blank" :href="twitter">Twitter</a>
       </div>
+    </div>
+    <div class="footerIcon">
+      <a href="https://www.joy.world/about">
+        <img :src="require(`../assets/JOYicon.png`)" />
+      </a>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.Footer {
-  min-height: 2rem;
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.footerLinks {
+  min-width: 60%;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 2rem;
-  font-size: 0.75rem;
+  margin: 2rem;
+
   a {
-    text-decoration: none;
+    color: black;
     text-transform: uppercase;
+    font-family: "VT323";
+    font-size: 140%;
   }
+}
+
+.link {
+  margin-left: 15px;
 }
 </style>
 

@@ -20,7 +20,7 @@
 }
 
 .navLinks {
-  width: 100%;
+  width: 80%;
   // border: solid 5px black;
   // border-radius: 50px;
   // box-shadow: 2px 2px 7px 1px rgba(85, 85, 85, 0.59);
@@ -31,12 +31,11 @@
 }
 
 a {
-  text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
   letter-spacing: 2px;
   color: #ffe70d;
   text-decoration: none;
   font-family: Doobie;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 // .navItemRight {

@@ -72,7 +72,7 @@
             v-if="tokenData && !tokenData.active"
             class="button joy invert"
             mode="joy"
-            @click="() => {}"
+            @click="openSeaLink()"
           >
             Gone
           </button>
@@ -80,7 +80,7 @@
             v-if="tokenData && !tokenData.vendingMachine && tokenData.active"
             class="button joy invert"
             mode="joy"
-            @click="() => {}"
+            @click="openSeaLink()"
           >
             Gone
           </button>
@@ -297,6 +297,9 @@ export default {
     },
     closeAction() {
       this.$modal.hide(`info-modal${this.id}`)
+    },
+    openSeaLink(e) {
+      window.open("https://opensea.io/collection/joyworld-joytoys")
     }
   }
 }

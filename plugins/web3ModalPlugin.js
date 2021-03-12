@@ -7,8 +7,7 @@ let web3Modal
 const requiredNetwork =
   process.env.PROD_NETWORK ||
   process.env.STAGING_NETWORK ||
-  process.env.DEV_NETWORK ||
-  "rinkeby"
+  process.env.DEV_NETWORK
 
 function init() {
   let web3ModalNetwork = "mainnet"

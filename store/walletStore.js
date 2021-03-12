@@ -106,7 +106,7 @@ export const actions = {
     commit("setWalletStatus", "connected")
     const providerType = getProviderType(provider)
     commit("setWalletType", providerType)
-
+    console.log("provider type", providerType)
     const accts = await provider.enable()
 
     console.log("accts", accts)
@@ -198,10 +198,8 @@ export const actions = {
     const { tokenId, requiredNetwork } = props
     // const { commit } = context
     const { contracts } = tokenshop
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
 
     let web3Read = window.web3Read
     if (!web3Read) {
@@ -220,7 +218,6 @@ export const actions = {
       .then((result) => {
         const priceEth = web3Read.utils.fromWei(result[6], "ether")
         const priceWei = Number(result[6])
-        console.log(tokenId)
         const tokenObject = {
           title: result[0],
           description: result[1],
@@ -244,11 +241,9 @@ export const actions = {
   async readImage(context, props) {
     const { tokenId, requiredNetwork, index } = props
     const { contracts } = tokenshop
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
     // console.log('props', props)
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
     let web3Read = window.web3Read
     if (!web3Read) {
       console.info("NO WEB3READ", requiredNetwork)
@@ -277,15 +272,14 @@ export const actions = {
     const { commit, dispatch } = context
     const { contracts } = tokenshop
     const debugMode = false // stops the contract from firing, while debugging
-    const rinkebyContract = contracts.rinkeby
+    // const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
     const web3Write = window.web3Write
     commit("setTransactionId", null)
     commit("setTransactionError", null)
     commit("setPendingCount", 0)
     commit("setTransactionStatus", "confirming")
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
 
     const tokenContractNew = new web3Write.eth.Contract(
       contractABI,

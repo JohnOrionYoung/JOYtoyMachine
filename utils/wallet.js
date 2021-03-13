@@ -1,20 +1,18 @@
-import tokenshop from "../tokenshop.config"
+// import tokenshop from "../tokenshop.config"
 
 /**
  * INIT web3.
  */
 
-function initWeb3(requiredNetwork) {
+function initWeb3(infuraId) {
   if (window && window.web3Read) {
     // console.info("web3read exists. Version: ", window.web3Read.version)
     return
   }
-  console.info("WEB3INIT", requiredNetwork)
+  console.info("WEB3INIT", infuraId)
 
   const infuraUrl =
-    requiredNetwork === "rinkeby"
-      ? tokenshop.keys.infura.rinkeby
-      : tokenshop.keys.infura.main
+    "https://mainnet.infura.io/v3/056ad12dceac40558c4b9afb10d52391"
 
   if (!window.Web3) {
     console.info("cannot init Web3 yet - not in window")
@@ -46,8 +44,6 @@ const getConnectedNetwork = (net) => {
     case 1:
       // setNetworkClass('main-network')
       return "main"
-    case 4:
-      return "rinkeby"
     default:
       return "private"
   }
@@ -64,27 +60,10 @@ const getProviderType = (provider) => {
   if (provider.isWalletConnect) {
     providerType = "walletconnect"
   }
-  if (provider.isDapper) {
-    providerType = "dapper"
-  }
   if (provider.isMetaMask) {
     providerType = "metamask"
-  }
-  if (provider.is3idProvider) {
-    providerType = "3id"
   }
   return providerType
 }
 
-const promisify = (inner) =>
-  new Promise((resolve, reject) =>
-    inner((err, res) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(res)
-      }
-    })
-  )
-
-export { getConnectedNetwork, getProviderType, promisify, initWeb3 }
+export { getConnectedNetwork, getProviderType, initWeb3 }

@@ -4,13 +4,11 @@
 export default {
   keys: {
     infura: {
-      main: "https://mainnet.infura.io/v3/056ad12dceac40558c4b9afb10d52391",
-      rinkeby: "https://rinkeby.infura.io/v3/056ad12dceac40558c4b9afb10d52391"
+      main: "https://mainnet.infura.io/v3/056ad12dceac40558c4b9afb10d52391"
     }
   },
   contracts: {
-    main: "0x0574c34385b039c2bb8db898f61b7767024a9449",
-    rinkeby: "0x365f47fa59ffe4b2400186ac17a98d219a79fafc"
+    main: "0x0574c34385b039c2bb8db898f61b7767024a9449"
   },
   site: {
     brandName: "JOYWORLD",
@@ -22,9 +20,7 @@ export default {
     hasNavigation: true,
     products: {
       main: [1, 2, 3, 4, 5, 6, 7],
-      mainDisplay: [1, 200, 305, 500, 900, 981, 1022],
-      rinkeby: [1, 2],
-      rinkebyDisplay: [1, 2]
+      mainDisplay: [1, 200, 305, 500, 900, 981, 1022]
     },
     social: {
       twitter: "https://twitter.com/johnorionyoung",

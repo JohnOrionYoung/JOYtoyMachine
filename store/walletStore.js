@@ -106,7 +106,7 @@ export const actions = {
     commit("setWalletStatus", "connected")
     const providerType = getProviderType(provider)
     commit("setWalletType", providerType)
-
+    console.log("provider type", providerType)
     const accts = await provider.enable()
 
     console.log("accts", accts)
@@ -129,28 +129,28 @@ export const actions = {
     commit("setWalletNetwork", connectedNetwork)
   },
 
-  networkCheck(context, requiredNetwork) {
-    if (typeof window.ethereum !== "undefined") {
-      const provider = window.ethereum
-      const networkVersion = provider.networkVersion
-      const walletNetwork = getConnectedNetwork(networkVersion)
-      if (walletNetwork && requiredNetwork !== walletNetwork) {
-        if (walletNetwork === "private") {
-          return
-        }
-        if (requiredNetwork === "main") {
-          alert(
-            `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork}`
-          )
-        }
-        if (requiredNetwork === "rinkeby") {
-          alert(
-            `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork} to use the staging environment. `
-          )
-        }
-      }
-    }
-  },
+  // networkCheck(context, requiredNetwork) {
+  //   if (typeof window.ethereum !== "undefined") {
+  //     const provider = window.ethereum
+  //     const networkVersion = provider.networkVersion
+  //     const walletNetwork = getConnectedNetwork(networkVersion)
+  //     if (walletNetwork && requiredNetwork !== walletNetwork) {
+  //       if (walletNetwork === "private") {
+  //         return
+  //       }
+  //       if (requiredNetwork === "main") {
+  //         alert(
+  //           `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork}`
+  //         )
+  //       }
+  //       if (requiredNetwork === "rinkeby") {
+  //         alert(
+  //           `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork} to use the staging environment. `
+  //         )
+  //       }
+  //     }
+  //   }
+  // },
 
   handleReset(context) {
     console.log("resetting: ")
@@ -172,7 +172,7 @@ export const actions = {
 
   async readTemplate(context, props) {
     // NOTE:  axios is a nuxt plugin, so using it here to avoid installing it again
-    const { tokenId, requiredNetwork, axios, artworkIndex = 1 } = props
+    const { tokenId, axios, artworkIndex = 1 } = props
 
     console.log("readtemplate ", tokenId, axios)
 
@@ -181,9 +181,8 @@ export const actions = {
     // can become /api/....
     // if the api url changes, you will need to add a base setting in the nuxt.config.js
     // This will be better implemented int he future, I promise.
-    const rinkebyApi = `/api/HttpTrigger?artworkIndex=${artworkIndex}&id=${tokenId}`
     const mainApi = `/api/HttpTrigger?artworkIndex=${artworkIndex}&id=${tokenId}`
-    const templateApiUrl = requiredNetwork === "rinkeby" ? rinkebyApi : mainApi
+    const templateApiUrl = mainApi
     // console.log("templateApiUrl", templateApiUrl)
     const { data } = await axios.get(templateApiUrl)
     // console.log("data", data)
@@ -198,10 +197,8 @@ export const actions = {
     const { tokenId, requiredNetwork } = props
     // const { commit } = context
     const { contracts } = tokenshop
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
 
     let web3Read = window.web3Read
     if (!web3Read) {
@@ -220,7 +217,6 @@ export const actions = {
       .then((result) => {
         const priceEth = web3Read.utils.fromWei(result[6], "ether")
         const priceWei = Number(result[6])
-        console.log(tokenId)
         const tokenObject = {
           title: result[0],
           description: result[1],
@@ -244,11 +240,9 @@ export const actions = {
   async readImage(context, props) {
     const { tokenId, requiredNetwork, index } = props
     const { contracts } = tokenshop
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
     // console.log('props', props)
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
     let web3Read = window.web3Read
     if (!web3Read) {
       console.info("NO WEB3READ", requiredNetwork)
@@ -277,15 +271,14 @@ export const actions = {
     const { commit, dispatch } = context
     const { contracts } = tokenshop
     const debugMode = false // stops the contract from firing, while debugging
-    const rinkebyContract = contracts.rinkeby
+    // const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
     const web3Write = window.web3Write
     commit("setTransactionId", null)
     commit("setTransactionError", null)
     commit("setPendingCount", 0)
     commit("setTransactionStatus", "confirming")
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
 
     const tokenContractNew = new web3Write.eth.Contract(
       contractABI,
@@ -371,7 +364,7 @@ export const actions = {
     // }
   },
   trackTransaction(context, props) {
-    const { transactionId, requiredNetwork } = props
+    const { transactionId } = props
     const { dispatch, commit } = context
     console.log("trackTransaction", transactionId)
     // dispatch('getTransactionReceiptMined', {
@@ -384,8 +377,8 @@ export const actions = {
     }
     dispatch("queryTransaction", {
       transactionId,
-      interval: 1000,
-      requiredNetwork
+      interval: 1000
+      // requiredNetwork
     })
       .then((completedTransaction) => {
         console.log("VEND DONE: ", completedTransaction)

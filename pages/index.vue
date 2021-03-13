@@ -59,14 +59,8 @@ export default {
     this.description = tokenshop.site.description
     this.logoUrl = tokenshop.site.logoUrl
     this.contractHash = tokenshop.contracts.main
-    const network = this.$config.requiredNetwork
-    if (network === "rinkeby") {
-      this.productsArray = tokenshop.site.products.rinkeby
-      this.displayArray = tokenshop.site.products.rinkebyDisplay
-    } else {
-      this.productsArray = tokenshop.site.products.main
-      this.displayArray = tokenshop.site.products.mainDisplay
-    }
+    this.productsArray = tokenshop.site.products.main
+    this.displayArray = tokenshop.site.products.mainDisplay
   },
   mounted() {},
 

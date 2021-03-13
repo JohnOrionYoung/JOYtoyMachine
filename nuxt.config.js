@@ -3,10 +3,7 @@ export default {
    * this brings in environment variables to public and private nuxt references
    */
   publicRuntimeConfig: {
-    requiredNetwork:
-      process.env.PROD_NETWORK ||
-      process.env.STAGING_NETWORK ||
-      process.env.DEV_NETWORK
+    requiredNetwork: process.env.PROD_NETWORK
 
     // VERCEL_ENV: process.env.VERCEL_ENV,
     // VERCEL_GIT_REPO_SLUG: process.env.VERCEL_GIT_REPO_SLUG,
@@ -21,7 +18,6 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {

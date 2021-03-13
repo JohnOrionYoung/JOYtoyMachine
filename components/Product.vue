@@ -65,6 +65,16 @@
             <span class="metaLabel">Price</span>
             <span class="metaValue">{{ tokenData.price }} ETH</span>
           </div>
+          <div class="metaRow">
+            <span class="metaLabel">Collaborator</span>
+            <span v-if="tokenData.id === 900" class="metaValue"> Franny </span>
+            <span v-else-if="tokenData.id === 981" class="metaValue">
+              Bubble Gum Borg
+            </span>
+            <span v-else class="metaValue">{{
+              tokenData.collaborators ? tokenData.collaborators : "100% JOY"
+            }}</span>
+          </div>
         </div>
 
         <div class="productActions">
@@ -241,10 +251,8 @@ export default {
   },
   mounted() {
     this.readStatus = "loading"
-    const requiredNetwork = this.$config.requiredNetwork
-    this.requiredNetwork = requiredNetwork
 
-    this.handleLoad({ requiredNetwork })
+    this.handleLoad()
   },
 
   methods: {
@@ -254,8 +262,7 @@ export default {
       readToken: "walletStore/readToken",
       readImage: "walletStore/readImage"
     }),
-    async handleLoad(props) {
-      const { requiredNetwork } = props
+    async handleLoad() {
       if (!process.client) {
         return
       }
@@ -272,8 +279,7 @@ export default {
       // })
       // console.log("templateData", templateData)
       const data = await this.readToken({
-        tokenId: this.displayid,
-        requiredNetwork
+        tokenId: this.displayid
       })
 
       this.tokenData = data || {}
@@ -281,8 +287,7 @@ export default {
       this.readStatus = "done"
       const imageData = await this.readImage({
         tokenId: this.displayid,
-        index: 1,
-        requiredNetwork: this.requiredNetwork
+        index: 1
       })
       this.imageData = imageData
     },

@@ -12,14 +12,12 @@ module.exports = {
     "plugin:nuxt/recommended",
     "plugin:vue/recommended",
     "prettier/vue",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:vue/recommended",
+    "eslint:recommended",
+    "prettier/vue",
     "plugin:prettier/recommended"
-
-    // "prettier"
-
-    // 'plugin:vue/recommended',
-    // 'eslint:recommended',
-    // 'prettier/vue',
-    // 'plugin:prettier/recommended'
   ],
   globals: {
     $nuxt: true
@@ -29,6 +27,12 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "vue/component-name-in-template-casing": ["error", "PascalCase"]
+    "vue/component-name-in-template-casing": ["error", "PascalCase"],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto"
+      }
+    ]
   }
 }

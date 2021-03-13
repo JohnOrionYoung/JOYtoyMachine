@@ -251,10 +251,8 @@ export default {
   },
   mounted() {
     this.readStatus = "loading"
-    const requiredNetwork = this.$config.requiredNetwork
-    this.requiredNetwork = requiredNetwork
 
-    this.handleLoad({ requiredNetwork })
+    this.handleLoad()
   },
 
   methods: {
@@ -264,8 +262,7 @@ export default {
       readToken: "walletStore/readToken",
       readImage: "walletStore/readImage"
     }),
-    async handleLoad(props) {
-      const { requiredNetwork } = props
+    async handleLoad() {
       if (!process.client) {
         return
       }
@@ -282,8 +279,7 @@ export default {
       // })
       // console.log("templateData", templateData)
       const data = await this.readToken({
-        tokenId: this.displayid,
-        requiredNetwork
+        tokenId: this.displayid
       })
 
       this.tokenData = data || {}
@@ -291,8 +287,7 @@ export default {
       this.readStatus = "done"
       const imageData = await this.readImage({
         tokenId: this.displayid,
-        index: 1,
-        requiredNetwork: this.requiredNetwork
+        index: 1
       })
       this.imageData = imageData
     },

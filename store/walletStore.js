@@ -129,28 +129,28 @@ export const actions = {
     commit("setWalletNetwork", connectedNetwork)
   },
 
-  networkCheck(context, requiredNetwork) {
-    if (typeof window.ethereum !== "undefined") {
-      const provider = window.ethereum
-      const networkVersion = provider.networkVersion
-      const walletNetwork = getConnectedNetwork(networkVersion)
-      if (walletNetwork && requiredNetwork !== walletNetwork) {
-        if (walletNetwork === "private") {
-          return
-        }
-        if (requiredNetwork === "main") {
-          alert(
-            `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork}`
-          )
-        }
-        if (requiredNetwork === "rinkeby") {
-          alert(
-            `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork} to use the staging environment. `
-          )
-        }
-      }
-    }
-  },
+  // networkCheck(context, requiredNetwork) {
+  //   if (typeof window.ethereum !== "undefined") {
+  //     const provider = window.ethereum
+  //     const networkVersion = provider.networkVersion
+  //     const walletNetwork = getConnectedNetwork(networkVersion)
+  //     if (walletNetwork && requiredNetwork !== walletNetwork) {
+  //       if (walletNetwork === "private") {
+  //         return
+  //       }
+  //       if (requiredNetwork === "main") {
+  //         alert(
+  //           `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork}`
+  //         )
+  //       }
+  //       if (requiredNetwork === "rinkeby") {
+  //         alert(
+  //           `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork} to use the staging environment. `
+  //         )
+  //       }
+  //     }
+  //   }
+  // },
 
   handleReset(context) {
     console.log("resetting: ")
@@ -172,7 +172,7 @@ export const actions = {
 
   async readTemplate(context, props) {
     // NOTE:  axios is a nuxt plugin, so using it here to avoid installing it again
-    const { tokenId, requiredNetwork, axios, artworkIndex = 1 } = props
+    const { tokenId, axios, artworkIndex = 1 } = props
 
     console.log("readtemplate ", tokenId, axios)
 
@@ -181,9 +181,8 @@ export const actions = {
     // can become /api/....
     // if the api url changes, you will need to add a base setting in the nuxt.config.js
     // This will be better implemented int he future, I promise.
-    const rinkebyApi = `/api/HttpTrigger?artworkIndex=${artworkIndex}&id=${tokenId}`
     const mainApi = `/api/HttpTrigger?artworkIndex=${artworkIndex}&id=${tokenId}`
-    const templateApiUrl = requiredNetwork === "rinkeby" ? rinkebyApi : mainApi
+    const templateApiUrl = mainApi
     // console.log("templateApiUrl", templateApiUrl)
     const { data } = await axios.get(templateApiUrl)
     // console.log("data", data)
@@ -365,7 +364,7 @@ export const actions = {
     // }
   },
   trackTransaction(context, props) {
-    const { transactionId, requiredNetwork } = props
+    const { transactionId } = props
     const { dispatch, commit } = context
     console.log("trackTransaction", transactionId)
     // dispatch('getTransactionReceiptMined', {
@@ -378,8 +377,8 @@ export const actions = {
     }
     dispatch("queryTransaction", {
       transactionId,
-      interval: 1000,
-      requiredNetwork
+      interval: 1000
+      // requiredNetwork
     })
       .then((completedTransaction) => {
         console.log("VEND DONE: ", completedTransaction)

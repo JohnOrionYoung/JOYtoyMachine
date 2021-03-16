@@ -8,7 +8,7 @@
         <a target="_blank" :href="youtube">YouTube</a>
       </div>
       <div class="link">
-        <a target="_blank" :href="instagram">Instagram</a>
+        <a target="_blank" :href="instagram">Gram</a>
       </div>
       <div class="link">
         <a target="_blank" :href="twitter">Twitter</a>
@@ -39,10 +39,15 @@
   margin: 2rem;
 
   a {
-    color: black;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: Sniglet, sans-serif;
+    color: #0060e1;
+    font-size: 14px;
+    font-weight: 400;
     text-transform: uppercase;
-    font-family: "VT323";
-    font-size: 140%;
   }
 }
 

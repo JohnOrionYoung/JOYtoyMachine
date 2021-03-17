@@ -12,15 +12,18 @@
     <Nav />
     <Connect />
     <Nuxt />
-    <Nav />
+    <NavBottom />
     <Footer />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from "vuex"
+import Nav from "../components/Nav.vue"
+import NavBottom from "../components/NavBottom"
 import tokenshop from "../tokenshop.config"
 export default {
+  components: { Nav, NavBottom },
   computed: {
     ...mapGetters({
       uiMode: "ui/uiMode",

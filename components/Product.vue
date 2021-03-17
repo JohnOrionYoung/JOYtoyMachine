@@ -65,6 +65,16 @@
             <span class="metaLabel">Price</span>
             <span class="metaValue">{{ tokenData.price }} ETH</span>
           </div>
+          <div class="metaRow">
+            <span class="metaLabel">Collaborator</span>
+            <span v-if="tokenData.id === 900" class="metaValue"> Franny </span>
+            <span v-else-if="tokenData.id === 981" class="metaValue">
+              Bubble Gum Borg
+            </span>
+            <span v-else class="metaValue">{{
+              tokenData.collaborators ? tokenData.collaborators : "100% JOY"
+            }}</span>
+          </div>
         </div>
 
         <div class="productActions">

@@ -11,7 +11,7 @@
       <div v-if="tokenData && readStatus !== 'working'" class="productTile">
         <div class="productImage">
           <img
-            v-if="tokenData.id === tokenData.id"
+            v-if="tokenData.id"
             :src="require(`../assets/` + tokenData.id + `.gif`)"
           />
         </div>

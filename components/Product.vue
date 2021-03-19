@@ -11,32 +11,8 @@
       <div v-if="tokenData && readStatus !== 'working'" class="productTile">
         <div class="productImage">
           <img
-            v-if="tokenData.id === 1"
-            :src="require(`../assets/JOYtoy1.gif`)"
-          />
-          <img
-            v-if="tokenData.id === 200"
-            :src="require(`../assets/JOYtoy2.gif`)"
-          />
-          <img
-            v-if="tokenData.id === 305"
-            :src="require(`../assets/JOYtoy3.gif`)"
-          />
-          <img
-            v-if="tokenData.id === 500"
-            :src="require(`../assets/JOYtoy4.gif`)"
-          />
-          <img
-            v-if="tokenData.id === 900"
-            :src="require(`../assets/JOYtoy5.gif`)"
-          />
-          <img
-            v-if="tokenData.id === 981"
-            :src="require(`../assets/JOYtoy6.gif`)"
-          />
-          <img
-            v-if="tokenData.id === 1022"
-            :src="require(`../assets/JOYtoy7.gif`)"
+            v-if="tokenData.id === tokenData.id"
+            :src="require(`../assets/` + tokenData.id + `.gif`)"
           />
         </div>
         <!-- <img
@@ -132,10 +108,7 @@
             :price="`${tokenData.price} ETH`"
             :price-wei="tokenData.priceWei"
             :title="tokenData.title"
-            :image-url="
-              imageData &&
-              `https://gateway.pinata.cloud/ipfs/${imageData.artworkHash}`
-            "
+            :image-url="require(`../assets/` + tokenData.id + `.gif`)"
           />
         </modal>
       </div>

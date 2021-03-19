@@ -1,6 +1,6 @@
 <template>
   <div class="modalContent">
-    <div class="top-right">
+    <!-- <div class="top-right">
       <Button
         class="btn iconButton"
         tabindex="0"
@@ -8,13 +8,13 @@
       >
         <IconClose />
       </Button>
-    </div>
+    </div> -->
 
     <div v-if="!transactionStatus && !pendingToken" class="modalSection">
-      <h3>Purchase JOYtoy</h3>
+      <h2>Purchase JOYtoy</h2>
       <div class="tokenPreview">
         <div class="previewImage">
-          <img :src="imageUrl" alt="token Image" />
+          <img :src="imageUrl" alt="Preview..." />
         </div>
         <div class="previewContent">
           <div class="previewTitle">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div>You sure?</div>
+      <h3>You sure?</h3>
       <div class="modalActions">
         <button
           class="button joy"
@@ -41,7 +41,9 @@
         >
           Yes, gimme!
         </button>
-        <button class="button joy invert" @click="closeAction">Cancel</button>
+        <button class="button joy invert" @click="closeAction">
+          No Thanks...
+        </button>
       </div>
     </div>
 
@@ -164,14 +166,16 @@ export default {
 
 <style lang="scss">
 .modalContent {
-  padding: 1rem;
+  padding: 1em 0.75em 0;
   width: 100%;
-  border-top: 4px solid var(--brand-color);
+  border: 4px solid black;
+  border-radius: 50px;
   h3 {
     margin: 0.5rem 0;
   }
 }
 .modalActions {
+  margin: 0 -0.75rem 0 -0.75rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -202,9 +206,9 @@ export default {
   align-items: flex-start;
   justify-content: flex-start;
   margin: 1rem 0;
-  background: rgba(0, 0, 0, 0.05);
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
   padding: 0.5rem;
-  border-radius: 0.5rem;
   .previewImage {
     width: 3rem;
     height: 3rem;

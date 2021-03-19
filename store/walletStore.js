@@ -172,7 +172,7 @@ export const actions = {
 
   async readTemplate(context, props) {
     // NOTE:  axios is a nuxt plugin, so using it here to avoid installing it again
-    const { tokenId, requiredNetwork, axios, artworkIndex = 1 } = props
+    const { tokenId, requiredNetwork, axios, artworkIndex = 5 } = props
 
     console.log("readtemplate ", tokenId, axios)
 

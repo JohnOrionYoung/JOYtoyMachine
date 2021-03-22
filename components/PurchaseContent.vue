@@ -108,7 +108,6 @@
 
 <script>
 import { mapMutations, mapGetters, mapActions } from "vuex"
-import tokenshop from "./../tokenshop.config"
 
 export default {
   // props: ['closeAction', 'id', 'price', 'priceWei', 'title', 'imageUrl'],
@@ -122,9 +121,7 @@ export default {
   },
   data() {
     return {
-      requiredNetwork: "",
-      purchaseButtonText: tokenshop.ui.purchaseButtonText,
-      cancelButtonText: tokenshop.ui.cancelButtonText
+      requiredNetwork: ""
       // desiredNetwork: "main"
       // showAddInterface: false,
       // customContractId: '',
@@ -166,7 +163,7 @@ export default {
 
 <style lang="scss">
 .modalContent {
-  padding: 1em 0.75em 0;
+  padding: 1em 0.75em 1em 0.75em;
   width: 100%;
   border: 4px solid black;
   border-radius: 50px;
@@ -175,7 +172,7 @@ export default {
   }
 }
 .modalActions {
-  margin: 0 -0.75rem 0 -0.75rem;
+  margin: 0 -0.75rem -1rem -0.75rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -198,7 +195,10 @@ export default {
   text-transform: capitalize;
 }
 .statusError {
+  justify-content: flex-end;
+  font-size: 1.5rem;
   color: var(--danger-color, red);
+  margin-left: 2rem;
 }
 .tokenPreview {
   display: flex;

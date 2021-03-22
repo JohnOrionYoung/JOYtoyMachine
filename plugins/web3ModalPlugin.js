@@ -1,20 +1,10 @@
 import Web3Modal from "web3modal"
-// import Portis from '@portis/web3'
 import WalletConnectProvider from "@walletconnect/web3-provider"
-// import tokenshop from "./../tokenshop.config"
 
 let web3Modal
-const requiredNetwork =
-  process.env.PROD_NETWORK ||
-  process.env.STAGING_NETWORK ||
-  process.env.DEV_NETWORK ||
-  "rinkeby"
 
 function init() {
-  let web3ModalNetwork = "mainnet"
-  if (requiredNetwork !== "main") {
-    web3ModalNetwork = "rinkeby"
-  }
+  const web3ModalNetwork = "mainnet"
 
   const providerOptions = {
     walletconnect: {

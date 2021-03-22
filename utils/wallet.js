@@ -11,10 +11,7 @@ function initWeb3(requiredNetwork) {
   }
   console.info("WEB3INIT", requiredNetwork)
 
-  const infuraUrl =
-    requiredNetwork === "rinkeby"
-      ? tokenshop.keys.infura.rinkeby
-      : tokenshop.keys.infura.main
+  const infuraUrl = tokenshop.keys.infura.main
 
   if (!window.Web3) {
     console.info("cannot init Web3 yet - not in window")
@@ -43,13 +40,8 @@ function initWeb3(requiredNetwork) {
 const getConnectedNetwork = (net) => {
   const connectedNetwork = Number(net)
   switch (connectedNetwork) {
-    case 1:
-      // setNetworkClass('main-network')
-      return "main"
-    case 4:
-      return "rinkeby"
     default:
-      return "private"
+      return "mainnet"
   }
 }
 
@@ -64,14 +56,8 @@ const getProviderType = (provider) => {
   if (provider.isWalletConnect) {
     providerType = "walletconnect"
   }
-  if (provider.isDapper) {
-    providerType = "dapper"
-  }
   if (provider.isMetaMask) {
     providerType = "metamask"
-  }
-  if (provider.is3idProvider) {
-    providerType = "3id"
   }
   return providerType
 }

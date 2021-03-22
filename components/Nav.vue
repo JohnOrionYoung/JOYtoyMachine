@@ -2,10 +2,10 @@
   <div class="navContainer">
     <div class="navLinks">
       <div class="navItemLeft">
-        <a href="https://www.joy.lol/joys">JOYs</a>
+        <a class="link" href="https://www.joy.lol/joys">JOYs</a>
       </div>
       <div class="navItemRight">
-        <nuxt-link to="/" class="navLink">JOYtoys</nuxt-link>
+        <nuxt-link to="/" class="link">JOYtoys</nuxt-link>
       </div>
     </div>
   </div>
@@ -34,8 +34,11 @@ a {
   letter-spacing: 2px;
   color: #ffe70d;
   text-decoration: none;
-  font-family: Doobie;
   font-size: 2rem;
+}
+
+.link {
+  font-family: Doobie;
 }
 
 // .navItemRight {
@@ -45,7 +48,7 @@ a {
 
 <script>
 import { mapMutations, mapGetters, mapActions } from "vuex"
-// import tokenshop from '../tokenshop.config'
+
 export default {
   data() {
     return {

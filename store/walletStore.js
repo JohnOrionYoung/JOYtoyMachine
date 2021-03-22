@@ -197,10 +197,8 @@ export const actions = {
     const { tokenId, requiredNetwork } = props
     // const { commit } = context
     const { contracts } = tokenshop
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
 
     let web3Read = window.web3Read
     if (!web3Read) {
@@ -274,15 +272,13 @@ export const actions = {
     const { commit, dispatch } = context
     const { contracts } = tokenshop
     const debugMode = false // stops the contract from firing, while debugging
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
     const web3Write = window.web3Write
     commit("setTransactionId", null)
     commit("setTransactionError", null)
     commit("setPendingCount", 0)
     commit("setTransactionStatus", "confirming")
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
 
     const tokenContractNew = new web3Write.eth.Contract(
       contractABI,

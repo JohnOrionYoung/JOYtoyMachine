@@ -1,7 +1,7 @@
 import { getField, updateField } from "vuex-map-fields"
 
 export const state = () => ({
-  network: "rinkeby",
+  network: "mainnet",
   walletChain: "ethereum",
   hasWallet: false,
   walletAddress: null,

@@ -34,11 +34,6 @@ export default {
       discord: "https://discord.gg/hBv9BDD"
     }
   },
-  ui: {
-    purchaseButtonText: "Yes, Gimme!",
-    cancelButtonText: "Nah, Cancel.",
-    round: "2px"
-  },
   colors: {
     textColor: "#000",
     backgroundColor: "#ffe70d",

@@ -1,7 +1,10 @@
 <template>
   <div class="Loading">
     <div class="loadingIcon">
-      <IconLoading />
+      <img
+        class="loadingAnimation"
+        :src="require(`../assets/loadingSpinner.gif`)"
+      />
     </div>
     <span v-if="text">{{ text }}</span>
   </div>

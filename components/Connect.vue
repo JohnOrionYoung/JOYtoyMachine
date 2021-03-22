@@ -12,7 +12,7 @@
             >
 
             <div v-if="walletAddress" class="networkLabel">
-              {{ walletNetwork === "main" ? "MetaMask:" : "WalletConnect:" }}
+              {{ walletType === "metamask" ? "MetaMask:" : "WalletConnect:" }}
             </div>
             <div v-if="walletAddress">
               <Button class="disconnect" @click.native="handleDisconnect">

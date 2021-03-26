@@ -136,11 +136,4 @@ export default {
 .row.between {
   justify-content: center;
 }
-.networkLabel {
-  border: 1px solid var(--ui-color, #000);
-  font-size: 0.75rem;
-  padding: 0 0.5rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-}
 </style>

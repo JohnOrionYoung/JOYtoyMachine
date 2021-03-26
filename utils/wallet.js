@@ -3,13 +3,13 @@ import tokenshop from "../tokenshop.config"
 /**
  * INIT web3.
  */
+const Web3Connect = require("web3")
 
-function initWeb3(requiredNetwork) {
+function initWeb3() {
   if (window && window.web3Read) {
     // console.info("web3read exists. Version: ", window.web3Read.version)
     return
   }
-  console.info("WEB3INIT", requiredNetwork)
 
   const infuraUrl = tokenshop.keys.infura.main
 
@@ -18,12 +18,12 @@ function initWeb3(requiredNetwork) {
     return
   }
   // load from script
-  const Web3 = window.Web3
+  const Web3 = Web3Connect
   const web3Implementation = new Web3(
     new Web3.providers.HttpProvider(infuraUrl)
   )
   window.web3Read = web3Implementation
-
+  console.info("WEB3INIT", web3Implementation)
   // DEPRECATED: check if user has web3 wallet
   // if (typeof web3 !== "undefined") {
   //   console.log("Web3 Detected! ", web3) // eslint-disable-line

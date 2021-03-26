@@ -133,6 +133,8 @@ export const actions = {
     if (typeof window.ethereum !== "undefined") {
       const provider = window.ethereum
       const networkVersion = provider.networkVersion
+      console.log("provider version", provider)
+      console.log("network version", networkVersion)
       const walletNetwork = getConnectedNetwork(networkVersion)
       if (walletNetwork && requiredNetwork !== walletNetwork) {
         if (walletNetwork === "private") {
@@ -194,7 +196,7 @@ export const actions = {
     if (!window) {
       return
     }
-    const { tokenId, requiredNetwork } = props
+    const { tokenId } = props
     // const { commit } = context
     const { contracts } = tokenshop
     const mainContract = contracts.main
@@ -202,7 +204,7 @@ export const actions = {
 
     let web3Read = window.web3Read
     if (!web3Read) {
-      await initWeb3(requiredNetwork)
+      await initWeb3()
       web3Read = window.web3Read
     }
 
@@ -247,7 +249,7 @@ export const actions = {
     let web3Read = window.web3Read
     if (!web3Read) {
       console.info("NO WEB3READ", requiredNetwork)
-      await initWeb3(requiredNetwork)
+      await initWeb3()
       web3Read = window.web3Read
     }
     const tokenContract = new web3Read.eth.Contract(contractABI, contractHash)
@@ -268,7 +270,7 @@ export const actions = {
       })
   },
   purchaseToken(context, props) {
-    const { requiredNetwork, priceWei, tokenId, walletAddress } = props
+    const { priceWei, tokenId, walletAddress } = props
     const { commit, dispatch } = context
     const { contracts } = tokenshop
     const debugMode = false // stops the contract from firing, while debugging
@@ -315,10 +317,7 @@ export const actions = {
           commit("setTransactionStatus", "pending")
           commit("setTransactionError", null)
           commit("setTransactionId", transactionId)
-          dispatch("trackTransaction", {
-            transactionId,
-            requiredNetwork
-          })
+          dispatch("trackTransaction", transactionId)
         })
         .catch((error) => {
           console.log("error", error)

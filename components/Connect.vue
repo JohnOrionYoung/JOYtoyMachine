@@ -10,9 +10,18 @@
               @click.native="handleConnect"
               >CONNECT WALLET</Button
             >
-
-            <div v-if="walletAddress" class="networkLabel">
-              {{ walletType === "metamask" ? "MetaMask:" : "WalletConnect:" }}
+            <div class="connectedInfo">
+              <div v-if="walletAddress" class="networkLabel">
+                {{
+                  walletType === "walletconnect"
+                    ? "WalletConnect:"
+                    : "MetaMask:"
+                }}
+              </div>
+              <div v-if="walletAddress" class="networkLabelAddress">
+                {{ walletAddress }}
+                <!-- {{ walletType === "metamask" ? "MetaMask:" : "WalletConnect:" }} -->
+              </div>
             </div>
             <div v-if="walletAddress">
               <Button class="disconnect" @click.native="handleDisconnect">
@@ -103,13 +112,22 @@ export default {
   padding: 0 1rem;
   .accountWrap {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-top: 10px;
   }
+  .connectedInfo {
+    display: flex;
+  }
   .networkLabel {
-    border: 0px solid var(--ui-color, #000);
+    font-size: 30px;
+    padding: 0 0.5rem;
+    line-height: 1;
+    font-family: "VT323";
+    font-weight: 600;
+  }
+  .networkLabelAddress {
     font-size: 30px;
     padding: 0 0.5rem;
     line-height: 1;

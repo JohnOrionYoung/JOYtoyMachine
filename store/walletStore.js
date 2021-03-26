@@ -1,5 +1,6 @@
 // import Web3 from 'web3'
 // import Web3Modal from 'web3modal'
+import Web3 from "web3"
 import {
   getConnectedNetwork,
   getProviderType,
@@ -275,7 +276,7 @@ export const actions = {
     const { contracts } = tokenshop
     const debugMode = false // stops the contract from firing, while debugging
     const mainContract = contracts.main
-    const web3Write = window.web3Write
+    const web3Write = new Web3(window.ethereum)
     commit("setTransactionId", null)
     commit("setTransactionError", null)
     commit("setPendingCount", 0)

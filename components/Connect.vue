@@ -8,7 +8,7 @@
               v-if="!walletAddress"
               class="button joy"
               @click.native="handleConnect"
-              >CONNECT WALLET</Button
+              >CONNECT METAMASK</Button
             >
             <div class="connectedInfo">
               <div v-if="walletAddress" class="networkLabel">

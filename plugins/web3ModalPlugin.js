@@ -1,5 +1,5 @@
 import Web3Modal from "web3modal"
-import WalletConnectProvider from "@walletconnect/web3-provider"
+// import WalletConnectProvider from "@walletconnect/web3-provider"
 
 let web3Modal
 
@@ -7,16 +7,16 @@ function init() {
   const web3ModalNetwork = "mainnet"
 
   const providerOptions = {
-    walletconnect: {
-      package: WalletConnectProvider,
-      options: {
-        infuraId: "056ad12dceac40558c4b9afb10d52391"
-      }
-    }
+    // walletconnect: {
+    //   package: WalletConnectProvider,
+    //   options: {
+    //     infuraId: "056ad12dceac40558c4b9afb10d52391"
+    //   }
+    // }
   }
 
   web3Modal = new Web3Modal({
-    cacheProvider: false, // optional
+    cacheProvider: true, // optional
     network: web3ModalNetwork,
     providerOptions, // required
     disableInjectedProvider: false // optional. For MetaMask / Brave / Opera.

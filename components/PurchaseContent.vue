@@ -1,15 +1,5 @@
 <template>
   <div class="modalContent">
-    <!-- <div class="top-right">
-      <Button
-        class="btn iconButton"
-        tabindex="0"
-        @click.native="$modal.hide(`info-modal${id}`)"
-      >
-        <IconClose />
-      </Button>
-    </div> -->
-
     <div v-if="!transactionStatus && !pendingToken" class="modalSection">
       <h2>Purchase JOYtoy</h2>
       <div class="tokenPreview">
@@ -41,7 +31,14 @@
         >
           Yes, gimme!
         </button>
-        <button class="button joy invert" @click="closeAction">
+        <button
+          class="button joy invert"
+          @click="
+            {
+              closePurchase()
+            }
+          "
+        >
           No Thanks...
         </button>
       </div>
@@ -65,7 +62,7 @@
           @click="
             {
               handleReset()
-              closeAction()
+              closePurchase()
             }
           "
         >
@@ -98,6 +95,18 @@
       <span v-if="transactionError" class="statusError">{{
         transactionError
       }}</span>
+      <div class="modalActions">
+        <button
+          class="button joy invert"
+          @click="
+            {
+              closePurchase()
+            }
+          "
+        >
+          Okay
+        </button>
+      </div>
     </div>
     <div v-if="pendingToken && pendingToken === id">
       <Loading :text="getPendingText(pendingCount)" />
@@ -110,9 +119,9 @@
 import { mapMutations, mapGetters, mapActions } from "vuex"
 
 export default {
-  // props: ['closeAction', 'id', 'price', 'priceWei', 'title', 'imageUrl'],
+  // props: ['closePurchase', 'id', 'price', 'priceWei', 'title', 'imageUrl'],
   props: {
-    closeAction: { type: Function, default: () => {} },
+    closePurchase: { type: Function, default: () => {} },
     id: { type: Number, default: 0 },
     price: { type: String, default: "" },
     priceWei: { type: Number, default: null },
@@ -177,13 +186,6 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
-.top-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-bottom-left-radius: 0.25rem;
-  overflow: hidden;
 }
 .tokenStatus {
   display: flex;

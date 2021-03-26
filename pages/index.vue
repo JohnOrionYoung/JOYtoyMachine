@@ -11,7 +11,6 @@
         >
         when they’re GONE!
       </h1>
-      <p class="outOfOrder">WalletConnect is ~Out of Order~</p>
     </header>
     <main>
       <Products>

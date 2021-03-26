@@ -16,7 +16,7 @@ function init() {
   }
 
   web3Modal = new Web3Modal({
-    cacheProvider: true, // optional
+    cacheProvider: false, // optional
     network: web3ModalNetwork,
     providerOptions, // required
     disableInjectedProvider: false // optional. For MetaMask / Brave / Opera.

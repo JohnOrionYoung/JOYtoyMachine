@@ -11,7 +11,6 @@
         >
         when they’re GONE!
       </h1>
-      <p class="outOfOrder">WalletConnect is ~Out of Order~</p>
     </header>
     <main>
       <Products>
@@ -59,14 +58,8 @@ export default {
     this.description = tokenshop.site.description
     this.logoUrl = tokenshop.site.logoUrl
     this.contractHash = tokenshop.contracts.main
-    const network = this.$config.requiredNetwork
-    if (network === "rinkeby") {
-      this.productsArray = tokenshop.site.products.rinkeby
-      this.displayArray = tokenshop.site.products.rinkebyDisplay
-    } else {
-      this.productsArray = tokenshop.site.products.main
-      this.displayArray = tokenshop.site.products.mainDisplay
-    }
+    this.productsArray = tokenshop.site.products.main
+    this.displayArray = tokenshop.site.products.mainDisplay
   },
   mounted() {},
 
@@ -141,12 +134,5 @@ export default {
 }
 .row.between {
   justify-content: center;
-}
-.networkLabel {
-  border: 1px solid var(--ui-color, #000);
-  font-size: 0.75rem;
-  padding: 0 0.5rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
 }
 </style>

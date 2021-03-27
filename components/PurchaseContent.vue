@@ -1,15 +1,5 @@
 <template>
   <div class="modalContent">
-    <!-- <div class="top-right">
-      <Button
-        class="btn iconButton"
-        tabindex="0"
-        @click.native="$modal.hide(`info-modal${id}`)"
-      >
-        <IconClose />
-      </Button>
-    </div> -->
-
     <div v-if="!transactionStatus && !pendingToken" class="modalSection">
       <h2>Purchase JOYtoy</h2>
       <div class="tokenPreview">
@@ -41,7 +31,14 @@
         >
           Yes, gimme!
         </button>
-        <button class="button joy invert" @click="closeAction">
+        <button
+          class="button joy invert"
+          @click="
+            {
+              closePurchase()
+            }
+          "
+        >
           No Thanks...
         </button>
       </div>
@@ -65,7 +62,7 @@
           @click="
             {
               handleReset()
-              closeAction()
+              closePurchase()
             }
           "
         >
@@ -98,6 +95,18 @@
       <span v-if="transactionError" class="statusError">{{
         transactionError
       }}</span>
+      <div class="modalActions">
+        <button
+          class="button joy invert"
+          @click="
+            {
+              closePurchase()
+            }
+          "
+        >
+          Okay
+        </button>
+      </div>
     </div>
     <div v-if="pendingToken && pendingToken === id">
       <Loading :text="getPendingText(pendingCount)" />
@@ -108,12 +117,11 @@
 
 <script>
 import { mapMutations, mapGetters, mapActions } from "vuex"
-import tokenshop from "./../tokenshop.config"
 
 export default {
-  // props: ['closeAction', 'id', 'price', 'priceWei', 'title', 'imageUrl'],
+  // props: ['closePurchase', 'id', 'price', 'priceWei', 'title', 'imageUrl'],
   props: {
-    closeAction: { type: Function, default: () => {} },
+    closePurchase: { type: Function, default: () => {} },
     id: { type: Number, default: 0 },
     price: { type: String, default: "" },
     priceWei: { type: Number, default: null },
@@ -122,9 +130,7 @@ export default {
   },
   data() {
     return {
-      requiredNetwork: "",
-      purchaseButtonText: tokenshop.ui.purchaseButtonText,
-      cancelButtonText: tokenshop.ui.cancelButtonText
+      requiredNetwork: ""
       // desiredNetwork: "main"
       // showAddInterface: false,
       // customContractId: '',
@@ -166,7 +172,7 @@ export default {
 
 <style lang="scss">
 .modalContent {
-  padding: 1em 0.75em 0;
+  padding: 1em 0.75em 1em 0.75em;
   width: 100%;
   border: 4px solid black;
   border-radius: 50px;
@@ -175,18 +181,11 @@ export default {
   }
 }
 .modalActions {
-  margin: 0 -0.75rem 0 -0.75rem;
+  margin: 0 -0.75rem -1rem -0.75rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
-.top-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-bottom-left-radius: 0.25rem;
-  overflow: hidden;
 }
 .tokenStatus {
   display: flex;
@@ -198,7 +197,10 @@ export default {
   text-transform: capitalize;
 }
 .statusError {
+  justify-content: flex-end;
+  font-size: 1.5rem;
   color: var(--danger-color, red);
+  margin-left: 2rem;
 }
 .tokenPreview {
   display: flex;

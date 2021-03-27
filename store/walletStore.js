@@ -1,5 +1,6 @@
 // import Web3 from 'web3'
 // import Web3Modal from 'web3modal'
+// import Web3 from "web3"
 import {
   getConnectedNetwork,
   getProviderType,
@@ -133,6 +134,8 @@ export const actions = {
     if (typeof window.ethereum !== "undefined") {
       const provider = window.ethereum
       const networkVersion = provider.networkVersion
+      console.log("provider version", provider)
+      console.log("network version", networkVersion)
       const walletNetwork = getConnectedNetwork(networkVersion)
       if (walletNetwork && requiredNetwork !== walletNetwork) {
         if (walletNetwork === "private") {
@@ -172,7 +175,7 @@ export const actions = {
 
   async readTemplate(context, props) {
     // NOTE:  axios is a nuxt plugin, so using it here to avoid installing it again
-    const { tokenId, requiredNetwork, axios, artworkIndex = 5 } = props
+    const { tokenId, axios, artworkIndex = 1 } = props
 
     console.log("readtemplate ", tokenId, axios)
 
@@ -181,9 +184,8 @@ export const actions = {
     // can become /api/....
     // if the api url changes, you will need to add a base setting in the nuxt.config.js
     // This will be better implemented int he future, I promise.
-    const rinkebyApi = `/api/HttpTrigger?artworkIndex=${artworkIndex}&id=${tokenId}`
     const mainApi = `/api/HttpTrigger?artworkIndex=${artworkIndex}&id=${tokenId}`
-    const templateApiUrl = requiredNetwork === "rinkeby" ? rinkebyApi : mainApi
+    const templateApiUrl = mainApi
     // console.log("templateApiUrl", templateApiUrl)
     const { data } = await axios.get(templateApiUrl)
     // console.log("data", data)
@@ -195,17 +197,15 @@ export const actions = {
     if (!window) {
       return
     }
-    const { tokenId, requiredNetwork } = props
+    const { tokenId } = props
     // const { commit } = context
     const { contracts } = tokenshop
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
 
     let web3Read = window.web3Read
     if (!web3Read) {
-      await initWeb3(requiredNetwork)
+      await initWeb3()
       web3Read = window.web3Read
     }
 
@@ -244,15 +244,13 @@ export const actions = {
   async readImage(context, props) {
     const { tokenId, requiredNetwork, index } = props
     const { contracts } = tokenshop
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
     // console.log('props', props)
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
     let web3Read = window.web3Read
     if (!web3Read) {
       console.info("NO WEB3READ", requiredNetwork)
-      await initWeb3(requiredNetwork)
+      await initWeb3()
       web3Read = window.web3Read
     }
     const tokenContract = new web3Read.eth.Contract(contractABI, contractHash)
@@ -273,19 +271,17 @@ export const actions = {
       })
   },
   purchaseToken(context, props) {
-    const { requiredNetwork, priceWei, tokenId, walletAddress } = props
+    const { priceWei, tokenId, walletAddress } = props
     const { commit, dispatch } = context
     const { contracts } = tokenshop
     const debugMode = false // stops the contract from firing, while debugging
-    const rinkebyContract = contracts.rinkeby
     const mainContract = contracts.main
     const web3Write = window.web3Write
     commit("setTransactionId", null)
     commit("setTransactionError", null)
     commit("setPendingCount", 0)
     commit("setTransactionStatus", "confirming")
-    const contractHash =
-      requiredNetwork === "rinkeby" ? rinkebyContract : mainContract
+    const contractHash = mainContract
 
     const tokenContractNew = new web3Write.eth.Contract(
       contractABI,
@@ -322,10 +318,7 @@ export const actions = {
           commit("setTransactionStatus", "pending")
           commit("setTransactionError", null)
           commit("setTransactionId", transactionId)
-          dispatch("trackTransaction", {
-            transactionId,
-            requiredNetwork
-          })
+          dispatch("trackTransaction", transactionId)
         })
         .catch((error) => {
           console.log("error", error)

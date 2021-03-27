@@ -130,30 +130,30 @@ export const actions = {
     commit("setWalletNetwork", connectedNetwork)
   },
 
-  networkCheck(context, requiredNetwork) {
-    if (typeof window.ethereum !== "undefined") {
-      const provider = window.ethereum
-      const networkVersion = provider.networkVersion
-      console.log("provider version", provider)
-      console.log("network version", networkVersion)
-      const walletNetwork = getConnectedNetwork(networkVersion)
-      if (walletNetwork && requiredNetwork !== walletNetwork) {
-        if (walletNetwork === "private") {
-          return
-        }
-        if (requiredNetwork === "main") {
-          alert(
-            `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork}`
-          )
-        }
-        if (requiredNetwork === "rinkeby") {
-          alert(
-            `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork} to use the staging environment. `
-          )
-        }
-      }
-    }
-  },
+  // networkCheck(context, requiredNetwork) {
+  //   if (typeof window.ethereum !== "undefined") {
+  //     const provider = window.ethereum
+  //     const networkVersion = provider.networkVersion
+  //     console.log("provider version", provider)
+  //     console.log("network version", networkVersion)
+  //     const walletNetwork = getConnectedNetwork(networkVersion)
+  //     if (walletNetwork && requiredNetwork !== walletNetwork) {
+  //       if (walletNetwork === "private") {
+  //         return
+  //       }
+  //       if (requiredNetwork === "main") {
+  //         alert(
+  //           `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork}`
+  //         )
+  //       }
+  //       if (requiredNetwork === "rinkeby") {
+  //         alert(
+  //           `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork} to use the staging environment. `
+  //         )
+  //       }
+  //     }
+  //   }
+  // },
 
   handleReset(context) {
     console.log("resetting: ")

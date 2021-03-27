@@ -3,7 +3,7 @@ import tokenshop from "../tokenshop.config"
 /**
  * INIT web3.
  */
-const Web3Connect = require("web3")
+// const Web3Connect = require("web3")
 
 function initWeb3() {
   if (window && window.web3Read) {
@@ -18,7 +18,7 @@ function initWeb3() {
     return
   }
   // load from script
-  const Web3 = Web3Connect
+  const Web3 = window.Web3
   const web3Implementation = new Web3(
     new Web3.providers.HttpProvider(infuraUrl)
   )

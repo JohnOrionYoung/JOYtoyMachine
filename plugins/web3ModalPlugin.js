@@ -2,17 +2,9 @@ import Web3Modal from "web3modal"
 // import WalletConnectProvider from "@walletconnect/web3-provider"
 
 let web3Modal
-const requiredNetwork =
-  process.env.PROD_NETWORK ||
-  process.env.STAGING_NETWORK ||
-  process.env.DEV_NETWORK ||
-  "rinkeby"
 
 function init() {
-  let web3ModalNetwork = "mainnet"
-  if (requiredNetwork !== "main") {
-    web3ModalNetwork = "rinkeby"
-  }
+  const web3ModalNetwork = "mainnet"
 
   const providerOptions = {
     // walletconnect: {
@@ -30,7 +22,6 @@ function init() {
     disableInjectedProvider: false // optional. For MetaMask / Brave / Opera.
   })
 }
-
 export default async ({ app, store, $axios, isHMR }, inject) => {
   if (process.client) {
     await init()

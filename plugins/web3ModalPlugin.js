@@ -1,9 +1,5 @@
 import Web3Modal from "web3modal"
-<<<<<<< HEAD
-import WalletConnectProvider from "@walletconnect/web3-provider"
-=======
 // import WalletConnectProvider from "@walletconnect/web3-provider"
->>>>>>> 84d9ecf2c241951e6980e525dabc22148961dad0
 
 let web3Modal
 

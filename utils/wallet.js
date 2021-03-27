@@ -3,18 +3,15 @@ import tokenshop from "../tokenshop.config"
 /**
  * INIT web3.
  */
+// const Web3Connect = require("web3")
 
-function initWeb3(requiredNetwork) {
+function initWeb3() {
   if (window && window.web3Read) {
     // console.info("web3read exists. Version: ", window.web3Read.version)
     return
   }
-  console.info("WEB3INIT", requiredNetwork)
 
-  const infuraUrl =
-    requiredNetwork === "rinkeby"
-      ? tokenshop.keys.infura.rinkeby
-      : tokenshop.keys.infura.main
+  const infuraUrl = tokenshop.keys.infura.main
 
   if (!window.Web3) {
     console.info("cannot init Web3 yet - not in window")
@@ -26,7 +23,7 @@ function initWeb3(requiredNetwork) {
     new Web3.providers.HttpProvider(infuraUrl)
   )
   window.web3Read = web3Implementation
-
+  console.info("WEB3INIT", web3Implementation)
   // DEPRECATED: check if user has web3 wallet
   // if (typeof web3 !== "undefined") {
   //   console.log("Web3 Detected! ", web3) // eslint-disable-line
@@ -43,13 +40,8 @@ function initWeb3(requiredNetwork) {
 const getConnectedNetwork = (net) => {
   const connectedNetwork = Number(net)
   switch (connectedNetwork) {
-    case 1:
-      // setNetworkClass('main-network')
-      return "main"
-    case 4:
-      return "rinkeby"
     default:
-      return "private"
+      return "mainnet"
   }
 }
 
@@ -64,14 +56,8 @@ const getProviderType = (provider) => {
   if (provider.isWalletConnect) {
     providerType = "walletconnect"
   }
-  if (provider.isDapper) {
-    providerType = "dapper"
-  }
   if (provider.isMetaMask) {
     providerType = "metamask"
-  }
-  if (provider.is3idProvider) {
-    providerType = "3id"
   }
   return providerType
 }

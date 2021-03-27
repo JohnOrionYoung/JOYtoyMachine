@@ -84,7 +84,7 @@
             "
             class="button joy"
             mode="joy"
-            @click="handleConnect"
+            @click="connectAlert"
           >
             Get
           </button>
@@ -92,24 +92,39 @@
         <modal
           :name="`info-modal${id}`"
           class="info-modal"
-          :adaptive="true"
+          :adaptive="false"
           :min-width="200"
           :min-height="200"
-          :scrollable="false"
+          :scrollable="true"
           :reset="true"
           width="60%"
           height="auto"
           :focus-trap="true"
-          :click-to-close="true"
+          :click-to-close="false"
         >
           <PurchaseContent
             :id="id"
-            :close-action="closeAction"
+            :close-purchase="closePurchase"
             :price="`${tokenData.price} ETH`"
             :price-wei="tokenData.priceWei"
             :title="tokenData.title"
             :image-url="require(`../assets/` + tokenData.id + `.gif`)"
           />
+        </modal>
+        <modal
+          :name="`connect-modal`"
+          class="connect-modal"
+          :adaptive="false"
+          :min-width="200"
+          :min-height="200"
+          :scrollable="true"
+          :reset="true"
+          width="60%"
+          height="auto"
+          :focus-trap="true"
+          :click-to-close="false"
+        >
+          <ConnectAlert :close-connect="closeConnect" />
         </modal>
       </div>
     </transition>
@@ -269,19 +284,19 @@ export default {
       })
       this.imageData = imageData
     },
-    handleConnect() {
-      const web3Modal = this.$web3Modal
-      if (web3Modal) {
-        this.handleWeb3Connect(web3Modal)
-      }
+    connectAlert() {
+      this.$modal.show(`connect-modal`)
     },
-    triggerPurchase(id) {
+    closeConnect() {
+      this.$modal.hide(`connect-modal`)
+    },
+    triggerPurchase() {
       this.$modal.show(`info-modal${this.id}`)
     },
-    closeAction() {
+    closePurchase() {
       this.$modal.hide(`info-modal${this.id}`)
     },
-    openSeaLink(e) {
+    openSeaLink() {
       window.open("https://opensea.io/collection/joyworld-joytoys")
     }
   }

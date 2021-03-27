@@ -2,13 +2,13 @@
   <div class="navContainer">
     <div class="navLinks">
       <div class="navItemLeft">
-        <a href="https://www.joy.world/about">JOY</a>
+        <a class="link" href="https://www.joy.world/about">JOY</a>
       </div>
       <div class="navItemLeft">
-        <a href="https://www.joy.lol/joys">JOYs</a>
+        <a class="link" href="https://www.joy.lol/joys">JOYs</a>
       </div>
       <div class="navItemRight">
-        <nuxt-link to="/" class="navLink">JOYtoys</nuxt-link>
+        <nuxt-link to="/" class="link">JOYtoys</nuxt-link>
       </div>
     </div>
   </div>
@@ -27,7 +27,6 @@
   // border: solid 5px black;
   // border-radius: 50px;
   // box-shadow: 2px 2px 7px 1px rgba(85, 85, 85, 0.59);
-
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -37,8 +36,11 @@ a {
   letter-spacing: 2px;
   color: #ffe70d;
   text-decoration: none;
-  font-family: Doobie;
   font-size: 2rem;
+}
+
+.link {
+  font-family: Doobie;
 }
 
 // .navItemRight {

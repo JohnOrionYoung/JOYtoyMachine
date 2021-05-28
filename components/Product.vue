@@ -134,9 +134,6 @@
 <style lang="scss">
 .Product {
   flex-basis: 25%;
-  min-width: 380px;
-  max-width: 380px;
-  min-height: auto;
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -151,6 +148,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
+  // border: none;
 }
 
 .loadingAnimation {
@@ -158,6 +156,7 @@
   max-height: auto;
 }
 .productTile {
+  width: 300px;
   border: 4px solid var(--ui-color, #111);
   box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
   background: rgba(255, 255, 255, 1);

@@ -134,8 +134,9 @@
 <style lang="scss">
 .Product {
   flex-basis: 25%;
-  min-width: 16rem;
-  min-height: 10rem;
+  min-width: 25rem;
+  max-width: 95%;
+  min-height: auto;
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -150,7 +151,6 @@
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
-  // border: none;
 }
 
 .loadingAnimation {

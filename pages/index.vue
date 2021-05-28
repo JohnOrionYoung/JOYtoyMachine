@@ -116,8 +116,9 @@ export default {
     margin-bottom: 1.5rem;
   }
   a {
-    font-family: "VT323";
-    font-size: 1.75rem;
+    font-family: Sniglet, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 1000;
   }
 }
 .outOfOrder {

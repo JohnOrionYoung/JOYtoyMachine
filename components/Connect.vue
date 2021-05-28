@@ -119,16 +119,17 @@ export default {
   }
   .connectedInfo {
     display: flex;
+    font-family: Sniglet, sans-serif;
   }
   .networkLabel {
-    font-size: 30px;
+    font-size: 24px;
     padding: 0 0.5rem;
     line-height: 1;
     font-family: "VT323";
     font-weight: 600;
   }
   .networkLabelAddress {
-    font-size: 30px;
+    font-size: 24px;
     padding: 0 0.5rem;
     line-height: 1;
     font-family: "VT323";
@@ -139,7 +140,8 @@ export default {
     border: 3px solid black;
     border-radius: 50px;
     padding: 5px 20px 5px 20px;
-    font-family: "VT323";
+    margin-top: 1rem;
+    font-family: Sniglet, sans-serif;
     font-size: 20px;
   }
 }

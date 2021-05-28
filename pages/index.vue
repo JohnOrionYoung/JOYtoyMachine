@@ -100,6 +100,7 @@ export default {
 
 <style lang="scss">
 .hero {
+  margin-top: -2rem;
   text-align: center;
   font-family: Sniglet, sans-serif;
   display: flex;
@@ -111,7 +112,8 @@ export default {
   h1 {
     text-align: center;
     font-family: Sniglet, sans-serif;
-    font-size: 1.5rem;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
   }
   a {
     font-family: "VT323";

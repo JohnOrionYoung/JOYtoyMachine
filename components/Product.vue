@@ -182,7 +182,7 @@
     }
     h4 {
       text-align: center;
-      font-family: "VT323";
+      font-family: Sniglet, sans-serif;
     }
     .description {
       text-align: center;

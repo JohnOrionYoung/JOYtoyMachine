@@ -101,7 +101,7 @@ export default {
 <style lang="scss">
 .hero {
   text-align: center;
-  font-family: "VT323";
+  font-family: Sniglet, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,7 +110,7 @@ export default {
   }
   h1 {
     text-align: center;
-    font-family: "VT323";
+    font-family: Sniglet, sans-serif;
     font-size: 1.5rem;
   }
   a {
@@ -129,7 +129,7 @@ export default {
 //JOY
 .productTile .productMeta h4 {
   text-align: center;
-  font-family: "Doobie";
+  font-family: Sniglet, sans-serif;
   font-size: 16px;
 }
 .row.between {

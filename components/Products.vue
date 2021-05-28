@@ -12,6 +12,7 @@
   justify-content: center;
   width: 100%;
   flex-wrap: wrap;
+  margin-bottom: 3rem;
 }
 </style>
 

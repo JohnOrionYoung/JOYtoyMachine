@@ -134,8 +134,8 @@
 <style lang="scss">
 .Product {
   flex-basis: 25%;
-  min-width: 25rem;
-  max-width: 95%;
+  min-width: 380px;
+  max-width: 380px;
   min-height: auto;
   padding: 0.5rem;
   display: flex;

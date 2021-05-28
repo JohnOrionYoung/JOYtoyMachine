@@ -119,6 +119,8 @@ export default {
   }
   .connectedInfo {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     font-family: Sniglet, sans-serif;
   }
   .networkLabel {

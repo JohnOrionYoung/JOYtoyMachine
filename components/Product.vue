@@ -158,8 +158,8 @@
 .productTile {
   width: 300px;
   border: 4px solid var(--ui-color, #111);
-  box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
-  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 1px 2rem -0.5rem rgba(0, 0, 0, 0.74);
+  background: rgb(255, 255, 255);
   color: var(--text-color, #111);
   border-radius: 50px;
 

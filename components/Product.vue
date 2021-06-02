@@ -167,8 +167,11 @@
     width: 100%;
     min-height: 100px;
     img {
-      width: 100%;
-      height: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      height: 80%;
       object-fit: contain;
     }
   }

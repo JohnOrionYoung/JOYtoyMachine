@@ -131,7 +131,7 @@ export default {
     font-weight: 600;
   }
   .networkLabelAddress {
-    font-size: 24px;
+    font-size: 20px;
     padding: 0 0.5rem;
     line-height: 1;
     font-family: "VT323";

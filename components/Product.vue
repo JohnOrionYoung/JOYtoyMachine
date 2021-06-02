@@ -133,7 +133,7 @@
 
 <style lang="scss">
 .Product {
-  flex-basis: 25%;
+  flex-basis: 15%;
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -176,6 +176,7 @@
     }
   }
   .productMeta {
+    justify-content: space-around;
     padding: 0.5rem;
     min-height: 100px;
     h4,

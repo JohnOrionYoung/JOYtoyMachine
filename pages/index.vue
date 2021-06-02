@@ -3,10 +3,7 @@
     <header class="hero">
       <h1>
         GET new JOYtoys from the JOYtoy Machine or find them on
-        <a
-          class="openSeaLink"
-          href="https://opensea.io/collection/joyworld-joytoys"
-          target="_blank"
+        <a href="https://opensea.io/collection/joyworld-joytoys" target="_blank"
           >OpenSea</a
         >
         when they’re GONE!
@@ -114,20 +111,18 @@ export default {
     font-family: Sniglet, sans-serif;
     font-size: 16px;
     margin-bottom: 1.5rem;
-  }
-  a {
-    font-family: Sniglet, sans-serif;
-    font-size: 1.25rem;
-    font-weight: 1000;
+
+    a {
+      color: black;
+      font-size: 18px;
+      text-decoration: underline;
+      font-family: Sniglet, sans-serif;
+      font-weight: 1000;
+    }
   }
 }
 .outOfOrder {
   font-size: 1.5em;
-}
-.openSeaLink {
-  font-size: 20px;
-  color: black;
-  text-decoration: underline;
 }
 //JOY
 .productTile .productMeta h4 {

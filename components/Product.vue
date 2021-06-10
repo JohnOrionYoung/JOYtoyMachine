@@ -53,7 +53,11 @@
             }}</span>
           </div>
         </div>
-
+        <div class="joy-vision-container">
+          <button class="joy-vision-btn" @click="triggerVision">
+            View in JOYvision
+          </button>
+        </div>
         <div class="productActions">
           <button
             v-if="tokenData && !tokenData.active"
@@ -90,7 +94,6 @@
             Get
           </button>
         </div>
-        <button @click="triggerVision">View in JOYvision</button>
         <modal
           :name="`info-modal${id}`"
           class="info-modal"
@@ -132,8 +135,8 @@
           :name="`vision-modal`"
           class="vision-modal"
           :adaptive="false"
-          :min-width="200"
-          :min-height="200"
+          :min-width="100"
+          :min-height="100"
           :scrollable="true"
           :reset="true"
           width="60%"
@@ -225,6 +228,18 @@
     align-items: center;
     justify-content: center;
   }
+}
+.joy-vision-container {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+.joy-vision-btn {
+  border: none;
+  background: none;
+  font-family: Sniglet, sans-serif;
+  font-size: 24px;
+  color: blue;
 }
 </style>
 

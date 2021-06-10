@@ -15,6 +15,7 @@
             :src="require(`../assets/` + tokenData.id + `.gif`)"
           />
         </div>
+
         <!-- <img
             v-if="imageData"
             :src="`https://gateway.pinata.cloud/ipfs/${imageData.artworkHash}`"
@@ -89,6 +90,7 @@
             Get
           </button>
         </div>
+        <button @click="triggerVision">View in JOYvision</button>
         <modal
           :name="`info-modal${id}`"
           class="info-modal"
@@ -126,6 +128,21 @@
         >
           <ConnectAlert :close-connect="closeConnect" />
         </modal>
+        <modal
+          :name="`connect-modal`"
+          class="connect-modal"
+          :adaptive="false"
+          :min-width="200"
+          :min-height="200"
+          :scrollable="true"
+          :reset="true"
+          width="60%"
+          height="auto"
+          :focus-trap="true"
+          :click-to-close="false"
+        >
+          <JOYVision :close-vision="closeVision" />
+        </modal>
       </div>
     </transition>
   </div>
@@ -133,7 +150,10 @@
 
 <style lang="scss">
 .Product {
-  flex-basis: 15%;
+  flex-basis: 25%;
+  min-width: 25rem;
+  max-width: 95%;
+  min-height: auto;
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -148,7 +168,6 @@
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
-  // border: none;
 }
 
 .loadingAnimation {
@@ -156,10 +175,9 @@
   max-height: auto;
 }
 .productTile {
-  width: 300px;
   border: 4px solid var(--ui-color, #111);
-  box-shadow: 0 1px 2rem -0.5rem rgba(0, 0, 0, 0.74);
-  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 1rem -0.25rem rgb(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 1);
   color: var(--text-color, #111);
   border-radius: 50px;
 
@@ -167,16 +185,12 @@
     width: 100%;
     min-height: 100px;
     img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 80%;
-      height: 80%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
     }
   }
   .productMeta {
-    justify-content: space-around;
     padding: 0.5rem;
     min-height: 100px;
     h4,
@@ -298,6 +312,12 @@ export default {
     },
     closePurchase() {
       this.$modal.hide(`info-modal${this.id}`)
+    },
+    triggerVision() {
+      this.$modal.show(`vision-modal`)
+    },
+    closeVision() {
+      this.$modal.hide(`vision-modal`)
     },
     openSeaLink() {
       window.open("https://opensea.io/collection/joyworld-joytoys")

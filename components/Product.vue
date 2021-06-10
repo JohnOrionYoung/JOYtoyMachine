@@ -129,8 +129,8 @@
           <ConnectAlert :close-connect="closeConnect" />
         </modal>
         <modal
-          :name="`connect-modal`"
-          class="connect-modal"
+          :name="`vision-modal`"
+          class="vision-modal"
           :adaptive="false"
           :min-width="200"
           :min-height="200"

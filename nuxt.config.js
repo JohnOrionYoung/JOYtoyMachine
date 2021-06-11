@@ -29,7 +29,7 @@ export default {
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sniglet&display=swap"
+        href: "https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap"
       }
     ],
     script: [

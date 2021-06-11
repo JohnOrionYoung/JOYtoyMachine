@@ -152,7 +152,6 @@
 </template>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap");
 .Product {
   flex-basis: 25%;
   min-width: 25rem;

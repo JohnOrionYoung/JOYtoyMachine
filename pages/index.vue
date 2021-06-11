@@ -109,15 +109,16 @@ export default {
   h1 {
     text-align: center;
     font-family: Sniglet, sans-serif;
+    font-weight: 400;
     font-size: 16px;
     margin-bottom: 1.5rem;
 
     a {
       color: black;
-      font-size: 18px;
+      font-size: 16px;
       text-decoration: underline;
       font-family: Sniglet, sans-serif;
-      font-weight: 1000;
+      font-weight: 800;
     }
   }
 }

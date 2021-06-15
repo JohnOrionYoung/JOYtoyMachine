@@ -114,10 +114,10 @@ export default {
 
     a {
       color: black;
-      font-size: 16px;
+      font-size: 18px;
       text-decoration: underline;
       font-family: Sniglet, sans-serif;
-      font-weight: 800;
+      font-weight: 400;
     }
   }
 }

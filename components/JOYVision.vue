@@ -213,6 +213,7 @@ export default {
 }
 .vision-content {
   margin-top: 10px;
+  margin-bottom: 30px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -235,7 +236,8 @@ export default {
   height: 44px;
   border-radius: 22px;
   border: black solid 4px;
-  position: relative;
+  position: absolute;
+  bottom: -15px;
   margin: 0 auto;
   width: 90%;
 }
@@ -257,7 +259,7 @@ export default {
     height: 44px;
     border-radius: 22px;
     border: black solid 4px;
-    position: relative;
+    position: absolute;
     margin: 0 auto;
     width: 50%;
   }

@@ -208,6 +208,7 @@
     h4 {
       text-align: center;
       font-family: Sniglet, sans-serif;
+      font-weight: 400;
     }
     .description {
       text-align: center;

@@ -186,7 +186,6 @@
       >
         <IconClose class="icon" />
       </button>
-      <button slot="ar-button" class="launchAR">VIEW IN JOYVISION</button>
     </div>
   </div>
 </template>

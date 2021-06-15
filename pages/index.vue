@@ -59,7 +59,6 @@ export default {
     this.displayArray = tokenshop.site.products.mainDisplay
   },
   mounted() {},
-
   methods: {
     ...mapActions({
       readToken: "walletStore/readToken"

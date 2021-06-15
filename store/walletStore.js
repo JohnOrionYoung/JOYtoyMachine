@@ -245,7 +245,7 @@ export const actions = {
     const { tokenId, requiredNetwork, index } = props
     const { contracts } = tokenshop
     const mainContract = contracts.main
-    // console.log('props', props)
+    console.log("props", props)
     const contractHash = mainContract
     let web3Read = window.web3Read
     if (!web3Read) {

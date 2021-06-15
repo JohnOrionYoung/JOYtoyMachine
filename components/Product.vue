@@ -132,7 +132,7 @@
           <ConnectAlert :close-connect="closeConnect" />
         </modal>
         <modal
-          :name="`vision-modal`"
+          :name="`vision-modal${id}`"
           class="vision-modal"
           :adaptive="false"
           :min-width="100"
@@ -144,7 +144,11 @@
           :focus-trap="true"
           :click-to-close="false"
         >
-          <JOYVision :close-vision="closeVision" />
+          <JOYvision
+            :id="id"
+            :token-id="tokenData.id"
+            :close-vision="closeVision"
+          />
         </modal>
       </div>
     </transition>
@@ -247,6 +251,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex"
+
 export default {
   props: {
     mode: { type: String, default: "" },
@@ -254,7 +259,6 @@ export default {
     id: { type: Number, default: 0 },
     displayid: { type: Number, default: 0 }
   },
-
   data() {
     return {
       requiredNetwork: null,
@@ -331,10 +335,11 @@ export default {
       this.$modal.hide(`info-modal${this.id}`)
     },
     triggerVision() {
-      this.$modal.show(`vision-modal`)
+      this.$modal.show(`vision-modal${this.id}`)
+      console.log("hello")
     },
     closeVision() {
-      this.$modal.hide(`vision-modal`)
+      this.$modal.hide(`vision-modal${this.id}`)
     },
     openSeaLink() {
       window.open("https://opensea.io/collection/joyworld-joytoys")

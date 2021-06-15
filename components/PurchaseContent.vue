@@ -150,6 +150,7 @@ export default {
     this.setTransactionStatus("")
     const net = this.$config.requiredNetwork
     this.requiredNetwork = net
+    console.log("object id", this.id)
   },
 
   methods: {

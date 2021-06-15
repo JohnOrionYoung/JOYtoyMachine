@@ -248,7 +248,7 @@ export default {
   border: none;
   background: none;
   position: absolute;
-  top: 1.25rem;
+  top: 1rem;
   right: 2rem;
 }
 @media screen and (min-width: 420px) {
@@ -276,7 +276,7 @@ export default {
     border: none;
     background: none;
     position: absolute;
-    top: 1.25rem;
+    top: 1rem;
     right: 4rem;
   }
 }

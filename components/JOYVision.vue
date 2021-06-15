@@ -212,7 +212,7 @@ export default {
   align-items: center;
 }
 .vision-content {
-  margin-top: 10px;
+  margin-top: 25px;
   margin-bottom: 30px;
   width: 100%;
   display: flex;
@@ -245,16 +245,14 @@ export default {
   bottom: -55px;
   text-align: center;
 }
-
 .closeVision {
   border: none;
   background: none;
   position: absolute;
-  top: 12px;
-  right: 55px;
+  top: 1rem;
+  right: 2rem;
 }
-
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 420px) {
   .launchAR {
     background-color: #ffe70d;
     padding: 5px 15px 5px 15px;
@@ -272,6 +270,15 @@ export default {
     right: 0;
     bottom: -55px;
     text-align: center;
+  }
+}
+@media screen and (min-width: 420px) {
+  .closeVision {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 1rem;
+    right: 4rem;
   }
 }
 </style>

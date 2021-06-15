@@ -20,7 +20,7 @@
 
 <style>
 .icon {
-  stroke: red;
+  stroke: black;
 }
 .icon.light {
   stroke: var(--background-color, #eee);

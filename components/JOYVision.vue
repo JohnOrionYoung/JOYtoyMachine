@@ -177,15 +177,16 @@
         </div>
       </div>
       <button
-        id="closeVision"
+        class="closeVision"
         @click="
           {
             closeVision()
           }
         "
       >
-        <IconClose id="icon" />
+        <IconClose class="icon" />
       </button>
+      <button slot="ar-button" class="launchAR">VIEW IN JOYVISION</button>
     </div>
   </div>
 </template>
@@ -212,6 +213,7 @@ export default {
   align-items: center;
 }
 .vision-content {
+  margin-top: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -222,9 +224,8 @@ export default {
 }
 .viewerStyle {
   margin: 15px auto;
-  min-height: 350px;
-  width: 100%;
-  border-radius: 50px;
+  min-height: 400px;
+  width: 92%;
   border: 4px solid black;
 }
 .launchAR {
@@ -235,16 +236,31 @@ export default {
   height: 44px;
   border-radius: 22px;
   border: black solid 4px;
-  position: absolute;
-  bottom: 15px;
-  left: 10%;
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
 }
-#closeVision {
+
+.closeVision {
   border: none;
   background: none;
-  size: 0;
   position: absolute;
-  top: 7px;
+  top: 12px;
   right: 55px;
+}
+
+@media screen and (min-width: 600px) {
+  .launchAR {
+    background-color: #ffe70d;
+    padding: 5px 15px 5px 15px;
+    font-family: Sniglet, sans-serif;
+    font-size: 16px;
+    height: 44px;
+    border-radius: 22px;
+    border: black solid 4px;
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+  }
 }
 </style>

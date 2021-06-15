@@ -242,7 +242,7 @@ export default {
   margin-right: auto;
   left: 0;
   right: 0;
-  bottom: -40px;
+  bottom: -55px;
   text-align: center;
 }
 

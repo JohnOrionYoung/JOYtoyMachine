@@ -237,9 +237,13 @@ export default {
   border-radius: 22px;
   border: black solid 4px;
   position: absolute;
-  bottom: -15px;
-  margin: 0 auto;
   width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  text-align: center;
 }
 
 .closeVision {
@@ -260,8 +264,14 @@ export default {
     border-radius: 22px;
     border: black solid 4px;
     position: absolute;
-    margin: 0 auto;
+    position: absolute;
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: -40px;
+    text-align: center;
   }
 }
 </style>

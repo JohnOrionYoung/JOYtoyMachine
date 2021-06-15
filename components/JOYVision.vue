@@ -154,7 +154,6 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            style="border-radius: 50px"
             src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.glb"
             ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.usdz"
             poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.png"
@@ -249,7 +248,7 @@ export default {
   border: none;
   background: none;
   position: absolute;
-  top: 1rem;
+  top: 1.25rem;
   right: 2rem;
 }
 @media screen and (min-width: 420px) {
@@ -277,7 +276,7 @@ export default {
     border: none;
     background: none;
     position: absolute;
-    top: 1rem;
+    top: 1.25rem;
     right: 4rem;
   }
 }

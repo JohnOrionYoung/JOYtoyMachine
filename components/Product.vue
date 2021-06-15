@@ -102,7 +102,7 @@
           :min-height="200"
           :scrollable="true"
           :reset="true"
-          width="85%"
+          width="87%"
           height="auto"
           :focus-trap="true"
           :click-to-close="false"
@@ -124,7 +124,7 @@
           :min-height="200"
           :scrollable="true"
           :reset="true"
-          width="85%"
+          width="87%"
           height="auto"
           :focus-trap="true"
           :click-to-close="false"
@@ -144,7 +144,7 @@
           :focus-trap="true"
           :click-to-close="false"
         >
-          <JOYvision
+          <JOYVision
             :id="id"
             :token-id="tokenData.id"
             :close-vision="closeVision"
@@ -336,7 +336,6 @@ export default {
     },
     triggerVision() {
       this.$modal.show(`vision-modal${this.id}`)
-      console.log("hello")
     },
     closeVision() {
       this.$modal.hide(`vision-modal${this.id}`)

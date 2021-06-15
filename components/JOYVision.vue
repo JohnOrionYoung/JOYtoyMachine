@@ -25,7 +25,10 @@
             ar-modes="webxr scene-viewer quick-look"
             ar-scale="auto"
             environment-image="neutral"
-          />
+            ><button slot="ar-button" class="launchAR">
+              VIEW IN JOYVISION
+            </button></model-viewer
+          >
         </div>
         <div v-if="tokenId === 200">
           <model-viewer
@@ -46,7 +49,10 @@
             ar-modes="webxr scene-viewer quick-look"
             ar-scale="auto"
             environment-image="neutral"
-          />
+            ><button slot="ar-button" class="launchAR">
+              VIEW IN JOYVISION
+            </button></model-viewer
+          >
         </div>
         <div v-if="tokenId === 305">
           <model-viewer
@@ -67,7 +73,10 @@
             ar-modes="webxr scene-viewer quick-look"
             ar-scale="auto"
             environment-image="neutral"
-          />
+            ><button slot="ar-button" class="launchAR">
+              VIEW IN JOYVISION
+            </button></model-viewer
+          >
         </div>
         <div v-if="tokenId === 500">
           <model-viewer
@@ -88,7 +97,10 @@
             ar-modes="webxr scene-viewer quick-look"
             ar-scale="auto"
             environment-image="neutral"
-          />
+            ><button slot="ar-button" class="launchAR">
+              VIEW IN JOYVISION
+            </button></model-viewer
+          >
         </div>
         <div v-if="tokenId === 900">
           <model-viewer
@@ -109,7 +121,10 @@
             ar-modes="webxr scene-viewer quick-look"
             ar-scale="auto"
             environment-image="neutral"
-          />
+            ><button slot="ar-button" class="launchAR">
+              VIEW IN JOYVISION
+            </button></model-viewer
+          >
         </div>
         <div v-if="tokenId === 981">
           <model-viewer
@@ -130,7 +145,10 @@
             ar-modes="webxr scene-viewer quick-look"
             ar-scale="auto"
             environment-image="neutral"
-          />
+            ><button slot="ar-button" class="launchAR">
+              VIEW IN JOYVISION
+            </button></model-viewer
+          >
         </div>
         <div v-if="tokenId === 1022">
           <model-viewer
@@ -151,54 +169,21 @@
             ar-modes="webxr scene-viewer quick-look"
             ar-scale="auto"
             environment-image="neutral"
-            ><button
-              slot="ar-button"
-              style="
-                background-color: #ffe70d;
-                font-family: VT323;
-                font-size: 22px;
-                font-color: #0060e1;
-                height: 44px;
-                border-radius: 22px;
-                border: 4px;
-                position: absolute;
-                bottom: 20px;
-                right: 20px;
-              "
-            >
+            ><button slot="ar-button" class="launchAR">
               VIEW IN JOYVISION
             </button></model-viewer
           >
         </div>
-        <!-- <button
-            slot="ar-button"
-            style="
-              background-color: #ffe70d;
-              font-family: VT323;
-              font-size: 22px;
-              font-color: #0060e1;
-              height: 44px;
-              border-radius: 22px;
-              border: 4px;
-              position: absolute;
-              bottom: 20px;
-              right: 20px;
-            "
-          >
-            VIEW IN JOYVISION
-          </button> -->
-        <!-- </model-viewer> -->
       </div>
       <button
         id="closeVision"
-        class="btn iconButton"
         @click="
           {
             closeVision()
           }
         "
       >
-        <IconClose class="logo.dark.large" />
+        <IconClose id="icon" />
       </button>
     </div>
   </div>
@@ -216,6 +201,7 @@ export default {
 
 <style lang="scss" scoped>
 .joy-vision {
+  min-height: auto;
   padding: 1em 0.75em 1em 0.75em;
   width: 100%;
   border: 4px solid black;
@@ -225,6 +211,7 @@ export default {
   align-items: center;
 }
 .vision-content {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -235,17 +222,28 @@ export default {
 .viewerStyle {
   margin: 15px auto;
   min-height: 350px;
+  width: 100%;
+  border-radius: 50px;
+  border: 4px solid black;
+}
+.launchAR {
+  background-color: #ffe70d;
+  padding: 5px 15px 5px 15px;
+  font-family: Sniglet, sans-serif;
+  font-size: 16px;
+  height: 44px;
+  border-radius: 22px;
+  border: black solid 4px;
+  position: absolute;
+  bottom: 15px;
+  left: 10%;
 }
 #closeVision {
   border: none;
   background: none;
   size: 0;
   position: absolute;
-  top: 25px;
-  right: 25px;
-}
-#icon {
-  width: 25px;
-  height: auto;
+  top: 7px;
+  right: 55px;
 }
 </style>

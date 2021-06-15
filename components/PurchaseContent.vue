@@ -31,6 +31,7 @@
         >
           Yes, gimme!
         </button>
+
         <button
           class="button joy invert"
           @click="
@@ -184,9 +185,20 @@ export default {
 .modalActions {
   margin: 0 -0.75rem -1rem -0.75rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+
+@media (min-width: 400px) {
+  .modalActions {
+    margin: 0 -0.75rem -1rem -0.75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 .tokenStatus {
   display: flex;

@@ -211,7 +211,7 @@ export default {
   align-items: center;
 }
 .vision-content {
-  margin-top: 25px;
+  margin-top: 20px;
   margin-bottom: 30px;
   width: 100%;
   display: flex;
@@ -276,7 +276,7 @@ export default {
     border: none;
     background: none;
     position: absolute;
-    top: 1rem;
+    top: 0.9rem;
     right: 4rem;
   }
 }

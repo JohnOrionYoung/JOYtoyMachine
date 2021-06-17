@@ -99,9 +99,30 @@
       <div class="modalActions">
         <button
           class="button joy invert"
+          @click="closePurchase(), confettiStop()"
+        >
+          Okay
+        </button>
+      </div>
+    </div>
+    <div v-if="pendingToken && pendingToken === id && pendingCount != 0">
+      <Loading />
+      <h4 :text="getPendingText(pendingCount)" />
+    </div>
+    <h4 v-if="transactionID && pendingCount === 0">Go play!</h4>
+    <div v-if="transactionId" class="txContainer">
+      <h4 v-if="transactionId" class="txId">Tx #: {{ transactionId }}</h4>
+      <div v-if="transactionId" class="txBtn">
+        <button class="joy button" @click="openScan(), confettiPop()">
+          View on Etherscan
+        </button>
+
+        <button
+          v-if="transactionId && pendingCount === 0"
+          class="button joy invert"
           @click="
             {
-              closePurchase()
+              closePurchase(), confettiStop()
             }
           "
         >
@@ -109,10 +130,6 @@
         </button>
       </div>
     </div>
-    <div v-if="pendingToken && pendingToken === id">
-      <Loading :text="getPendingText(pendingCount)" />
-    </div>
-    <div v-if="transactionId">TransactionId: {{ transactionId }}</div>
   </div>
 </template>
 
@@ -164,9 +181,24 @@ export default {
       handleReset: "walletStore/handleReset"
     }),
     getPendingText(pendingCount) {
-      const string = "Pending... "
+      const string = "Your JOYtoy will be done in... "
       const count = pendingCount / 1000 || 0
-      return pendingCount ? `${string} ${count}s` : ""
+      return pendingCount
+        ? `${string} ${count}s`
+        : "Your JOYtoy is being built!"
+    },
+    openScan() {
+      window.open("https://etherscan.io/tx/{{ transactionId }}")
+    },
+    confettiPop() {
+      this.$confetti.start({
+        particles: [
+          {
+            type: "image",
+            url: "../assets/JOYicon.png"
+          }
+        ]
+      })
     }
   }
 }
@@ -232,5 +264,12 @@ export default {
       font-size: 0.875rem;
     }
   }
+}
+.txContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 </style>

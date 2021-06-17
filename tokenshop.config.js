@@ -10,7 +10,7 @@ export default {
   },
   contracts: {
     main: "0x0574c34385b039c2bb8db898f61b7767024a9449",
-    rinkeby: "0x365f47fa59ffe4b2400186ac17a98d219a79fafc"
+    rinkeby: "0x729e6c57d12259dab29f1d65080c7666c3f1e41c"
   },
   site: {
     brandName: "JOYWORLD",

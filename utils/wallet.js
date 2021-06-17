@@ -39,9 +39,15 @@ function initWeb3() {
 
 const getConnectedNetwork = (net) => {
   const connectedNetwork = Number(net)
+  console.log(connectedNetwork)
   switch (connectedNetwork) {
+    case 1:
+      // setNetworkClass('main-network')
+      return "main"
+    case 4:
+      return "rinkeby"
     default:
-      return "mainnet"
+      return "private"
   }
 }
 

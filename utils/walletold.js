@@ -11,10 +11,6 @@ function initWeb3(requiredNetwork) {
     return
   }
 
-  // const infuraUrl =
-  //   requiredNetwork === 'rinkeby'
-  //     ? 'https://rinkeby.infura.io/v3/760ff7b32ef04620b65bc7e6c416190b'
-  //     : 'https://mainnet.infura.io/v3/760ff7b32ef04620b65bc7e6c416190b'
   const infuraUrl =
     requiredNetwork === "rinkeby"
       ? tokenshop.keys.infura.rinkeby
@@ -54,6 +50,7 @@ function initWeb3(requiredNetwork) {
 
 const getConnectedNetwork = (net) => {
   const connectedNetwork = Number(net)
+  console.log(connectedNetwork)
   switch (connectedNetwork) {
     case 1:
       // setNetworkClass('main-network')

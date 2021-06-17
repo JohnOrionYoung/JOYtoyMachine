@@ -200,10 +200,19 @@ export default {
         particles: [
           {
             type: "image",
-            url: "../assets/JOYicon.png"
-          }
+            size: 15,
+            url: "https://uploads-ssl.webflow.com/5c73606d331282a7a53d3df3/60cb94ec09a56d66dadc81f3_JOYfetti25px.png"
+          },
+          {
+            type: "heart",
+            size: 30
+          },
+          { type: "circle" }
         ]
       })
+    },
+    confettiStop() {
+      this.$confetti.stop()
     }
   }
 }

@@ -7,7 +7,7 @@
             <Button
               v-if="!walletAddress"
               class="button joy"
-              @click.native="handleConnect"
+              @click.native="handleConnect(), confettiPop()"
               >CONNECT METAMASK</Button
             >
             <div class="connectedInfo">
@@ -24,7 +24,10 @@
               </div>
             </div>
             <div v-if="walletAddress">
-              <Button class="disconnect" @click.native="handleDisconnect">
+              <Button
+                class="disconnect"
+                @click.native="handleDisconnect(), confettiStop()"
+              >
                 Disconnect
               </Button>
             </div>
@@ -98,6 +101,25 @@ export default {
       if (web3Modal) {
         this.handleWeb3Connect(web3Modal)
       }
+    },
+    confettiPop() {
+      this.$confetti.start({
+        particles: [
+          {
+            type: "image",
+            size: 15,
+            url: "https://uploads-ssl.webflow.com/5c73606d331282a7a53d3df3/60cb94ec09a56d66dadc81f3_JOYfetti25px.png"
+          },
+          {
+            type: "heart",
+            size: 30
+          },
+          { type: "circle" }
+        ]
+      })
+    },
+    confettiStop() {
+      this.$confetti.stop()
     }
   }
 }

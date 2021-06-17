@@ -15,6 +15,7 @@
             :src="require(`../assets/` + tokenData.id + `.gif`)"
           />
         </div>
+
         <!-- <img
             v-if="imageData"
             :src="`https://gateway.pinata.cloud/ipfs/${imageData.artworkHash}`"
@@ -52,7 +53,11 @@
             }}</span>
           </div>
         </div>
-
+        <div class="joy-vision-container">
+          <button class="joy-vision-btn" @click="triggerVision">
+            JOYvision
+          </button>
+        </div>
         <div class="productActions">
           <button
             v-if="tokenData && !tokenData.active"
@@ -97,7 +102,7 @@
           :min-height="200"
           :scrollable="true"
           :reset="true"
-          width="60%"
+          width="87%"
           height="auto"
           :focus-trap="true"
           :click-to-close="false"
@@ -119,12 +124,31 @@
           :min-height="200"
           :scrollable="true"
           :reset="true"
-          width="60%"
+          width="87%"
           height="auto"
           :focus-trap="true"
           :click-to-close="false"
         >
           <ConnectAlert :close-connect="closeConnect" />
+        </modal>
+        <modal
+          :name="`vision-modal${id}`"
+          class="vision-modal"
+          :adaptive="false"
+          :min-width="100"
+          :min-height="100"
+          :scrollable="true"
+          :reset="true"
+          width="87%"
+          height="auto"
+          :focus-trap="true"
+          :click-to-close="false"
+        >
+          <JOYVision
+            :id="id"
+            :token-id="tokenData.id"
+            :close-vision="closeVision"
+          />
         </modal>
       </div>
     </transition>
@@ -150,7 +174,6 @@
   background: rgba(255, 255, 255, 0.1);
   // border: none;
 }
-
 .loadingAnimation {
   max-width: 75px;
   max-height: auto;
@@ -162,7 +185,6 @@
   background: rgb(255, 255, 255);
   color: var(--text-color, #111);
   border-radius: 50px;
-
   .productImage {
     width: 100%;
     min-height: 100px;
@@ -186,6 +208,7 @@
     h4 {
       text-align: center;
       font-family: Sniglet, sans-serif;
+      font-weight: 400;
     }
     .description {
       text-align: center;
@@ -212,10 +235,24 @@
     justify-content: center;
   }
 }
+.joy-vision-container {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+.joy-vision-btn {
+  border: none;
+  background: none;
+  font-family: Sniglet, cursive;
+  font-weight: 800;
+  font-size: 20px;
+  color: #0060e1;
+}
 </style>
 
 <script>
 import { mapGetters, mapActions } from "vuex"
+
 export default {
   props: {
     mode: { type: String, default: "" },
@@ -223,7 +260,6 @@ export default {
     id: { type: Number, default: 0 },
     displayid: { type: Number, default: 0 }
   },
-
   data() {
     return {
       requiredNetwork: null,
@@ -298,6 +334,12 @@ export default {
     },
     closePurchase() {
       this.$modal.hide(`info-modal${this.id}`)
+    },
+    triggerVision() {
+      this.$modal.show(`vision-modal${this.id}`)
+    },
+    closeVision() {
+      this.$modal.hide(`vision-modal${this.id}`)
     },
     openSeaLink() {
       window.open("https://opensea.io/collection/joyworld-joytoys")

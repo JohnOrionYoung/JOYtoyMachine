@@ -31,6 +31,7 @@
         >
           Yes, gimme!
         </button>
+
         <button
           class="button joy invert"
           @click="
@@ -150,6 +151,7 @@ export default {
     this.setTransactionStatus("")
     const net = this.$config.requiredNetwork
     this.requiredNetwork = net
+    console.log("object id", this.id)
   },
 
   methods: {
@@ -183,10 +185,11 @@ export default {
 .modalActions {
   margin: 0 -0.75rem -1rem -0.75rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
+
 .tokenStatus {
   display: flex;
   align-items: center;

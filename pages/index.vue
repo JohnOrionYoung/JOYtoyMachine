@@ -59,7 +59,6 @@ export default {
     this.displayArray = tokenshop.site.products.mainDisplay
   },
   mounted() {},
-
   methods: {
     ...mapActions({
       readToken: "walletStore/readToken"
@@ -109,6 +108,7 @@ export default {
   h1 {
     text-align: center;
     font-family: Sniglet, sans-serif;
+    font-weight: 400;
     font-size: 16px;
     margin-bottom: 1.5rem;
 
@@ -117,7 +117,7 @@ export default {
       font-size: 18px;
       text-decoration: underline;
       font-family: Sniglet, sans-serif;
-      font-weight: 1000;
+      font-weight: 400;
     }
   }
 }

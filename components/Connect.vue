@@ -7,7 +7,7 @@
             <Button
               v-if="!walletAddress"
               class="button joy"
-              @click.native="handleConnect(), confettiPop()"
+              @click.native="handleConnect()"
               >CONNECT METAMASK</Button
             >
             <div class="connectedInfo">
@@ -24,10 +24,7 @@
               </div>
             </div>
             <div v-if="walletAddress">
-              <Button
-                class="disconnect"
-                @click.native="handleDisconnect(), confettiStop()"
-              >
+              <Button class="disconnect" @click.native="handleDisconnect()">
                 Disconnect
               </Button>
             </div>

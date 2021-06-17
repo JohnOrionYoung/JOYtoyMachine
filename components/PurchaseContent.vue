@@ -113,7 +113,13 @@
     <div v-if="transactionId" class="txContainer">
       <h4 v-if="transactionId" class="txId">Tx #: {{ transactionId }}</h4>
       <div v-if="transactionId" class="txBtn">
-        <button class="joy button" @click="openScan(), confettiPop()">
+        <button
+          class="joy button"
+          @click="
+            openScan()
+            confettiPop()
+          "
+        >
           View on Etherscan
         </button>
 
@@ -121,12 +127,11 @@
           v-if="transactionId && pendingCount === 0"
           class="button joy invert"
           @click="
-            {
-              closePurchase(), confettiStop()
-            }
+            closePurchase()
+            confettiStop()
           "
         >
-          Okay
+          YAY!
         </button>
       </div>
     </div>

@@ -101,25 +101,6 @@ export default {
       if (web3Modal) {
         this.handleWeb3Connect(web3Modal)
       }
-    },
-    confettiPop() {
-      this.$confetti.start({
-        particles: [
-          {
-            type: "image",
-            size: 15,
-            url: "https://uploads-ssl.webflow.com/5c73606d331282a7a53d3df3/60cb94ec09a56d66dadc81f3_JOYfetti25px.png"
-          },
-          {
-            type: "heart",
-            size: 30
-          },
-          { type: "circle" }
-        ]
-      })
-    },
-    confettiStop() {
-      this.$confetti.stop()
     }
   }
 }

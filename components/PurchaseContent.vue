@@ -96,16 +96,11 @@
       <span v-if="transactionError" class="statusError">{{
         transactionError
       }}</span>
-      <div class="modalActions">
-        <button
-          class="button joy invert"
-          @click="closePurchase(), confettiStop()"
-        >
-          Okay
-        </button>
+      <div v-if="transactionError" class="modalActions">
+        <button class="button joy invert" @click="closePurchase()">Okay</button>
       </div>
     </div>
-    <div v-if="pendingToken && pendingToken === id && pendingCount != 0">
+    <div v-if="pendingToken && pendingToken === id && pendingCount !== 0">
       <Loading />
       <h4 :text="getPendingText(pendingCount)" />
     </div>

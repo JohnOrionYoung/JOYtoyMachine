@@ -105,11 +105,13 @@
         <img :src="imageUrl" alt="Preview..." />
       </div>
       <h3>
-        Your JOYtoy is being made! Checkout your status over on Etherscan:
+        Your JOYtoy is being made and will be available in your wallet soon!
+        Check out the status over on Etherscan:
       </h3>
-      <h4 class="txId">Tx #: {{ transactionId }}</h4>
       <div class="txBtn">
-        <button class="joy button invert" @click="openScan()">View Scan</button>
+        <button class="joy button invert" @click="openScan()">
+          View Transaction
+        </button>
         <button
           class="button joy"
           @click="
@@ -117,7 +119,7 @@
             confettiStop()
           "
         >
-          Got your JOY? Yay!
+          GOT IT!
         </button>
       </div>
     </div>
@@ -273,17 +275,15 @@ export default {
   align-content: center;
   align-items: center;
   justify-content: center;
+  text-align: center;
   h3 {
     font-family: Sniglet, sans-serif;
     font-size: 24px;
-  }
-  h4 {
-    font-family: Sniglet, sans-serif;
-    font-weight: 400;
-    font-size: 20px;
+    padding-bottom: 30px;
   }
   .pendingImage {
     img {
+      margin: 10px;
       width: 6rem;
       height: 6rem;
       object-fit: contain;

@@ -20,13 +20,13 @@
         <button
           class="button joy"
           @click="
-            () =>
-              purchaseToken({
-                tokenId: id,
-                requiredNetwork: requiredNetwork,
-                priceWei: priceWei,
-                walletAddress: walletAddress
-              })
+            purchaseToken({
+              tokenId: id,
+              requiredNetwork: requiredNetwork,
+              priceWei: priceWei,
+              walletAddress: walletAddress
+            })
+            confettiPop()
           "
         >
           Yes, gimme!
@@ -87,7 +87,7 @@
     </button> -->
 
     <div v-if="transactionStatus && transactionStatus === 'confirming'">
-      <span>Confirm this transaction in your wallet to continue</span>
+      <span>Confirm this transaction in your wallet to continue.</span>
     </div>
     <div v-if="transactionStatus && transactionStatus === 'error'">
       <span v-if="!transactionError" class="statusError"
@@ -100,33 +100,24 @@
         <button class="button joy invert" @click="closePurchase()">Okay</button>
       </div>
     </div>
-    <div v-if="pendingToken && pendingToken === id && pendingCount !== 0">
-      <Loading />
-      <h4 :text="getPendingText(pendingCount)" />
-    </div>
-    <h4 v-if="transactionID && pendingCount === 0">Go play!</h4>
-    <div v-if="transactionId" class="txContainer">
-      <h4 v-if="transactionId" class="txId">Tx #: {{ transactionId }}</h4>
-      <div v-if="transactionId" class="txBtn">
+    <div v-if="pendingToken && pendingToken === id" class="txContainer">
+      <div class="pendingImage">
+        <img :src="imageUrl" alt="Preview..." />
+      </div>
+      <h3>
+        Your JOYtoy is being made! Checkout your status over on Etherscan:
+      </h3>
+      <h4 class="txId">Tx #: {{ transactionId }}</h4>
+      <div class="txBtn">
+        <button class="joy button invert" @click="openScan()">View Scan</button>
         <button
-          class="joy button"
-          @click="
-            openScan()
-            confettiPop()
-          "
-        >
-          View on Etherscan
-        </button>
-
-        <button
-          v-if="transactionId && pendingCount === 0"
-          class="button joy invert"
+          class="button joy"
           @click="
             closePurchase()
             confettiStop()
           "
         >
-          YAY!
+          Got your JOY? Yay!
         </button>
       </div>
     </div>
@@ -202,7 +193,7 @@ export default {
             type: "heart",
             size: 30
           },
-          { type: "circle" }
+          { type: "circle", size: 3 }
         ]
       })
     },
@@ -275,10 +266,28 @@ export default {
   }
 }
 .txContainer {
+  font-family: Sniglet, sans-serif;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
   justify-content: center;
+  h3 {
+    font-family: Sniglet, sans-serif;
+    font-size: 24px;
+  }
+  h4 {
+    font-family: Sniglet, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .pendingImage {
+    img {
+      width: 6rem;
+      height: 6rem;
+      object-fit: contain;
+    }
+  }
 }
 </style>

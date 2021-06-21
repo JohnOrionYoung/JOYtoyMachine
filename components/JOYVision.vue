@@ -26,7 +26,7 @@
             ar-scale="auto"
             environment-image="neutral"
             ><button slot="ar-button" class="launchAR">
-              VIEW IN JOYVISION
+              Enter JOYvision
             </button></model-viewer
           >
         </div>
@@ -50,7 +50,7 @@
             ar-scale="auto"
             environment-image="neutral"
             ><button slot="ar-button" class="launchAR">
-              VIEW IN JOYVISION
+              Enter JOYvision
             </button></model-viewer
           >
         </div>
@@ -74,7 +74,7 @@
             ar-scale="auto"
             environment-image="neutral"
             ><button slot="ar-button" class="launchAR">
-              VIEW IN JOYVISION
+              Enter JOYvision
             </button></model-viewer
           >
         </div>
@@ -98,7 +98,7 @@
             ar-scale="auto"
             environment-image="neutral"
             ><button slot="ar-button" class="launchAR">
-              VIEW IN JOYVISION
+              Enter JOYvision
             </button></model-viewer
           >
         </div>
@@ -122,7 +122,7 @@
             ar-scale="auto"
             environment-image="neutral"
             ><button slot="ar-button" class="launchAR">
-              VIEW IN JOYVISION
+              Enter JOYvision
             </button></model-viewer
           >
         </div>
@@ -146,7 +146,7 @@
             ar-scale="auto"
             environment-image="neutral"
             ><button slot="ar-button" class="launchAR">
-              VIEW IN JOYVISION
+              Enter JOYvision
             </button></model-viewer
           >
         </div>
@@ -170,7 +170,7 @@
             ar-scale="auto"
             environment-image="neutral"
             ><button slot="ar-button" class="launchAR">
-              VIEW IN JOYVISION
+              Enter JOYvision
             </button></model-viewer
           >
         </div>
@@ -185,6 +185,7 @@
       >
         <IconClose class="icon" />
       </button>
+      <button class="launchAR">Enter JOYvision</button>
     </div>
   </div>
 </template>
@@ -232,11 +233,11 @@ export default {
   padding: 5px 15px 5px 15px;
   font-family: Sniglet, sans-serif;
   font-size: 16px;
-  height: 44px;
+  height: auto;
   border-radius: 22px;
   border: black solid 4px;
   position: absolute;
-  width: 90%;
+  width: auto;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -244,25 +245,17 @@ export default {
   bottom: -55px;
   text-align: center;
 }
-.closeVision {
-  border: none;
-  background: none;
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-}
 @media screen and (min-width: 420px) {
   .launchAR {
     background-color: #ffe70d;
     padding: 5px 15px 5px 15px;
     font-family: Sniglet, sans-serif;
     font-size: 16px;
-    height: 44px;
+    height: auto;
     border-radius: 22px;
     border: black solid 4px;
     position: absolute;
-    position: absolute;
-    width: 50%;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -270,6 +263,13 @@ export default {
     bottom: -55px;
     text-align: center;
   }
+}
+.closeVision {
+  border: none;
+  background: none;
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
 }
 @media screen and (min-width: 420px) {
   .closeVision {

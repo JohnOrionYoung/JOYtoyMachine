@@ -109,9 +109,9 @@
         Check out the status over on Etherscan:
       </h3>
       <div class="txBtn">
-        <button class="joy button invert" @click="openScan()">
-          View Transaction
-        </button>
+        <a :href="`https://etherscan.io/tx/` + transactionId"
+          ><button class="joy button invert">View Transaction</button></a
+        >
         <button
           class="button joy"
           @click="
@@ -180,9 +180,6 @@ export default {
         ? `${string} ${count}s`
         : "Your JOYtoy is being built!"
     },
-    openScan() {
-      window.open("https://etherscan.io/tx/{{ transactionId }}")
-    },
     confettiPop() {
       this.$confetti.start({
         particles: [
@@ -219,7 +216,7 @@ export default {
 .modalActions {
   margin: 0 -0.75rem -1rem -0.75rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }

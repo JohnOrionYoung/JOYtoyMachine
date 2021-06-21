@@ -185,7 +185,6 @@
       >
         <IconClose class="icon" />
       </button>
-      <button class="launchAR">Enter JOYvision</button>
     </div>
   </div>
 </template>

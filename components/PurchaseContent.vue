@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div v-if="transactionStatus" class="tokenStatus">
+    <!-- <div v-if="transactionStatus" class="tokenStatus">
       <span
         v-if="
           transactionStatus !== 'completed' &&
@@ -70,7 +70,7 @@
           CLOSE
         </button>
       </div>
-    </div>
+    </div> -->
     <!-- <button
       class="button joy"
       @click="
@@ -97,7 +97,15 @@
         transactionError
       }}</span>
       <div v-if="transactionError" class="modalActions">
-        <button class="button joy invert" @click="closePurchase()">Okay</button>
+        <button
+          class="button joy invert"
+          @click="
+            closePurchase()
+            confettiStop()
+          "
+        >
+          Start Over
+        </button>
       </div>
     </div>
     <div v-if="pendingToken && pendingToken === id" class="txContainer">
@@ -109,9 +117,7 @@
         Check out the status over on Etherscan:
       </h3>
       <div class="txBtn">
-        <a :href="`https://etherscan.io/tx/` + transactionId"
-          ><button class="joy button invert">View Transaction</button></a
-        >
+        <button class="joy button invert">View Transaction</button>
         <button
           class="button joy"
           @click="
@@ -162,6 +168,7 @@ export default {
     const net = this.$config.requiredNetwork
     this.requiredNetwork = net
     console.log("object id", this.id)
+    console.log("transaction", this.transactionId)
   },
 
   methods: {

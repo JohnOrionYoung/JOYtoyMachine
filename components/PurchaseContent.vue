@@ -118,10 +118,7 @@
           Check out the status over on Etherscan:
         </h3>
         <div class="modalActions">
-          <button
-            class="joy button invert"
-            :href="`https://www.etherscan.io/tx/` + transactionId"
-          >
+          <button class="joy button invert" @click="openTracking()">
             View Transaction
           </button>
           <button
@@ -154,7 +151,8 @@ export default {
   },
   data() {
     return {
-      requiredNetwork: ""
+      requiredNetwork: "",
+      transactionId: ""
       // desiredNetwork: "main"
       // showAddInterface: false,
       // customContractId: '',
@@ -212,6 +210,10 @@ export default {
     },
     confettiStop() {
       this.$confetti.stop()
+    },
+    openTracking() {
+      const transactionSlug = this.transactionId
+      window.open("https://etherscan.io/tx/" + transactionSlug)
     }
   }
 }

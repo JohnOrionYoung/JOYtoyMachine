@@ -16,7 +16,7 @@
             </div>
           </div>
         </div>
-        <h3>You sure?</h3>
+        <h2>You sure?</h2>
         <div class="modalActions">
           <button
             class="button joy"
@@ -113,22 +113,39 @@
         <div class="pendingImage">
           <img :src="imageUrl" alt="Preview..." />
         </div>
-        <h3>
-          Your JOYtoy is being made and will be available in your wallet soon!
-          Check out the status over on Etherscan:
+
+        <h3 v-if="!transactionId"></h3>
+        <h3 v-if="!transactionId">
+          Once you "Confirm" the request in MetaMask the JOYtoy Machine will
+          begin making your new {{ title }}.
         </h3>
+        <img
+          v-if="!transactionId"
+          class="loadingAnimation"
+          :src="require(`../assets/3_dot.gif`)"
+        />
+        <h2 v-if="transactionId">
+          Your {{ title }} is being made and will be available in your wallet
+          soon! Check out the transaction status on Etherscan.
+        </h2>
+        <h4 v-if="transactionId">Tx: {{ transactionId }}</h4>
         <div class="modalActions">
-          <button class="joy button invert" @click="openTracking()">
+          <button
+            v-if="transactionId"
+            class="joy button invert"
+            @click="openTracking()"
+          >
             View Transaction
           </button>
           <button
+            v-if="transactionId"
             class="button joy"
             @click="
               closePurchase()
               confettiStop()
             "
           >
-            GOT IT!
+            Got It!
           </button>
         </div>
       </div>
@@ -151,8 +168,7 @@ export default {
   },
   data() {
     return {
-      requiredNetwork: "",
-      transactionId: ""
+      requiredNetwork: ""
       // desiredNetwork: "main"
       // showAddInterface: false,
       // customContractId: '',
@@ -212,8 +228,9 @@ export default {
       this.$confetti.stop()
     },
     openTracking() {
-      const transactionSlug = this.transactionId
+      const transactionSlug = this.transactionId.toString()
       window.open("https://etherscan.io/tx/" + transactionSlug)
+      console.log("slug", transactionSlug)
     }
   }
 }
@@ -225,7 +242,9 @@ export default {
   width: 100%;
   border: 4px solid black;
   border-radius: 50px;
-  h3 {
+  h2 {
+    font-family: "VT323";
+    font-weight: 400;
     margin: 0.5rem 0;
   }
 }
@@ -237,7 +256,7 @@ export default {
   margin: 0 0 -1rem 0;
   min-width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -296,10 +315,15 @@ export default {
   justify-content: center;
   text-align: center;
   h3 {
-    font-family: Sniglet, sans-serif;
+    font-family: "VT323";
     font-weight: 400;
     font-size: 24px;
-    padding-bottom: 30px;
+  }
+  h4 {
+    font-family: "VT323";
+  }
+  #gotIt {
+    margin-top: 30px;
   }
   .pendingImage {
     img {

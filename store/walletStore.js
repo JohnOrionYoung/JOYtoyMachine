@@ -89,8 +89,12 @@ export const actions = {
     if (!web3Modal) {
       return
     }
+
     commit("setWalletStatus", "connecting")
-    // const requiredNetwork = this.$config.requiredNetwork;
+    // const requiredNetwork = this.$config.requiredNetwork
+
+    // commit("setRequiredNetwork", requiredNetwork)
+
     web3Modal.clearCachedProvider()
 
     const provider = await web3Modal.connect().catch((error) => {

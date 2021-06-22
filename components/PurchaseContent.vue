@@ -1,51 +1,52 @@
 <template>
   <div class="modalContent">
-    <div v-if="!transactionStatus && !pendingToken" class="modalSection">
-      <h2>Purchase JOYtoy</h2>
-      <div class="tokenPreview">
-        <div class="previewImage">
-          <img :src="imageUrl" alt="Preview..." />
+    <div class="spaceContainer">
+      <div v-if="!transactionStatus && !pendingToken" class="modalSection">
+        <h2>Purchase JOYtoy</h2>
+        <div class="tokenPreview">
+          <div class="previewImage">
+            <img :src="imageUrl" alt="Preview..." />
+          </div>
+          <div class="previewContent">
+            <div class="previewTitle">
+              {{ title }}
+            </div>
+            <div class="subtitle">
+              {{ price }}
+            </div>
+          </div>
         </div>
-        <div class="previewContent">
-          <div class="previewTitle">
-            {{ title }}
-          </div>
-          <div class="subtitle">
-            {{ price }}
-          </div>
+        <h3>You sure?</h3>
+        <div class="modalActions">
+          <button
+            class="button joy"
+            @click="
+              purchaseToken({
+                tokenId: id,
+                requiredNetwork: requiredNetwork,
+                priceWei: priceWei,
+                walletAddress: walletAddress
+              })
+              confettiPop()
+            "
+          >
+            Yes, gimme!
+          </button>
+
+          <button
+            class="button joy invert"
+            @click="
+              {
+                closePurchase()
+              }
+            "
+          >
+            No Thanks
+          </button>
         </div>
       </div>
-      <h3>You sure?</h3>
-      <div class="modalActions">
-        <button
-          class="button joy"
-          @click="
-            purchaseToken({
-              tokenId: id,
-              requiredNetwork: requiredNetwork,
-              priceWei: priceWei,
-              walletAddress: walletAddress
-            })
-            confettiPop()
-          "
-        >
-          Yes, gimme!
-        </button>
 
-        <button
-          class="button joy invert"
-          @click="
-            {
-              closePurchase()
-            }
-          "
-        >
-          No Thanks...
-        </button>
-      </div>
-    </div>
-
-    <!-- <div v-if="transactionStatus" class="tokenStatus">
+      <!-- <div v-if="transactionStatus" class="tokenStatus">
       <span
         v-if="
           transactionStatus !== 'completed' &&
@@ -71,7 +72,7 @@
         </button>
       </div>
     </div> -->
-    <!-- <button
+      <!-- <button
       class="button joy"
       @click="
         {
@@ -86,47 +87,53 @@
       Track transaction
     </button> -->
 
-    <div v-if="transactionStatus && transactionStatus === 'confirming'">
-      <span>Confirm this transaction in your wallet to continue.</span>
-    </div>
-    <div v-if="transactionStatus && transactionStatus === 'error'">
-      <span v-if="!transactionError" class="statusError"
-        >Something got weird.</span
-      >
-      <span v-if="transactionError" class="statusError">{{
-        transactionError
-      }}</span>
-      <div v-if="transactionError" class="modalActions">
-        <button
-          class="button joy invert"
-          @click="
-            closePurchase()
-            confettiStop()
-          "
-        >
-          Start Over
-        </button>
+      <div v-if="transactionStatus && transactionStatus === 'confirming'">
+        <span>Confirm this transaction in your wallet to continue.</span>
       </div>
-    </div>
-    <div v-if="pendingToken && pendingToken === id" class="txContainer">
-      <div class="pendingImage">
-        <img :src="imageUrl" alt="Preview..." />
-      </div>
-      <h3>
-        Your JOYtoy is being made and will be available in your wallet soon!
-        Check out the status over on Etherscan:
-      </h3>
-      <div class="txBtn">
-        <button class="joy button invert">View Transaction</button>
-        <button
-          class="button joy"
-          @click="
-            closePurchase()
-            confettiStop()
-          "
+      <div v-if="transactionStatus && transactionStatus === 'error'">
+        <span v-if="!transactionError" class="statusError"
+          >Something got weird.</span
         >
-          GOT IT!
-        </button>
+        <span v-if="transactionError" class="statusError">{{
+          transactionError
+        }}</span>
+        <div v-if="transactionError" class="modalActions">
+          <button
+            class="button joy invert"
+            @click="
+              closePurchase()
+              confettiStop()
+            "
+          >
+            Start Over
+          </button>
+        </div>
+      </div>
+      <div v-if="pendingToken && pendingToken === id" class="txContainer">
+        <div class="pendingImage">
+          <img :src="imageUrl" alt="Preview..." />
+        </div>
+        <h3>
+          Your JOYtoy is being made and will be available in your wallet soon!
+          Check out the status over on Etherscan:
+        </h3>
+        <div class="modalActions">
+          <button
+            class="joy button invert"
+            :href="`https://www.etherscan.io/tx/` + transactionId"
+          >
+            View Transaction
+          </button>
+          <button
+            class="button joy"
+            @click="
+              closePurchase()
+              confettiStop()
+            "
+          >
+            GOT IT!
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -220,14 +227,18 @@ export default {
     margin: 0.5rem 0;
   }
 }
-.modalActions {
-  margin: 0 -0.75rem -1rem -0.75rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+.spaceContainer {
+  width: 100%;
+  margin: 0;
 }
-
+.modalActions {
+  margin: 0 0 -1rem 0;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .tokenStatus {
   display: flex;
   align-items: center;
@@ -265,9 +276,11 @@ export default {
   .previewContent {
     .previewTitle {
       font-weight: bold;
+      text-align: left;
     }
     .subtitle {
       font-size: 0.875rem;
+      text-align: left;
     }
   }
 }
@@ -282,6 +295,7 @@ export default {
   text-align: center;
   h3 {
     font-family: Sniglet, sans-serif;
+    font-weight: 400;
     font-size: 24px;
     padding-bottom: 30px;
   }

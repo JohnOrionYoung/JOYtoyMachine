@@ -1,51 +1,54 @@
 <template>
   <div class="modalContent">
-    <div v-if="!transactionStatus && !pendingToken" class="modalSection">
-      <h2>Purchase JOYtoy</h2>
-      <div class="tokenPreview">
-        <div class="previewImage">
-          <img :src="imageUrl" alt="Preview..." />
-        </div>
-        <div class="previewContent">
-          <div class="previewTitle">
-            {{ title }}
+    <div class="spaceContainer">
+      <div v-if="!transactionStatus && !pendingToken" class="modalSection">
+        <h2>Purchase JOYtoy</h2>
+        <div class="tokenPreview">
+          <div class="previewImage">
+            <img :src="imageUrl" alt="Preview..." />
           </div>
-          <div class="subtitle">
-            {{ price }}
+          <div class="previewContent">
+            <div class="previewTitle">
+              {{ title }}
+            </div>
+            <div class="subtitle">
+              {{ price }}
+            </div>
           </div>
         </div>
-      </div>
-      <h3>You sure?</h3>
-      <div class="modalActions">
-        <button
-          class="button joy"
-          @click="
-            () =>
+        <h2>You sure?</h2>
+        <div class="modalActions">
+          <button
+            id="modalactionsYN"
+            class="button joy"
+            @click="
               purchaseToken({
                 tokenId: id,
                 requiredNetwork: requiredNetwork,
                 priceWei: priceWei,
                 walletAddress: walletAddress
               })
-          "
-        >
-          Yes, gimme!
-        </button>
+              confettiPop()
+            "
+          >
+            Yes, gimme!
+          </button>
 
-        <button
-          class="button joy invert"
-          @click="
-            {
-              closePurchase()
-            }
-          "
-        >
-          No Thanks...
-        </button>
+          <button
+            id="modalactionsYN"
+            class="button joy invert"
+            @click="
+              {
+                closePurchase()
+              }
+            "
+          >
+            No Thanks
+          </button>
+        </div>
       </div>
-    </div>
 
-    <div v-if="transactionStatus" class="tokenStatus">
+      <!-- <div v-if="transactionStatus" class="tokenStatus">
       <span
         v-if="
           transactionStatus !== 'completed' &&
@@ -70,8 +73,8 @@
           CLOSE
         </button>
       </div>
-    </div>
-    <!-- <button
+    </div> -->
+      <!-- <button
       class="button joy"
       @click="
         {
@@ -86,33 +89,69 @@
       Track transaction
     </button> -->
 
-    <div v-if="transactionStatus && transactionStatus === 'confirming'">
-      <span>Confirm this transaction in your wallet to continue</span>
-    </div>
-    <div v-if="transactionStatus && transactionStatus === 'error'">
-      <span v-if="!transactionError" class="statusError"
-        >Something got weird.</span
-      >
-      <span v-if="transactionError" class="statusError">{{
-        transactionError
-      }}</span>
-      <div class="modalActions">
-        <button
-          class="button joy invert"
-          @click="
-            {
-              closePurchase()
-            }
-          "
+      <div v-if="transactionStatus && transactionStatus === 'confirming'">
+        <span>Confirm this transaction in your wallet to continue.</span>
+      </div>
+      <div v-if="transactionStatus && transactionStatus === 'error'">
+        <span v-if="!transactionError" class="statusError"
+          >Something got weird.</span
         >
-          Okay
-        </button>
+        <span v-if="transactionError" class="statusError">{{
+          transactionError
+        }}</span>
+        <div v-if="transactionError" class="modalActions">
+          <button
+            class="button joy invert"
+            @click="
+              closePurchase()
+              confettiStop()
+            "
+          >
+            Start Over
+          </button>
+        </div>
+      </div>
+      <div v-if="pendingToken && pendingToken === id" class="txContainer">
+        <div class="pendingImage">
+          <img :src="imageUrl" alt="Preview..." />
+        </div>
+
+        <h3 v-if="!transactionId"></h3>
+        <h3 v-if="!transactionId">
+          Once you "Confirm" the request in MetaMask the JOYtoy Machine will
+          begin making your new {{ title }}.
+        </h3>
+        <img
+          v-if="!transactionId"
+          class="loadingAnimation"
+          :src="require(`../assets/3_dot.gif`)"
+        />
+        <h2 v-if="transactionId">
+          Your {{ title }} is being made and will be available in your wallet
+          soon! Check out the transaction status on Etherscan.
+        </h2>
+        <h4 v-if="transactionId">Tx: {{ transactionId }}</h4>
+        <div class="modalActions">
+          <button
+            v-if="transactionId"
+            class="joy button invert"
+            @click="openTracking()"
+          >
+            View Transaction
+          </button>
+          <button
+            v-if="transactionId"
+            class="button joy"
+            @click="
+              closePurchase()
+              confettiStop()
+            "
+          >
+            Got It!
+          </button>
+        </div>
       </div>
     </div>
-    <div v-if="pendingToken && pendingToken === id">
-      <Loading :text="getPendingText(pendingCount)" />
-    </div>
-    <div v-if="transactionId">TransactionId: {{ transactionId }}</div>
   </div>
 </template>
 
@@ -152,6 +191,7 @@ export default {
     const net = this.$config.requiredNetwork
     this.requiredNetwork = net
     console.log("object id", this.id)
+    console.log("transaction", this.transactionId)
   },
 
   methods: {
@@ -164,9 +204,35 @@ export default {
       handleReset: "walletStore/handleReset"
     }),
     getPendingText(pendingCount) {
-      const string = "Pending... "
+      const string = "Your JOYtoy will be done in... "
       const count = pendingCount / 1000 || 0
-      return pendingCount ? `${string} ${count}s` : ""
+      return pendingCount
+        ? `${string} ${count}s`
+        : "Your JOYtoy is being built!"
+    },
+    confettiPop() {
+      this.$confetti.start({
+        particles: [
+          {
+            type: "image",
+            size: 15,
+            url: "https://uploads-ssl.webflow.com/5c73606d331282a7a53d3df3/60cb94ec09a56d66dadc81f3_JOYfetti25px.png"
+          },
+          {
+            type: "heart",
+            size: 30
+          },
+          { type: "circle", size: 3 }
+        ]
+      })
+    },
+    confettiStop() {
+      this.$confetti.stop()
+    },
+    openTracking() {
+      const transactionSlug = this.transactionId.toString()
+      window.open("https://etherscan.io/tx/" + transactionSlug)
+      console.log("slug", transactionSlug)
     }
   }
 }
@@ -178,18 +244,32 @@ export default {
   width: 100%;
   border: 4px solid black;
   border-radius: 50px;
-  h3 {
+  h2 {
+    font-family: "VT323";
+    font-weight: 400;
     margin: 0.5rem 0;
   }
 }
+.spaceContainer {
+  width: 100%;
+  margin: 0;
+}
 .modalActions {
-  margin: 0 -0.75rem -1rem -0.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  margin: 0 0 -1rem 0;
+  min-width: 100%;
 }
-
+@media (min-width: 420px) {
+  .modalActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .tokenStatus {
   display: flex;
   align-items: center;
@@ -227,9 +307,40 @@ export default {
   .previewContent {
     .previewTitle {
       font-weight: bold;
+      text-align: left;
     }
     .subtitle {
       font-size: 0.875rem;
+      text-align: left;
+    }
+  }
+}
+.txContainer {
+  font-family: Sniglet, sans-serif;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  h3 {
+    font-family: "VT323";
+    font-weight: 400;
+    font-size: 24px;
+  }
+  h4 {
+    font-family: "VT323";
+  }
+  #gotIt {
+    margin-top: 30px;
+  }
+  .pendingImage {
+    img {
+      margin: 10px;
+      width: 6rem;
+      height: 6rem;
+      object-fit: contain;
     }
   }
 }

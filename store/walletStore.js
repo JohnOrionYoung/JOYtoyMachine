@@ -89,8 +89,12 @@ export const actions = {
     if (!web3Modal) {
       return
     }
+
     commit("setWalletStatus", "connecting")
-    // const requiredNetwork = this.$config.requiredNetwork;
+    // const requiredNetwork = this.$config.requiredNetwork
+
+    // commit("setRequiredNetwork", requiredNetwork)
+
     web3Modal.clearCachedProvider()
 
     const provider = await web3Modal.connect().catch((error) => {
@@ -108,7 +112,7 @@ export const actions = {
     const providerType = getProviderType(provider)
     commit("setWalletType", providerType)
 
-    const accts = await provider.enable()
+    const accts = await provider.request({ method: "eth_requestAccounts" })
 
     console.log("accts", accts)
     if (!accts[0]) {
@@ -130,30 +134,30 @@ export const actions = {
     commit("setWalletNetwork", connectedNetwork)
   },
 
-  // networkCheck(context, requiredNetwork) {
-  //   if (typeof window.ethereum !== "undefined") {
-  //     const provider = window.ethereum
-  //     const networkVersion = provider.networkVersion
-  //     console.log("provider version", provider)
-  //     console.log("network version", networkVersion)
-  //     const walletNetwork = getConnectedNetwork(networkVersion)
-  //     if (walletNetwork && requiredNetwork !== walletNetwork) {
-  //       if (walletNetwork === "private") {
-  //         return
-  //       }
-  //       if (requiredNetwork === "main") {
-  //         alert(
-  //           `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork}`
-  //         )
-  //       }
-  //       if (requiredNetwork === "rinkeby") {
-  //         alert(
-  //           `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork} to use the staging environment. `
-  //         )
-  //       }
-  //     }
-  //   }
-  // },
+  networkCheck(context, requiredNetwork) {
+    if (typeof window.ethereum !== "undefined") {
+      const provider = window.ethereum
+      const networkVersion = provider.networkVersion
+      console.log("provider version", provider)
+      console.log("network version", networkVersion)
+      const walletNetwork = getConnectedNetwork(networkVersion)
+      if (walletNetwork && requiredNetwork !== walletNetwork) {
+        if (walletNetwork === "private") {
+          return
+        }
+        if (requiredNetwork === "main") {
+          alert(
+            `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork}`
+          )
+        }
+        if (requiredNetwork === "rinkeby") {
+          alert(
+            `Your wallet is connected to ${walletNetwork}. Please connect wallet to ${requiredNetwork} to use the staging environment. `
+          )
+        }
+      }
+    }
+  },
 
   handleReset(context) {
     console.log("resetting: ")
@@ -435,7 +439,7 @@ export const actions = {
       txHash,
       transactionId,
       number,
-      // requiredNetwork,
+      requiredNetwork,
       interval = 1000
     } = props
     const { commit, state } = context
@@ -445,7 +449,7 @@ export const actions = {
       alert("No transactionId")
       return
     }
-    console.log({ num, txHash, transactionId, number })
+    console.log({ num, txHash, transactionId, number, requiredNetwork })
     // await initWeb3(requiredNetwork)
     const web3Read = window.web3Read
     if (!web3Read) {

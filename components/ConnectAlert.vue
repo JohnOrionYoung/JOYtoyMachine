@@ -9,7 +9,12 @@
 
 <style lang="scss">
 .modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 1em 0.75em 1em 0.75em;
+  text-align: center;
   width: 100%;
   border: 4px solid black;
   border-radius: 50px;
@@ -18,11 +23,8 @@
   }
 }
 .modalActions {
-  margin: 0 -0.75rem -1rem -0.75rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  width: 240px;
+  padding-bottom: 10px;
 }
 </style>
 <script>

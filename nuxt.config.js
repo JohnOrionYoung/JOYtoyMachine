@@ -48,7 +48,8 @@ export default {
     // { src: "~/plugins/localStorage.js", ssr: false },
     { src: "~plugins/vue-js-modal.js" },
     { src: "~plugins/web3ModalPlugin.js", mode: "client" },
-    { src: "~plugins/web3plugin.js", mode: "client" }
+    { src: "~plugins/web3plugin.js", mode: "client" },
+    { src: "~/plugins/vue-confetti.js", mode: "client" }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

@@ -262,7 +262,7 @@ export default {
   margin: 0 0 -1rem 0;
   min-width: 100%;
 }
-@media (min-width: 380px) {
+@media (min-width: 420px) {
   .modalActions {
     display: flex;
     flex-direction: row;

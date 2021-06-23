@@ -19,6 +19,7 @@
         <h2>You sure?</h2>
         <div class="modalActions">
           <button
+            id="modalactionsYN"
             class="button joy"
             @click="
               purchaseToken({
@@ -34,6 +35,7 @@
           </button>
 
           <button
+            id="modalactionsYN"
             class="button joy invert"
             @click="
               {
@@ -253,12 +255,20 @@ export default {
   margin: 0;
 }
 .modalActions {
-  margin: 0 0 -1rem 0;
-  min-width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 0 -1rem 0;
+  min-width: 100%;
+}
+@media (min-width: 380px) {
+  .modalActions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .tokenStatus {
   display: flex;

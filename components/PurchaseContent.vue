@@ -105,6 +105,7 @@
             @click="
               closePurchase()
               confettiStop()
+              handleReset()
             "
           >
             Start Over

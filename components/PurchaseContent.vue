@@ -161,6 +161,8 @@
             @click="
               closePurchase()
               confettiStop()
+              transactionClear()
+              handleReset()
             "
           >
             Got It!
@@ -252,7 +254,7 @@ export default {
       console.log("slug", transactionSlug)
     },
     transactionClear() {
-      this.transactionOkay = true
+      this.transactionOkay = !this.transactionOkay
     }
   }
 }

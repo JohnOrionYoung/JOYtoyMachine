@@ -116,21 +116,16 @@
         <div class="pendingImage">
           <img :src="imageUrl" alt="Preview..." />
         </div>
-
-        <h3 v-if="!transactionId && transactionOkay === false"></h3>
-        <h3 v-if="!transactionId && transactionOkay === false">
+        <h3 v-if="transactionOkay === false">
           Once you "Confirm" the request in MetaMask the JOYtoy Machine will
           begin making your new {{ title }}. It could take a few minutes to spin
           up. Please enjoy this moment for yourself!
         </h3>
-        <div
-          v-if="!transactionId && transactionOkay === false"
-          class="vidPlayer"
-        >
+        <div v-if="transactionOkay === false" class="vidPlayer">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/WxXMpjgYTno?autoplay=1&playlist=WxXMpjgYTno&loop=1&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&controls=0&disablekb=1"
-            width="224"
-            height="126"
+            src="https://www.youtube-nocookie.com/embed/ZfBbVV7zXco?autoplay=1&playlist=ZfBbVV7zXco&loop=1&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&controls=0&disablekb=1"
+            width="200"
+            height="200.5"
             frameborder="0"
           ></iframe>
         </div>
@@ -235,12 +230,12 @@ export default {
         particles: [
           {
             type: "image",
-            size: 15,
+            size: 25,
             url: "https://uploads-ssl.webflow.com/5c73606d331282a7a53d3df3/60cb94ec09a56d66dadc81f3_JOYfetti25px.png"
           },
           {
             type: "heart",
-            size: 30
+            size: 20
           },
           { type: "circle", size: 3 }
         ]
@@ -369,8 +364,9 @@ export default {
 }
 .vidPlayer {
   margin: 10px 0 10px 0;
-  border: 4px solid black;
+  border: 5px solid black;
   overflow: hidden;
-  height: 126px;
+  height: 200px;
+  height: 210px;
 }
 </style>

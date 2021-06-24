@@ -119,13 +119,17 @@
         <h3 v-if="!transactionId"></h3>
         <h3 v-if="!transactionId">
           Once you "Confirm" the request in MetaMask the JOYtoy Machine will
-          begin making your new {{ title }}.
+          begin making your new {{ title }}. It could take a few minutes to spin
+          up. Please enjoy this moment for yourself!
         </h3>
-        <img
-          v-if="!transactionId"
-          class="loadingAnimation"
-          :src="require(`../assets/3_dot.gif`)"
-        />
+        <div v-if="!transactionId" class="vidPlayer">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/WxXMpjgYTno?autoplay=1&loop=1&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&controls=0&disablekb=1"
+            width="224"
+            height="126"
+            frameborder="0"
+          ></iframe>
+        </div>
         <h2 v-if="transactionId">
           Your {{ title }} is being made and will be available in your wallet
           soon! Check out the transaction status on Etherscan.
@@ -343,5 +347,11 @@ export default {
       object-fit: contain;
     }
   }
+}
+.vidPlayer {
+  margin: 10px 0 10px 0;
+  border: 4px solid black;
+  overflow: hidden;
+  height: 126px;
 }
 </style>

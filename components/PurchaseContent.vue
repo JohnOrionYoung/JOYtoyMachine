@@ -116,35 +116,47 @@
           <img :src="imageUrl" alt="Preview..." />
         </div>
 
-        <h3 v-if="!transactionId"></h3>
-        <h3 v-if="!transactionId">
+        <h3 v-if="!transactionId && transactionOkay === false"></h3>
+        <h3 v-if="!transactionId && transactionOkay === false">
           Once you "Confirm" the request in MetaMask the JOYtoy Machine will
           begin making your new {{ title }}. It could take a few minutes to spin
           up. Please enjoy this moment for yourself!
         </h3>
-        <div v-if="!transactionId" class="vidPlayer">
+        <div
+          v-if="!transactionId && transactionOkay === false"
+          class="vidPlayer"
+        >
           <iframe
-            src="https://www.youtube-nocookie.com/embed/WxXMpjgYTno?autoplay=1&loop=1&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&controls=0&disablekb=1"
+            src="https://www.youtube-nocookie.com/embed/WxXMpjgYTno?autoplay=1&playlist=WxXMpjgYTno&loop=1&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&controls=0&disablekb=1"
             width="224"
             height="126"
             frameborder="0"
           ></iframe>
         </div>
-        <h2 v-if="transactionId">
+        <button
+          v-if="transactionId && transactionOkay === false"
+          class="button joy"
+          @click="transactionClear()"
+        >
+          Continue
+        </button>
+        <h2 v-if="transactionId && transactionOkay === true">
           Your {{ title }} is being made and will be available in your wallet
           soon! Check out the transaction status on Etherscan.
         </h2>
-        <h4 v-if="transactionId">Tx: {{ transactionId }}</h4>
+        <h4 v-if="transactionId && transactionOkay === true">
+          Tx: {{ transactionId }}
+        </h4>
         <div class="modalActions">
           <button
-            v-if="transactionId"
+            v-if="transactionId && transactionOkay === true"
             class="joy button invert"
             @click="openTracking()"
           >
             View Transaction
           </button>
           <button
-            v-if="transactionId"
+            v-if="transactionId && transactionOkay === true"
             class="button joy"
             @click="
               closePurchase()
@@ -174,7 +186,8 @@ export default {
   },
   data() {
     return {
-      requiredNetwork: ""
+      requiredNetwork: "",
+      transactionOkay: false
       // desiredNetwork: "main"
       // showAddInterface: false,
       // customContractId: '',
@@ -237,6 +250,9 @@ export default {
       const transactionSlug = this.transactionId.toString()
       window.open("https://etherscan.io/tx/" + transactionSlug)
       console.log("slug", transactionSlug)
+    },
+    transactionClear() {
+      this.transactionOkay = true
     }
   }
 }

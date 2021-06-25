@@ -364,7 +364,6 @@ export default {
 }
 .vidPlayer {
   margin: 10px 0 10px 0;
-  border: 5px solid black;
   overflow: hidden;
   height: 200px;
   height: 210px;

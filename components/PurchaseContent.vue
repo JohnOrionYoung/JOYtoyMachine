@@ -105,6 +105,7 @@
             @click="
               closePurchase()
               confettiStop()
+              handleReset()
             "
           >
             Start Over
@@ -115,36 +116,49 @@
         <div class="pendingImage">
           <img :src="imageUrl" alt="Preview..." />
         </div>
-
-        <h3 v-if="!transactionId"></h3>
-        <h3 v-if="!transactionId">
+        <h3 v-if="transactionOkay === false">
           Once you "Confirm" the request in MetaMask the JOYtoy Machine will
-          begin making your new {{ title }}.
+          begin making your new {{ title }}. It could take a few minutes to spin
+          up. Please enjoy this moment for yourself!
         </h3>
-        <img
-          v-if="!transactionId"
-          class="loadingAnimation"
-          :src="require(`../assets/3_dot.gif`)"
-        />
-        <h2 v-if="transactionId">
+        <div v-if="transactionOkay === false" class="vidPlayer">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/ZfBbVV7zXco?autoplay=1&playlist=ZfBbVV7zXco&loop=1&modestbranding=1&showinfo=0&rel=0&cc_load_policy=1&iv_load_policy=3&theme=light&fs=0&color=white&controls=0&disablekb=1"
+            width="200"
+            height="200.5"
+            frameborder="0"
+          ></iframe>
+        </div>
+        <button
+          v-if="transactionId && transactionOkay === false"
+          class="button joy"
+          @click="transactionClear()"
+        >
+          Continue
+        </button>
+        <h2 v-if="transactionId && transactionOkay === true">
           Your {{ title }} is being made and will be available in your wallet
           soon! Check out the transaction status on Etherscan.
         </h2>
-        <h4 v-if="transactionId">Tx: {{ transactionId }}</h4>
+        <h4 v-if="transactionId && transactionOkay === true">
+          Tx: {{ transactionId }}
+        </h4>
         <div class="modalActions">
           <button
-            v-if="transactionId"
+            v-if="transactionId && transactionOkay === true"
             class="joy button invert"
             @click="openTracking()"
           >
             View Transaction
           </button>
           <button
-            v-if="transactionId"
+            v-if="transactionId && transactionOkay === true"
             class="button joy"
             @click="
               closePurchase()
               confettiStop()
+              transactionClear()
+              handleReset()
             "
           >
             Got It!
@@ -170,7 +184,8 @@ export default {
   },
   data() {
     return {
-      requiredNetwork: ""
+      requiredNetwork: "",
+      transactionOkay: false
       // desiredNetwork: "main"
       // showAddInterface: false,
       // customContractId: '',
@@ -215,12 +230,12 @@ export default {
         particles: [
           {
             type: "image",
-            size: 15,
+            size: 25,
             url: "https://uploads-ssl.webflow.com/5c73606d331282a7a53d3df3/60cb94ec09a56d66dadc81f3_JOYfetti25px.png"
           },
           {
             type: "heart",
-            size: 30
+            size: 20
           },
           { type: "circle", size: 3 }
         ]
@@ -233,6 +248,9 @@ export default {
       const transactionSlug = this.transactionId.toString()
       window.open("https://etherscan.io/tx/" + transactionSlug)
       console.log("slug", transactionSlug)
+    },
+    transactionClear() {
+      this.transactionOkay = !this.transactionOkay
     }
   }
 }
@@ -343,5 +361,11 @@ export default {
       object-fit: contain;
     }
   }
+}
+.vidPlayer {
+  margin: 10px 0 10px 0;
+  overflow: hidden;
+  height: 200px;
+  height: 210px;
 }
 </style>

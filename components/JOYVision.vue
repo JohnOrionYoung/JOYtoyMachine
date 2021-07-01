@@ -26,7 +26,7 @@
             ar-scale="auto"
             environment-image="neutral"
           >
-            <portal :destination="tokenId">
+            <portal destination="firstButton">
               <button slot="ar-button" class="launchAR">Enter JOYvision</button>
             </portal>
           </model-viewer>

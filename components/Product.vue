@@ -57,6 +57,7 @@
           <button class="joy-vision-btn" @click="triggerVision">
             JOYvision
           </button>
+          <portal-target :name="tokenId"></portal-target>
         </div>
         <div class="productActions">
           <button

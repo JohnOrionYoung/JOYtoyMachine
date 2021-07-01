@@ -25,10 +25,11 @@
             ar-modes="webxr scene-viewer quick-look"
             ar-scale="auto"
             environment-image="neutral"
-            ><button slot="ar-button" class="launchAR">
-              Enter JOYvision
-            </button></model-viewer
           >
+            <portal :destination="tokenId">
+              <button slot="ar-button" class="launchAR">Enter JOYvision</button>
+            </portal>
+          </model-viewer>
         </div>
         <div v-if="tokenId === 200">
           <model-viewer

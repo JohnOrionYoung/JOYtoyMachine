@@ -247,7 +247,6 @@ export default {
     openTracking() {
       const transactionSlug = this.transactionId.toString()
       window.open("https://etherscan.io/tx/" + transactionSlug)
-      console.log("slug", transactionSlug)
     },
     transactionClear() {
       this.transactionOkay = !this.transactionOkay

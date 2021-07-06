@@ -49,7 +49,8 @@ export default {
     { src: "~plugins/vue-js-modal.js" },
     { src: "~plugins/web3ModalPlugin.js", mode: "client" },
     { src: "~plugins/web3plugin.js", mode: "client" },
-    { src: "~/plugins/vue-confetti.js", mode: "client" }
+    { src: "~/plugins/vue-confetti.js", mode: "client" },
+    { src: "~/plugins/deviceDetector.js", mode: "client" }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -70,9 +71,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
-    "@nuxtjs/pwa",
-    // https://github.com/LinusBorg/portal-vue
-    "portal-vue/nuxt"
+    "@nuxtjs/pwa"
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

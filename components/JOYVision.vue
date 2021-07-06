@@ -26,9 +26,7 @@
             ar-scale="auto"
             environment-image="neutral"
           >
-            <portal destination="firstButton">
-              <button slot="ar-button" class="launchAR">Enter JOYvision</button>
-            </portal>
+            <button slot="ar-button" class="launchAR">Enter JOYvision</button>
           </model-viewer>
         </div>
         <div v-if="tokenId === 200">

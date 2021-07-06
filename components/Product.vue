@@ -15,14 +15,8 @@
             :src="require(`../assets/` + tokenData.id + `.gif`)"
           />
         </div>
-
-        <!-- <img
-            v-if="imageData"
-            :src="`https://gateway.pinata.cloud/ipfs/${imageData.artworkHash}`"
-          /> -->
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
-          <!-- <p class="description small">{{ tokenData.feature }}</p> -->
           <p class="description small">{{ tokenData.description }}</p>
           <div class="metaRow">
             <span class="metaLabel">JOYtoy No.</span>
@@ -54,10 +48,27 @@
           </div>
         </div>
         <div class="joy-vision-container">
-          <button class="joy-vision-btn" @click="triggerVision">
+          <a
+            v-if="this.$device.ios === true"
+            class="joy-vision-btn"
+            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.usdz"
+          >
+            JOYvision
+          </a>
+          <a
+            v-if="this.$device.android === true"
+            class="joy-vision-btn"
+            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.usdz"
+          >
+            JOYvision
+          </a>
+          <button
+            v-if="this.$device.mobile === false"
+            class="joy-vision-btn"
+            @click="triggerVision"
+          >
             JOYvision
           </button>
-          <portal-target name="firstButton"></portal-target>
         </div>
         <div class="productActions">
           <button

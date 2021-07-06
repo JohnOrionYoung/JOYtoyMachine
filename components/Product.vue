@@ -56,7 +56,7 @@
             JOYvision
           </a>
           <a
-            v-if="this.$device.ios === true && tokenData.id === 1"
+            v-if="this.$device.android === true && tokenData.id === 1"
             class="joy-vision-btn"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.glb"
           >
@@ -70,7 +70,7 @@
             JOYvision
           </a>
           <a
-            v-if="this.$device.ios === true && tokenData.id === 200"
+            v-if="this.$device.android === true && tokenData.id === 200"
             class="joy-vision-btn"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy2/JOYtoy2.glb"
           >
@@ -84,7 +84,7 @@
             JOYvision
           </a>
           <a
-            v-if="this.$device.ios === true && tokenData.id === 305"
+            v-if="this.$device.android === true && tokenData.id === 305"
             class="joy-vision-btn"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy3/JOYtoy3.glb"
           >
@@ -98,7 +98,7 @@
             JOYvision
           </a>
           <a
-            v-if="this.$device.ios === true && tokenData.id === 500"
+            v-if="this.$device.android === true && tokenData.id === 500"
             class="joy-vision-btn"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy4/JOYtoy4.glb"
           >
@@ -112,7 +112,7 @@
             JOYvision
           </a>
           <a
-            v-if="this.$device.ios === true && tokenData.id === 900"
+            v-if="this.$device.android === true && tokenData.id === 900"
             class="joy-vision-btn"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy5/JOYtoy5.glb"
           >
@@ -126,7 +126,7 @@
             JOYvision
           </a>
           <a
-            v-if="this.$device.ios === true && tokenData.id === 981"
+            v-if="this.$device.android === true && tokenData.id === 981"
             class="joy-vision-btn"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy6/JOYtoy6.glb"
           >
@@ -140,7 +140,7 @@
             JOYvision
           </a>
           <a
-            v-if="this.$device.ios === true && tokenData.id === 1022"
+            v-if="this.$device.android === true && tokenData.id === 1022"
             class="joy-vision-btn"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.glb"
           >

@@ -224,7 +224,18 @@
             JOYvision
           </a>
           <button
-            v-if="this.$device.mobile === false"
+            v-if="
+              !this.$device.mobile &&
+              !this.$device.ios &&
+              !this.$device.iphone &&
+              !this.$device.iphoneX &&
+              !this.$device.iphoneXR &&
+              !this.$device.iphoneXSMax &&
+              !this.$device.ipod &&
+              !this.$device.ipad &&
+              !this.$device.android &&
+              !this.$device.androidPhone
+            "
             class="joy-vision-btn"
             @click="triggerVision"
           >

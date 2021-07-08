@@ -388,7 +388,7 @@ export default {
       anchor.click()
     },
     mapTokenDataIds(id) {
-      const joyToyNo = [1, 200, 305, 500, 905, 981, 1022].indexOf(id) + 1
+      const joyToyNo = [1, 200, 305, 500, 900, 981, 1022].indexOf(id) + 1
       return joyToyNo
     }
   }

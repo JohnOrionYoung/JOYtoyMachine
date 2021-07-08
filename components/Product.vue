@@ -48,195 +48,46 @@
           </div>
         </div>
         <div class="joy-vision-container">
-          <a
+          <button
             v-if="
-              (this.$device.ios && tokenData.id === 1) ||
-              (this.$device.iphone && tokenData.id === 1) ||
-              (this.$device.iphoneX && tokenData.id === 1) ||
-              (this.$device.iphoneXR && tokenData.id === 1) ||
-              (this.$device.iphoneXSMax && tokenData.id === 1) ||
-              (this.$device.ipod && tokenData.id === 1) ||
-              (this.$device.ipad && tokenData.id === 1)
+              this.$device.ios ||
+              this.$device.iphone ||
+              this.$device.iphoneX ||
+              this.$device.iphoneXR ||
+              this.$device.iphoneXSMax ||
+              this.$device.ipod ||
+              this.$device.ipad
             "
             class="joy-vision-btn"
             rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.usdz"
+            @click="
+              triggerMobileVision(
+                'https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '.usdz'
+              )
+            "
           >
             JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.android && tokenData.id === 1) ||
-              (this.$device.androidPhone && tokenData.id === 1)
-            "
+          </button>
+          <button
+            v-if="this.$device.android || this.$device.androidPhone"
             class="joy-vision-btn"
             rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.glb"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.ios && tokenData.id === 200) ||
-              (this.$device.iphone && tokenData.id === 200) ||
-              (this.$device.iphoneX && tokenData.id === 200) ||
-              (this.$device.iphoneXR && tokenData.id === 200) ||
-              (this.$device.iphoneXSMax && tokenData.id === 200) ||
-              (this.$device.ipod && tokenData.id === 200) ||
-              (this.$device.ipad && tokenData.id === 200)
+            @click="
+              triggerMobileVision(
+                'https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '.glb'
+              )
             "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy2/JOYtoy2.usdz"
           >
             JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.android && tokenData.id === 200) ||
-              (this.$device.androidPhone && tokenData.id === 200)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy2/JOYtoy2.glb"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.ios && tokenData.id === 305) ||
-              (this.$device.iphone && tokenData.id === 305) ||
-              (this.$device.iphoneX && tokenData.id === 305) ||
-              (this.$device.iphoneXR && tokenData.id === 305) ||
-              (this.$device.iphoneXSMax && tokenData.id === 305) ||
-              (this.$device.ipod && tokenData.id === 305) ||
-              (this.$device.ipad && tokenData.id === 305)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy3/JOYtoy3.usdz"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.android && tokenData.id === 305) ||
-              (this.$device.androidPhone && tokenData.id === 305)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy3/JOYtoy3.glb"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.ios && tokenData.id === 500) ||
-              (this.$device.iphone && tokenData.id === 500) ||
-              (this.$device.iphoneX && tokenData.id === 500) ||
-              (this.$device.iphoneXR && tokenData.id === 500) ||
-              (this.$device.iphoneXSMax && tokenData.id === 500) ||
-              (this.$device.ipod && tokenData.id === 500) ||
-              (this.$device.ipad && tokenData.id === 500)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy4/JOYtoy4.usdz"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.android && tokenData.id === 500) ||
-              (this.$device.androidPhone && tokenData.id === 500)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy/JOYtoy4.glb"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.ios && tokenData.id === 900) ||
-              (this.$device.iphone && tokenData.id === 900) ||
-              (this.$device.iphoneX && tokenData.id === 900) ||
-              (this.$device.iphoneXR && tokenData.id === 900) ||
-              (this.$device.iphoneXSMax && tokenData.id === 900) ||
-              (this.$device.ipod && tokenData.id === 900) ||
-              (this.$device.ipad && tokenData.id === 900)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy5/JOYtoy5.usdz"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.android && tokenData.id === 900) ||
-              (this.$device.androidPhone && tokenData.id === 900)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy5/JOYtoy5.glb"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.ios && tokenData.id === 981) ||
-              (this.$device.iphone && tokenData.id === 981) ||
-              (this.$device.iphoneX && tokenData.id === 981) ||
-              (this.$device.iphoneXR && tokenData.id === 981) ||
-              (this.$device.iphoneXSMax && tokenData.id === 981) ||
-              (this.$device.ipod && tokenData.id === 981) ||
-              (this.$device.ipad && tokenData.id === 981)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy6/JOYtoy6.usdz"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.android && tokenData.id === 981) ||
-              (this.$device.androidPhone && tokenData.id === 981)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy6/JOYtoy6.glb"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.ios && tokenData.id === 1022) ||
-              (this.$device.iphone && tokenData.id === 1022) ||
-              (this.$device.iphoneX && tokenData.id === 1022) ||
-              (this.$device.iphoneXR && tokenData.id === 1022) ||
-              (this.$device.iphoneXSMax && tokenData.id === 1022) ||
-              (this.$device.ipod && tokenData.id === 1022) ||
-              (this.$device.ipad && tokenData.id === 1022)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.usdz"
-          >
-            JOYvision
-          </a>
-          <a
-            v-if="
-              (this.$device.android && tokenData.id === 1022) ||
-              (this.$device.androidPhone && tokenData.id === 1022)
-            "
-            class="joy-vision-btn"
-            rel="ar"
-            href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.glb"
-          >
-            JOYvision
-          </a>
+          </button>
           <button
             v-if="
               !this.$device.mobile &&
@@ -251,15 +102,7 @@
               !this.$device.androidPhone
             "
             class="joy-vision-btn"
-            @click="
-              triggerVision(
-                'https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy' +
-                  mapTokenDataIds(tokenData.id) +
-                  '/JOYtoy' +
-                  mapTokenDataIds(tokenData.id) +
-                  '.glb'
-              )
-            "
+            @click="triggerVision()"
           >
             JOYvision
           </button>
@@ -542,11 +385,7 @@ export default {
       this.$modal.hide(`info-modal${this.id}`)
     },
     triggerVision(usdzSrc) {
-      const anchor = document.createElement("a")
-      anchor.setAttribute("rel", "ar")
-      anchor.appendChild(document.createElement("img"))
-      anchor.setAttribute("href", usdzSrc)
-      anchor.click()
+      this.$modal.show(`vision-modal${this.id}`)
     },
     closeVision() {
       this.$modal.hide(`vision-modal${this.id}`)
@@ -554,8 +393,15 @@ export default {
     openSeaLink() {
       window.open("https://opensea.io/collection/joyworld-joytoys")
     },
+    triggerMobileVision(usdzSrc) {
+      const anchor = document.createElement("a")
+      anchor.setAttribute("rel", "ar")
+      anchor.appendChild(document.createElement("img"))
+      anchor.setAttribute("href", usdzSrc)
+      anchor.click()
+    },
     mapTokenDataIds(id) {
-      const joyToyNo = [1, 200, 305, 500, 905, 981, 1022].indexOf(id)
+      const joyToyNo = [1, 200, 305, 500, 905, 981, 1022].indexOf(id) + 1
       return joyToyNo
     }
   }

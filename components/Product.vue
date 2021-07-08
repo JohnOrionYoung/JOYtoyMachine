@@ -59,6 +59,7 @@
               (this.$device.ipad && tokenData.id === 1)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.usdz"
           >
             JOYvision
@@ -69,6 +70,7 @@
               (this.$device.androidPhone && tokenData.id === 1)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.glb"
           >
             JOYvision
@@ -84,6 +86,7 @@
               (this.$device.ipad && tokenData.id === 200)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy2/JOYtoy2.usdz"
           >
             JOYvision
@@ -94,6 +97,7 @@
               (this.$device.androidPhone && tokenData.id === 200)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy2/JOYtoy2.glb"
           >
             JOYvision
@@ -109,6 +113,7 @@
               (this.$device.ipad && tokenData.id === 305)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy3/JOYtoy3.usdz"
           >
             JOYvision
@@ -119,6 +124,7 @@
               (this.$device.androidPhone && tokenData.id === 305)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy3/JOYtoy3.glb"
           >
             JOYvision
@@ -134,6 +140,7 @@
               (this.$device.ipad && tokenData.id === 500)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy4/JOYtoy4.usdz"
           >
             JOYvision
@@ -144,6 +151,7 @@
               (this.$device.androidPhone && tokenData.id === 500)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy/JOYtoy4.glb"
           >
             JOYvision
@@ -159,6 +167,7 @@
               (this.$device.ipad && tokenData.id === 900)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy5/JOYtoy5.usdz"
           >
             JOYvision
@@ -169,6 +178,7 @@
               (this.$device.androidPhone && tokenData.id === 900)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy5/JOYtoy5.glb"
           >
             JOYvision
@@ -184,6 +194,7 @@
               (this.$device.ipad && tokenData.id === 981)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy6/JOYtoy6.usdz"
           >
             JOYvision
@@ -194,6 +205,7 @@
               (this.$device.androidPhone && tokenData.id === 981)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy6/JOYtoy6.glb"
           >
             JOYvision
@@ -209,6 +221,7 @@
               (this.$device.ipad && tokenData.id === 1022)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.usdz"
           >
             JOYvision
@@ -219,6 +232,7 @@
               (this.$device.androidPhone && tokenData.id === 1022)
             "
             class="joy-vision-btn"
+            rel="ar"
             href="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.glb"
           >
             JOYvision
@@ -237,7 +251,15 @@
               !this.$device.androidPhone
             "
             class="joy-vision-btn"
-            @click="triggerVision"
+            @click="
+              triggerVision(
+                'https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '.glb'
+              )
+            "
           >
             JOYvision
           </button>
@@ -449,14 +471,7 @@ export default {
       requiredNetwork: null,
       readStatus: "",
       tokenData: null,
-      imageData: null,
-      1: 1,
-      2: 200,
-      3: 305,
-      4: 500,
-      5: 900,
-      6: 981,
-      7: 1022
+      imageData: null
     }
   },
   computed: {
@@ -526,14 +541,22 @@ export default {
     closePurchase() {
       this.$modal.hide(`info-modal${this.id}`)
     },
-    triggerVision() {
-      this.$modal.show(`vision-modal${this.id}`)
+    triggerVision(usdzSrc) {
+      const anchor = document.createElement("a")
+      anchor.setAttribute("rel", "ar")
+      anchor.appendChild(document.createElement("img"))
+      anchor.setAttribute("href", usdzSrc)
+      anchor.click()
     },
     closeVision() {
       this.$modal.hide(`vision-modal${this.id}`)
     },
     openSeaLink() {
       window.open("https://opensea.io/collection/joyworld-joytoys")
+    },
+    mapTokenDataIds(id) {
+      const joyToyNo = [1, 200, 305, 500, 905, 981, 1022].indexOf(id)
+      return joyToyNo
     }
   }
 }

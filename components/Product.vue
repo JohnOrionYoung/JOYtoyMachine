@@ -15,24 +15,12 @@
             :src="require(`../assets/` + tokenData.id + `.gif`)"
           />
         </div>
-
-        <!-- <img
-            v-if="imageData"
-            :src="`https://gateway.pinata.cloud/ipfs/${imageData.artworkHash}`"
-          /> -->
         <div class="productMeta">
           <h4>{{ tokenData.title }}</h4>
-          <!-- <p class="description small">{{ tokenData.feature }}</p> -->
           <p class="description small">{{ tokenData.description }}</p>
           <div class="metaRow">
             <span class="metaLabel">JOYtoy No.</span>
-            <span v-if="tokenData.id === 1" class="metaValue">01</span>
-            <span v-if="tokenData.id === 200" class="metaValue">02</span>
-            <span v-if="tokenData.id === 305" class="metaValue">03</span>
-            <span v-if="tokenData.id === 500" class="metaValue">04</span>
-            <span v-if="tokenData.id === 900" class="metaValue">05</span>
-            <span v-if="tokenData.id === 981" class="metaValue">06</span>
-            <span v-if="tokenData.id === 1022" class="metaValue">07</span>
+            <span class="metaValue">0{{ mapTokenDataIds(tokenData.id) }}</span>
           </div>
           <div class="metaRow">
             <span class="metaLabel">Total</span>
@@ -54,7 +42,62 @@
           </div>
         </div>
         <div class="joy-vision-container">
-          <button class="joy-vision-btn" @click="triggerVision">
+          <button
+            v-if="
+              this.$device.ios ||
+              this.$device.iphone ||
+              this.$device.iphoneX ||
+              this.$device.iphoneXR ||
+              this.$device.iphoneXSMax ||
+              this.$device.ipod ||
+              this.$device.ipad
+            "
+            class="joy-vision-btn"
+            rel="ar"
+            @click="
+              triggerMobileVision(
+                'https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '.usdz'
+              )
+            "
+          >
+            JOYvision
+          </button>
+          <button
+            v-if="this.$device.android || this.$device.androidPhone"
+            class="joy-vision-btn"
+            rel="ar"
+            @click="
+              triggerMobileVision(
+                'https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '/JOYtoy' +
+                  mapTokenDataIds(tokenData.id) +
+                  '.glb'
+              )
+            "
+          >
+            JOYvision
+          </button>
+          <button
+            v-if="
+              !this.$device.mobile &&
+              !this.$device.ios &&
+              !this.$device.iphone &&
+              !this.$device.iphoneX &&
+              !this.$device.iphoneXR &&
+              !this.$device.iphoneXSMax &&
+              !this.$device.ipod &&
+              !this.$device.ipad &&
+              !this.$device.android &&
+              !this.$device.androidPhone
+            "
+            class="joy-vision-btn"
+            @click="triggerVision()"
+          >
             JOYvision
           </button>
         </div>
@@ -301,13 +344,6 @@ export default {
         return
       }
       this.readStatus = "working"
-
-      // const templateData = await this.readTemplate({
-      //   tokenId: this.displayid,
-      //   requiredNetwork: this.requiredNetwork,
-      //   axios: this.$axios
-      // })
-      // console.log("templateData", templateData)
       const data = await this.readToken({
         tokenId: this.displayid,
         requiredNetwork
@@ -335,7 +371,7 @@ export default {
     closePurchase() {
       this.$modal.hide(`info-modal${this.id}`)
     },
-    triggerVision() {
+    triggerVision(usdzSrc) {
       this.$modal.show(`vision-modal${this.id}`)
     },
     closeVision() {
@@ -343,6 +379,17 @@ export default {
     },
     openSeaLink() {
       window.open("https://opensea.io/collection/joyworld-joytoys")
+    },
+    triggerMobileVision(usdzSrc) {
+      const anchor = document.createElement("a")
+      anchor.setAttribute("rel", "ar")
+      anchor.appendChild(document.createElement("img"))
+      anchor.setAttribute("href", usdzSrc)
+      anchor.click()
+    },
+    mapTokenDataIds(id) {
+      const joyToyNo = [1, 200, 305, 500, 905, 981, 1022].indexOf(id) + 1
+      return joyToyNo
     }
   }
 }

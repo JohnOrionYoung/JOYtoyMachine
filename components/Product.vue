@@ -20,13 +20,7 @@
           <p class="description small">{{ tokenData.description }}</p>
           <div class="metaRow">
             <span class="metaLabel">JOYtoy No.</span>
-            <span v-if="tokenData.id === 1" class="metaValue">01</span>
-            <span v-if="tokenData.id === 200" class="metaValue">02</span>
-            <span v-if="tokenData.id === 305" class="metaValue">03</span>
-            <span v-if="tokenData.id === 500" class="metaValue">04</span>
-            <span v-if="tokenData.id === 900" class="metaValue">05</span>
-            <span v-if="tokenData.id === 981" class="metaValue">06</span>
-            <span v-if="tokenData.id === 1022" class="metaValue">07</span>
+            <span class="metaValue">0{{ mapTokenDataIds(tokenData.id) }}</span>
           </div>
           <div class="metaRow">
             <span class="metaLabel">Total</span>
@@ -350,13 +344,6 @@ export default {
         return
       }
       this.readStatus = "working"
-
-      // const templateData = await this.readTemplate({
-      //   tokenId: this.displayid,
-      //   requiredNetwork: this.requiredNetwork,
-      //   axios: this.$axios
-      // })
-      // console.log("templateData", templateData)
       const data = await this.readToken({
         tokenId: this.displayid,
         requiredNetwork

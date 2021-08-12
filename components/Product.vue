@@ -12,7 +12,9 @@
         <div class="productImage">
           <img
             v-if="tokenData.id"
-            :src="require(`../assets/` + tokenData.id + `.gif`)"
+            :src="
+              require(`../assets/` + mapTokenDataIds(tokenData.id) + `.gif`)
+            "
           />
         </div>
         <div class="productMeta">
@@ -36,6 +38,9 @@
             <span v-else-if="tokenData.id === 981" class="metaValue">
               Bubble Gum Borg
             </span>
+            <span v-else-if="tokenData.id === 1699" class="metaValue"
+              >daWublr</span
+            >
             <span v-else class="metaValue">{{
               tokenData.collaborators ? tokenData.collaborators : "100% JOY"
             }}</span>
@@ -156,7 +161,9 @@
             :price="`${tokenData.price} ETH`"
             :price-wei="tokenData.priceWei"
             :title="tokenData.title"
-            :image-url="require(`../assets/` + tokenData.id + `.gif`)"
+            :image-url="
+              require(`../assets/` + mapTokenDataIds(tokenData.id) + `.gif`)
+            "
           />
         </modal>
         <modal
@@ -388,7 +395,7 @@ export default {
       anchor.click()
     },
     mapTokenDataIds(id) {
-      const joyToyNo = [1, 200, 305, 500, 900, 981, 1022].indexOf(id) + 1
+      const joyToyNo = [1, 200, 305, 500, 900, 981, 1022, 1699].indexOf(id) + 1
       return joyToyNo
     }
   }

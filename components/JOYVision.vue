@@ -173,6 +173,30 @@
             </button></model-viewer
           >
         </div>
+        <div v-if="tokenId === 1699">
+          <model-viewer
+            class="viewerStyle"
+            alt="JOYtoy"
+            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.glb"
+            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.usdz"
+            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.png"
+            preload
+            reveal-when-loaded
+            camera-controls
+            auto-rotate
+            autoplay
+            exposure="1.2"
+            shadow-intensity=".0"
+            shadow-softness=".0"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            ar-scale="auto"
+            environment-image="neutral"
+            ><button slot="ar-button" class="launchAR">
+              Enter JOYvision
+            </button></model-viewer
+          >
+        </div>
       </div>
       <button
         class="closeVision"

@@ -10,9 +10,9 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.usdz"
-            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy1/JOYtoy1.png"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy1/JOYtoy1.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy1/JOYtoy1.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy1/JOYtoy1.png"
             preload
             reveal-when-loaded
             camera-controls
@@ -33,9 +33,9 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy2/JOYtoy2.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy2/JOYtoy2.usdz"
-            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy2/JOYtoy2.png"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy2/JOYtoy2.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy2/JOYtoy2.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy2/JOYtoy2.png"
             preload
             reveal-when-loaded
             camera-controls
@@ -57,9 +57,9 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy3/JOYtoy3.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy3/JOYtoy3.usdz"
-            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy3/JOYtoy3.png"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy3/JOYtoy3.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy3/JOYtoy3.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy3/JOYtoy3.png"
             preload
             reveal-when-loaded
             camera-controls
@@ -81,9 +81,9 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy4/JOYtoy4.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy4/JOYtoy4.usdz"
-            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy4/JOYtoy4.png"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy4/JOYtoy4.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy4/JOYtoy4.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy4/JOYtoy4.png"
             preload
             reveal-when-loaded
             camera-controls
@@ -105,9 +105,9 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy5/JOYtoy5.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy5/JOYtoy5.usdz"
-            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy5/JOYtoy5.png"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy5/JOYtoy5.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy5/JOYtoy5.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy5/JOYtoy5.png"
             preload
             reveal-when-loaded
             camera-controls
@@ -129,9 +129,9 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy6/JOYtoy6.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy6/JOYtoy6.usdz"
-            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy6/JOYtoy6.png"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy6/JOYtoy6.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy6/JOYtoy6.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy6/JOYtoy6.png"
             preload
             reveal-when-loaded
             camera-controls
@@ -153,9 +153,9 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.usdz"
-            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy7/JOYtoy7.png"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy7/JOYtoy7.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy7/JOYtoy7.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy7/JOYtoy7.png"
             preload
             reveal-when-loaded
             camera-controls
@@ -177,9 +177,9 @@
           <model-viewer
             class="viewerStyle"
             alt="JOYtoy"
-            src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.usdz"
-            poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.png"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy8/JOYtoy8.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy8/JOYtoy8.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy8/JOYtoy8.png"
             preload
             reveal-when-loaded
             camera-controls

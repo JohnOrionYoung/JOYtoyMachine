@@ -61,7 +61,7 @@
             rel="ar"
             @click="
               triggerMobileVision(
-                'https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy' +
+                'storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy' +
                   mapTokenDataIds(tokenData.id) +
                   '/JOYtoy' +
                   mapTokenDataIds(tokenData.id) +
@@ -77,7 +77,7 @@
             rel="ar"
             @click="
               triggerMobileVision(
-                'https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy' +
+                'storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy' +
                   mapTokenDataIds(tokenData.id) +
                   '/JOYtoy' +
                   mapTokenDataIds(tokenData.id) +

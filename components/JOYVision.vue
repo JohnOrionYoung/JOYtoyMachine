@@ -178,7 +178,7 @@
             class="viewerStyle"
             alt="JOYtoy"
             src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.glb"
-            ios-src="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.usdz"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy8/JOYtoy8.usdz"
             poster="https://joyworld-bucket.storage.fleek.co/ipfs/QmYrVH14vnhCcKL2cZaNYw5qEHBYVkzS6tcY6sVEXUg2BM/JOYtoys/JOYtoy8/JOYtoy8.png"
             preload
             reveal-when-loaded

@@ -61,7 +61,7 @@
             rel="ar"
             @click="
               triggerMobileVision(
-                'storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy' +
+                'https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy' +
                   mapTokenDataIds(tokenData.id) +
                   '/JOYtoy' +
                   mapTokenDataIds(tokenData.id) +
@@ -77,7 +77,7 @@
             rel="ar"
             @click="
               triggerMobileVision(
-                'storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy' +
+                'https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy' +
                   mapTokenDataIds(tokenData.id) +
                   '/JOYtoy' +
                   mapTokenDataIds(tokenData.id) +

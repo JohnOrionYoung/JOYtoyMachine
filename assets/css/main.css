@@ -1,0 +1,273 @@
+@use 'defaults';
+@use 'mediaqueries';
+html,
+body {
+  min-height: 100%;
+  background: var(--background-color);
+  font-family: "arial, sans-serif";
+  font-family: var(--font-family);
+}
+
+#__nuxt {
+  height: 100%;
+  background: var(--background-color);
+  min-height: 100vh;
+}
+
+#__layout {
+  height: 100%;
+}
+
+#layout {
+  color: var(--text-color, #111);
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.row.full {
+  width: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.row.between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.row.center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.col.between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.col.center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.vue-modal-resizer {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999;
+  background: transparent;
+  cursor: se-resize;
+}
+
+.vue-modal-resizer::after {
+  display: block;
+  position: absolute;
+  content: "";
+  background: transparent;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #ddd;
+  border-left: 10px solid transparent;
+}
+
+.vue-modal-resizer.clicked::after {
+  border-bottom: 10px solid #369be9;
+}
+
+.vm--block-scroll {
+  overflow: hidden;
+  width: 100vw;
+}
+
+.vm--container {
+  position: fixed;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+}
+
+.vm--overlay {
+  position: fixed;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  /* z-index: 999; */
+  opacity: 1;
+}
+
+.vm--container.scrollable {
+  height: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vm--modal {
+  position: relative;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.vm--container.scrollable .vm--modal {
+  margin-bottom: 2px;
+}
+
+.vm--top-right-slot {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.vm-transition--overlay-enter-active,
+.vm-transition--overlay-leave-active {
+  -webkit-transition: all 50ms;
+  transition: all 50ms;
+}
+
+.vm-transition--overlay-enter,
+.vm-transition--overlay-leave-active {
+  opacity: 0;
+}
+
+.vm-transition--modal-enter-active,
+.vm-transition--modal-leave-active {
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.vm-transition--modal-enter,
+.vm-transition--modal-leave-active {
+  opacity: 0;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.vm-transition--default-enter-active,
+.vm-transition--default-leave-active {
+  -webkit-transition: all 2ms;
+  transition: all 2ms;
+}
+
+.vm-transition--default-enter,
+.vm-transition--default-leave-active {
+  opacity: 0;
+}
+
+.vue-dialog {
+  font-size: 14px;
+}
+
+.vue-dialog div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.vue-dialog-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  width: 100%;
+  padding: 14px;
+}
+
+.vue-dialog-content-title {
+  font-weight: 600;
+  padding-bottom: 14px;
+}
+
+.vue-dialog-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  width: 100%;
+  border-top: 1px solid #eee;
+}
+
+.vue-dialog-buttons-none {
+  width: 100%;
+  padding-bottom: 14px;
+}
+
+.vue-dialog-button {
+  font-size: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 40px;
+  height: 40px;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+
+.vue-dialog-button:hover {
+  background: #f9f9f9;
+}
+
+.vue-dialog-button:active {
+  background: #f3f3f3;
+}
+
+.vue-dialog-button:not(:first-of-type) {
+  border-left: 1px solid #eee;
+}
+/*# sourceMappingURL=main.css.map */

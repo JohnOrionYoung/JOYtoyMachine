@@ -21,8 +21,8 @@ export default {
       "https://assets.website-files.com/5c73606d331282a7a53d3df3/5ffb98b2f2faea1a53240c1f_IMG_5303-p-1080.png",
     hasNavigation: true,
     products: {
-      main: [1, 2, 3, 4, 5, 6, 7, 8],
-      mainDisplay: [1, 200, 305, 500, 900, 981, 1022, 1699],
+      main: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      mainDisplay: [1, 200, 305, 500, 900, 981, 1022, 1699, 2180],
       rinkeby: [1, 2],
       rinkebyDisplay: [1, 2]
     },

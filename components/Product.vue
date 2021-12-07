@@ -38,9 +38,12 @@
             <span v-else-if="tokenData.id === 981" class="metaValue">
               Bubble Gum Borg
             </span>
-            <span v-else-if="tokenData.id === 1699" class="metaValue"
-              >daWublr</span
-            >
+            <span v-else-if="tokenData.id === 1699" class="metaValue">
+              daWublr
+            </span>
+            <span v-else-if="tokenData.id === 2797" class="metaValue">
+              The Persistence of Time
+            </span>
             <span v-else class="metaValue">{{
               tokenData.collaborators ? tokenData.collaborators : "100% JOY"
             }}</span>

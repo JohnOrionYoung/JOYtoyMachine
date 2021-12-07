@@ -221,6 +221,31 @@
             </button></model-viewer
           >
         </div>
+        <div v-if="tokenId === 2797">
+          <!-- <model-viewer
+            class="viewerStyle"
+            alt="JOYtoy"
+            src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy9/JOYtoy10.glb"
+            ios-src="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy9/JOYtoy10.usdz"
+            poster="https://storageapi.fleek.co/joyworld-bucket/JOYtoys/JOYtoy9/JOYtoy10.png"
+            preload
+            reveal-when-loaded
+            camera-controls
+            auto-rotate
+            autoplay
+            exposure="1.2"
+            shadow-intensity=".0"
+            shadow-softness=".0"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            ar-scale="auto"
+            environment-image="neutral"
+            ><button slot="ar-button" class="launchAR">
+              Enter JOYvision
+            </button></model-viewer
+          > -->
+          <h1 style="margin-left: 45%">COMING SOON!</h1>
+        </div>
       </div>
       <button
         class="closeVision"

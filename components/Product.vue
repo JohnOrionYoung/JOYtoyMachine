@@ -38,9 +38,12 @@
             <span v-else-if="tokenData.id === 981" class="metaValue">
               Bubble Gum Borg
             </span>
-            <span v-else-if="tokenData.id === 1699" class="metaValue"
-              >daWublr</span
-            >
+            <span v-else-if="tokenData.id === 1699" class="metaValue">
+              daWublr
+            </span>
+            <span v-else-if="tokenData.id === 2797" class="metaValue">
+              The Persistence of Time
+            </span>
             <span v-else class="metaValue">{{
               tokenData.collaborators ? tokenData.collaborators : "100% JOY"
             }}</span>
@@ -396,7 +399,7 @@ export default {
     },
     mapTokenDataIds(id) {
       const joyToyNo =
-        [1, 200, 305, 500, 900, 981, 1022, 1699, 2180].indexOf(id) + 1
+        [1, 200, 305, 500, 900, 981, 1022, 1699, 2180, 2797].indexOf(id) + 1
       return joyToyNo
     }
   }
